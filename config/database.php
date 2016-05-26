@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'kNet'),
+    'default' => env('DB_CONNECTION', 'kNet_it'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,45 +64,45 @@ return [
             'strict'    => false,
             'engine'    => null,
         ],
-
-        'kki' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => 'kkiWH',
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-            'engine'    => null,
-        ],
-
-        'kkf' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('kkfWH', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-            'engine'    => null,
-        ],
-
-        'kke' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('kkeWH', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-            'engine'    => null,
-        ],
+        //
+        // 'kki' => [
+        //     'driver'    => 'mysql',
+        //     'host'      => env('DB_HOST', 'localhost'),
+        //     'database'  => 'kkiWH',
+        //     'username'  => env('DB_USERNAME', 'forge'),
+        //     'password'  => env('DB_PASSWORD', ''),
+        //     'charset'   => 'utf8',
+        //     'collation' => 'utf8_unicode_ci',
+        //     'prefix'    => '',
+        //     'strict'    => false,
+        //     'engine'    => null,
+        // ],
+        //
+        // 'kkf' => [
+        //     'driver'    => 'mysql',
+        //     'host'      => env('DB_HOST', 'localhost'),
+        //     'database'  => env('kkfWH', 'forge'),
+        //     'username'  => env('DB_USERNAME', 'forge'),
+        //     'password'  => env('DB_PASSWORD', ''),
+        //     'charset'   => 'utf8',
+        //     'collation' => 'utf8_unicode_ci',
+        //     'prefix'    => '',
+        //     'strict'    => false,
+        //     'engine'    => null,
+        // ],
+        //
+        // 'kke' => [
+        //     'driver'    => 'mysql',
+        //     'host'      => env('DB_HOST', 'localhost'),
+        //     'database'  => env('kkeWH', 'forge'),
+        //     'username'  => env('DB_USERNAME', 'forge'),
+        //     'password'  => env('DB_PASSWORD', ''),
+        //     'charset'   => 'utf8',
+        //     'collation' => 'utf8_unicode_ci',
+        //     'prefix'    => '',
+        //     'strict'    => false,
+        //     'engine'    => null,
+        // ],
 
     ],
 
