@@ -22,11 +22,15 @@ class Client extends Model
         });
     }
 
+    // JOIN Tables
+    public function doccli(){
+      return $this->hasMany('knet\DocCli', 'codicecf', 'codice');
+    }
 
     //Multator
-    public function getDescrizionAttribute($value)
-    {
-        return ucfirst(strtolower($value));
-    }
+    // public function getDescrizionAttribute($value)
+    // {
+    //     return ucfirst(strtolower($value));
+    // }
 
 }

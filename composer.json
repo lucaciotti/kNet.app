@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "doctrine/dbal": "^2.5",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -18,7 +20,7 @@
     "autoload": {
         "classmap": [
             "database",
-            "app/Models"
+            "app/ArcaModels"
         ],
         "psr-4": {
             "knet\\": "app/"

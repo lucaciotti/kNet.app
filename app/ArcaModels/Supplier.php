@@ -22,10 +22,14 @@ class Supplier extends Model
       });
   }
 
+  // JOIN Tables
+  public function docsup(){
+    return $this->hasMany('knet\DocSup', 'codicecf', 'codice');
+  }
 
   //Multator
-  public function getDescrizionAttribute($value)
-  {
-      return ucfirst(strtolower($value));
-  }
+  // public function getDescrizionAttribute($value)
+  // {
+  //     return ucfirst(strtolower($value));
+  // }
 }
