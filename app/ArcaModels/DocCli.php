@@ -31,4 +31,10 @@ class DocCli extends Model
     return $this->hasMany('knet\DocRow', 'id_testa', 'id');
   }
 
+  //Multator
+  // public function getNumerodocAttribute($value)
+  // {
+  //     return intval($value);
+  // }
+
 }

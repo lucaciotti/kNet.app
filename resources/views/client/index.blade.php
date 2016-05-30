@@ -15,6 +15,7 @@
                       <th>Località</th>
                       <th>Settore</th>
                       <th>Cod. Agente</th>
+                      <th>Link Documenti</th>
                     </thead>
                     <tbody>
                       @foreach ($clients as $client)
@@ -27,6 +28,7 @@
                           <td>{{ $client->localita }}</td>
                           <td>{{ $client->settore }}</td>
                           <td>{{ $client->agente }}</td>
+                          <td><a href="{{ url('client/'.$client->codice.'/doc') }}">Documenti</a></td>
                         </tr>
                       @endforeach
                     </tbody>

@@ -52,6 +52,12 @@
                     <dt>Data Fine Rapporto</dt>
                     <dd>{{$client->u_datafine}}</dd>
 
+                    <dt>Link Documenti</dt>
+                    <dd>
+                      <a href="{{ url('client/'.$client->codice.'/doc/O') }}">Ordini</a></br>
+                      <a href="{{ url('client/'.$client->codice.'/doc/B') }}">Bolle</a></br>
+                      <a href="{{ url('client/'.$client->codice.'/doc/F') }}">Fatture</a></br>
+                    </dd>
 
                     <dt>Note</dt>
                     <dd>{!! $client->note !!}</dd>
