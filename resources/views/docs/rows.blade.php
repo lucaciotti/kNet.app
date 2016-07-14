@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('main-content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                       @foreach ($rows as $row)
-                        <tr>                        
+                        <tr>
                           <td>
                             <a href="#"> {{ $row->numeroriga }}</a>
                           </td>
