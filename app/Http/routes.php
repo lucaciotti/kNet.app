@@ -25,4 +25,4 @@ Route::get('/client/{codice}', 'ClientController@detail');
 Route::get('/doc/{tipodoc?}', 'DocCliController@index');
 Route::get('/client/{codice}/doc/{tipomodulo?}', 'DocCliController@docCli');
 
-Route::get('docrows/{id_testa}', 'DocRowController@show');
+Route::get('/docrows/{id_testa}', 'DocRowController@show');

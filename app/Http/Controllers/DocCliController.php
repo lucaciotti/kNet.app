@@ -31,6 +31,8 @@ class DocCliController extends Controller
     // dd($docs);
     return view('docs.index', [
       'docs' => $docs,
+      'tipomodulo' => $tipomodulo,
     ]);
   }
+  
 }

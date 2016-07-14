@@ -11,6 +11,7 @@ class DocCli extends Model
   public $timestamps = false;
   // protected $primaryKey = 'codice';
   // public $incrementing = false;
+  protected $dates = ['datadoc'];
 
   // Scope that garante to find only Supplier from anagrafe
   protected static function boot()
@@ -32,9 +33,9 @@ class DocCli extends Model
   }
 
   //Multator
-  // public function getNumerodocAttribute($value)
+  // public function getDatadocAttribute($value)
   // {
-  //     return intval($value);
+  //    return $value->format('m/d/Y');
   // }
 
 }

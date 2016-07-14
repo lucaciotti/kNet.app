@@ -29,7 +29,7 @@
                             <a href="{{ url('docrows/'.$doc->id) }}"> {{ $doc->tipodoc }}</a>
                           </td>
                           <td>{{ $doc->numerodoc }}</td>
-                          <td>{{ $doc->datadoc }}</td>
+                          <td>{{ $doc->datadoc->format('d-m-Y') }}</td>
                           <td>{{ $doc->codicecf }}</td>
                           <td>{{ $doc->numerodocf }}</td>
                           <td>{{ $doc->totdoc }}</td>
