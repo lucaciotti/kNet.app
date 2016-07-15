@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/client', 'ClientController@index');
 Route::get('/client/{codice}', 'ClientController@detail');
+Route::post('/client/filter', 'ClientController@fltIndex');
 
 Route::get('/doc/{tipodoc?}', 'DocCliController@index');
 Route::get('/client/{codice}/doc/{tipomodulo?}', 'DocCliController@docCli');
