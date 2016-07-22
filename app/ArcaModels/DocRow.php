@@ -1,6 +1,6 @@
 <?php
 
-namespace knet;
+namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 

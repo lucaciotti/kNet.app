@@ -6,24 +6,24 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adminlte-laravel - {{ trans('adminlte_lang::message.landingdescription') }} ">
-    <meta name="author" content="Sergi Tur Badenas - acacha.org">
+    <meta name="description" content="kNet 2.0 ">
+    <meta name="author" content="Luca Ciotti">
 
-    <meta property="og:title" content="Adminlte-laravel" />
+    <meta property="og:title" content="kNet 2.0 " />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Adminlte-laravel - {{ trans('adminlte_lang::message.landingdescription') }}" />
-    <meta property="og:url" content="http://demo.adminlte.acacha.org/" />
-    <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE.png" />
+    <meta property="og:description" content="kNet 2.0 " />
+    <meta property="og:url" content="http://intranet.krona.it/" />
+    {{-- <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE.png" />
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x600.png" />
-    <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x314.png" />
-    <meta property="og:sitename" content="demo.adminlte.acacha.org" />
-    <meta property="og:url" content="http://demo.adminlte.acacha.org" />
+    <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x314.png" /> --}}
+    <meta property="og:sitename" content="intranet.krona.it/" />
+    <meta property="og:url" content="http://intranet.krona.it/" />
 
-    <meta name="twitter:card" content="summary_large_image" />
+    {{-- <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@acachawiki" />
-    <meta name="twitter:creator" content="@acacha1" />
+    <meta name="twitter:creator" content="@acacha1" /> --}}
 
-    <title>{{ trans('adminlte_lang::message.landingdescriptionpratt') }}</title>
+    <title>kNet 2.0</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
@@ -51,13 +51,13 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+            <a class="navbar-brand" href="#"><b>kNet 2.0</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
-                <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
-                <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li>
+                {{-- <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
+                <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
                 <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -78,13 +78,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <div class="row centered">
             <div class="col-lg-12">
-                <h1>Acacha <b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h1>
-                <h3>A <a href="https://laravel.com/">Laravel</a> {{ trans('adminlte_lang::message.laravelpackage') }}
-                    scaffolding/boilerplate {{ trans('adminlte_lang::message.to') }} <a href="https://almsaeedstudio.com/preview">AdminLTE</a> {{ trans('adminlte_lang::message.templatewith') }}
-                    <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 {{ trans('adminlte_lang::message.and') }} <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
-                <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
+                <h1>kNet <b><a href="http://intranet.krona.it">2.0</a></b></h1>
+                <h3>Un progetto per rinnovare i servizi di intranet aziendali volto ad offrire una migliore esperienza e servizio informatizzato ai nostri Clienti ed Agenti.</h3>
+                {{-- <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3> --}}
             </div>
-            <div class="col-lg-2">
+            {{-- <div class="col-lg-2">
                 <h5>{{ trans('adminlte_lang::message.amazing') }}</h5>
                 <p>{{ trans('adminlte_lang::message.basedadminlte') }}</p>
                 <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow1.png') }}">
@@ -97,7 +95,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow2.png') }}">
                 <h5>{{ trans('adminlte_lang::message.awesomepackaged') }}</h5>
                 <p>... {{ trans('adminlte_lang::message.by') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a> {{ trans('adminlte_lang::message.at') }} <a href="http://acacha.org">acacha.org</a> {{ trans('adminlte_lang::message.readytouse') }}</p>
-            </div>
+            </div> --}}
         </div>
     </div> <!--/ .container -->
 </div><!--/ #headerwrap -->
@@ -108,23 +106,23 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <h1>{{ trans('adminlte_lang::message.designed') }}</h1>
+            <h1>Servizi Offerti</h1>
             <br>
             <br>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro01.png') }}" alt="">
                 <h3>{{ trans('adminlte_lang::message.community') }}</h3>
-                <p>{{ trans('adminlte_lang::message.see') }} <a href="https://github.com/acacha/adminlte-laravel">{{ trans('adminlte_lang::message.githubproject') }}</a>, {{ trans('adminlte_lang::message.post') }} <a href="https://github.com/acacha/adminlte-laravel/issues">{{ trans('adminlte_lang::message.issues') }}</a> {{ trans('adminlte_lang::message.and') }} <a href="https://github.com/acacha/adminlte-laravel/pulls">{{ trans('adminlte_lang::message.pullrequests') }}</a></p>
+                {{-- <p>{{ trans('adminlte_lang::message.see') }} <a href="https://github.com/acacha/adminlte-laravel">{{ trans('adminlte_lang::message.githubproject') }}</a>, {{ trans('adminlte_lang::message.post') }} <a href="https://github.com/acacha/adminlte-laravel/issues">{{ trans('adminlte_lang::message.issues') }}</a> {{ trans('adminlte_lang::message.and') }} <a href="https://github.com/acacha/adminlte-laravel/pulls">{{ trans('adminlte_lang::message.pullrequests') }}</a></p> --}}
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro02.png') }}" alt="">
                 <h3>{{ trans('adminlte_lang::message.schedule') }}</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                {{-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> --}}
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro03.png') }}" alt="">
                 <h3>{{ trans('adminlte_lang::message.monitoring') }}</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                {{-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> --}}
             </div>
         </div>
         <br>
@@ -133,7 +131,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 </div><!--/ #introwrap -->
 
 <!-- FEATURES WRAP -->
-<div id="features">
+{{-- <div id="features">
     <div class="container">
         <div class="row">
             <h1 class="centered">{{ trans('adminlte_lang::message.whatnew') }}</h1>
@@ -207,7 +205,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </div>
         </div>
     </div><!--/ .container -->
-</div><!--/ #features -->
+</div><!--/ #features --> --}}
 
 
 <section id="showcase" name="showcase"></section>
@@ -230,7 +228,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                             <img src="{{ asset('/img/item-01.png') }}" alt="">
                         </div>
                         <div class="item">
-                            <img src="{{ asset('/img/item-02.png') }}" alt="">
+                            <img src="{{ asset('/img/item-03.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -249,10 +247,10 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div class="col-lg-5">
             <h3>{{ trans('adminlte_lang::message.address') }}</h3>
             <p>
-                Av. Greenville 987,<br/>
-                New York,<br/>
-                90873<br/>
-                United States
+                via Piane 90,<br/>
+                Coriano, Rimini<br/>
+                47924<br/>
+                Italia
             </p>
         </div>
 
@@ -281,12 +279,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="c">
     <div class="container">
         <p>
-            <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. {{ trans('adminlte_lang::message.descriptionpackage') }}.<br/>
-            <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/acacha/adminlte-laravel">Github</a>
-            <br/>
-            AdminLTE {{ trans('adminlte_lang::message.createdby') }} Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
-            <br/>
-             Pratt Landing Page {{ trans('adminlte_lang::message.createdby') }} <a href="http://www.blacktie.co">BLACKTIE.CO</a>
+            <a href="http://intranet.krona.it"></a><b>kNet 2.0</b></a>.<br/>
+            <strong>Copyright &copy; 2016.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="https://github.com/lucaciotti">Luca Ciotti</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/lucaciotti">Github</a>
         </p>
 
     </div>

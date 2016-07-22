@@ -5,7 +5,7 @@ namespace knet\Http\Controllers;
 use Illuminate\Http\Request;
 
 use knet\Http\Requests;
-use knet\DocRow;
+use knet\ArcaModels\DocRow;
 
 class DocRowController extends Controller
 {

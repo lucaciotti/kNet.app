@@ -1,6 +1,6 @@
 <?php
 
-namespace knet;
+namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -24,11 +24,11 @@ class Product extends Model
 
   // JOIN Tables
   public function doccli(){
-    return $this->hasMany('knet\DocCli', 'codicearti', 'codice');
+    return $this->hasMany('knet\ArcaModels\DocCli', 'codicearti', 'codice');
   }
 
   public function docsup(){
-    return $this->hasMany('knet\DocSup', 'codicearti', 'codice');
+    return $this->hasMany('knet\ArcaModels\DocSup', 'codicearti', 'codice');
   }
 
   //Multator

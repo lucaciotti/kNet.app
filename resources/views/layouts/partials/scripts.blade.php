@@ -13,3 +13,9 @@
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
       fixed layout. -->
+
+      {{-- <script src="{{ asset('/plugins/slimScroll/jquery.slimscroll.js') }}"></script>
+      <script src="{{ asset('/plugins/fastclick/fastclick.min.js') }}"></script> --}}
+@include('layouts.partials.scripts.dataTables')
+
+{{-- @stack('scripts') --}}

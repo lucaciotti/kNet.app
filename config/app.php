@@ -163,6 +163,10 @@ return [
          */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 
+        Laravelista\Ekko\EkkoServiceProvider::class,
+
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+
     ],
 
     /*
@@ -215,6 +219,10 @@ return [
          * Acacha AdminLTE template alias
          */
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+
+        'Ekko' => Laravelista\Ekko\Facades\Ekko::class,
+
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 
     ],
 

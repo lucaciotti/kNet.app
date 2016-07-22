@@ -29,7 +29,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="sidebar-collapde sidebar-mini skin-green">
+<body class="skin-green sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
     @include('layouts.partials.mainheader')

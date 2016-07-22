@@ -33,14 +33,14 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li><a href="{{ url('/client') }}"><i class='fa fa-link'></i> <span>Lista Cliente</span></a></li>
-            <li class="treeview">
-                <a href="{{ url('/doc') }}"><i class='fa fa-link'></i> <span>Documenti</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class="{{ Ekko::isActiveURL('home') }}"><a href="{{ url('/blankPage') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-users'></i> <span>Lista Cliente</span></a></li>
+            <li class="treeview {{ Ekko::isActiveRoute('doc::*') }}">
+                <a href="{{ route('doc::list') }}"><i class='fa fa-copy'></i> <span>Documenti</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('/doc/OC') }}">ORDINI</a></li>
-                    <li><a href="{{ url('/doc/BO') }}">BOLLE</a></li>
-                    <li><a href="{{ url('/doc/FT') }}">FATTURE</a></li>
+                    <li class="{{ Ekko::isActiveRoute('doc::list','O') }}"><a href="{{ route('doc::list', 'O') }}">ORDINI</a></li>
+                    <li class="{{ Ekko::isActiveRoute('doc::list','B') }}"><a href="{{ route('doc::list', 'B') }}">BOLLE</a></li>
+                    <li class="{{ Ekko::isActiveRoute('doc::list','F') }}"><a href="{{ route('doc::list', 'F') }}">FATTURE</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->
