@@ -1,19 +1,15 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - {{$descModulo}}
+    - Scadenze
 @endsection
 
 @section('contentheader_title')
-    Lista {{$descModulo}}
-@endsection
-
-@section('contentheader_description')
-    {{$client->descrizion}} [{{$client->codice}}]
+    Lista Scadenze
 @endsection
 
 @section('contentheader_breadcrumb')
-    {!! Breadcrumbs::render('clientDocs', $codicecf, $tipomodulo) !!}
+  {!! Breadcrumbs::render('scads') !!}
 @endsection
 
 @section('main-content')
@@ -21,13 +17,13 @@
   <div class="col-lg-7">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Lista Documenti</h3>
+        <h3 class="box-title" data-widget="collapse">Lista Scadenze</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
-        @include('docs.partials.tblIndex', $docs)
+        @include('scads.partials.tblIndex', $scads)
       </div>
     </div>
   </div>
@@ -42,32 +38,32 @@
         </div>
       </div>
       <div class="box-body">
-        @include('docs.partials.formIndex')
+        @include('scads.partials.formIndex')
       </div>
     </div>
 
-    <div class="box box-default">
+    {{-- <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Cambia Documento per {{$client->descrizion}}</h3>
+        <h3 class="box-title" data-widget="collapse">Cambia Tipo Documento</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, '']) }}">TUTTI</a>
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, 'P']) }}">Preventivi</a>
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, 'O']) }}">Ordini</a>
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, 'B']) }}">Bolle</a>
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, 'F']) }}">Fatture</a>
-        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::client', [$client->codice, 'N']) }}">Note di Accredito</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['']) }}">TUTTI</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['P']) }}">Preventivi</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['O']) }}">Ordini</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['B']) }}">Bolle</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['F']) }}">Fatture</a>
+        <a type="button" class="btn btn-default btn-block" href="{{ route('doc::list', ['N']) }}">Note di Accredito</a>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 @endsection
 
 @section('extra_script')
-  @include('layouts.partials.scripts.iCheck')
   @include('layouts.partials.scripts.select2')
   @include('layouts.partials.scripts.datePicker')
+    @include('layouts.partials.scripts.iCheck')
 @endsection

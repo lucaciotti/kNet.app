@@ -3,13 +3,14 @@
 namespace knet\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 use knet\Http\Requests;
 use knet\ArcaModels\Client;
 use knet\ArcaModels\Nazione;
 use knet\ArcaModels\Settore;
 use knet\ArcaModels\Zona;
-use knet\ArcaModels\Scadenza;
+use knet\ArcaModels\ScadCli;
 
 class ClientController extends Controller
 {
@@ -76,7 +77,7 @@ class ClientController extends Controller
 
     public function detail (Request $req, $codCli){
       $client = Client::with(['agent', 'detNation', 'detZona', 'detSect', 'clasCli', 'detPag', 'detStato'])->findOrFail($codCli);
-      $scadToPay = Scadenza::where('codcf', $codCli)->where('pagato',0)->whereIn('tipoacc', ['F', ''])->orderBy('datascad','desc')->get();
+      $scadToPay = ScadCli::where('codcf', $codCli)->where('pagato',0)->whereIn('tipoacc', ['F', ''])->orderBy('datascad','desc')->get();
       // dd($client);
       return view('client.detail', [
         'client' => $client,

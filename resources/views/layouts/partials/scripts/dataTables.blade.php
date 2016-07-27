@@ -5,6 +5,7 @@
   $(function () {
     $(".dtTbls_full").DataTable({
       "iDisplayLength": 25,
+      "aaSorting": [],
     });
     $('.dtTbls_light').DataTable({
       "iDisplayLength": 25,
@@ -13,7 +14,8 @@
       "searching": false,
       "ordering": true,
       "info": true,
-      "autoWidth": false
+      "autoWidth": false,
+      "aaSorting": []
     });
     $('.dtTbls_total').DataTable({
       "iDisplayLength": 15,
@@ -23,6 +25,7 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
+      "aaSorting": [],
       "footerCallback": function ( row, data, start, end, display ) {
           var api = this.api(), data;
 
@@ -36,7 +39,7 @@
 
           // Total over all pages
           total = api
-              .column( 6 )
+              .column( 7 )
               .data()
               .reduce( function (a, b) {
                   return intVal(a) + intVal(b);
@@ -44,14 +47,14 @@
 
           // Total over this page
           pageTotal = api
-              .column( 6, { page: 'current'} )
+              .column( 7, { page: 'current'} )
               .data()
               .reduce( function (a, b) {
                   return intVal(a) + intVal(b);
               }, 0 );
 
           // Update footer
-          $( api.column( 6 ).footer() ).html(
+          $( api.column( 7 ).footer() ).html(
               total +' €'//+' ['+ total +' € Tot.Doc.]'
           );
       }
@@ -64,6 +67,9 @@
     display:none;
 }
 .dtTbls_full span {
+    display:none;
+}
+.dtTbls_total span {
     display:none;
 }
 </style>

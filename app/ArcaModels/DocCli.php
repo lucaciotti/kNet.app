@@ -11,7 +11,7 @@ class DocCli extends Model
   public $timestamps = false;
   // protected $primaryKey = 'codice';
   // public $incrementing = false;
-  protected $dates = ['datadoc', 'v1data', 'datacons', 'u_dtpronto'];
+  protected $dates = ['datadoc', 'v1data'];
 
   // Scope that garante to find only Supplier from anagrafe
   protected static function boot()
@@ -45,8 +45,12 @@ class DocCli extends Model
   }
 
   public function scadenza(){
-    return $this->hasOne('knet\ArcaModels\Scadenza', 'id_doc', 'id');
+    return $this->hasOne('knet\ArcaModels\ScadCli', 'id_doc', 'id');
   }
+
+  // public function destinaz(){
+  //   return $this->hasOne('knet\ArcaModels\Destinaz', 'codicedes', 'destdiv')->join('codicecf', $this->codicecf);
+  // }
 
   //Multator
   // public function getDatadocAttribute($value)

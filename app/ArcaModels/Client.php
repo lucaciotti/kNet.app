@@ -63,8 +63,8 @@ class Client extends Model
       return $this->hasOne('knet\ArcaModels\Pagament', 'codice', 'pag');
     }
 
-    public function scadToPay(){
-      return $this->hasMany('knet\ArcaModels\Scadenza', 'codcf', 'codice');
+    public function scadenza(){
+      return $this->hasMany('knet\ArcaModels\ScadCli', 'codcf', 'codice');
     }
 
     //Multator

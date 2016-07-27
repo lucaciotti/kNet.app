@@ -56,3 +56,22 @@ Route::group(['as' => 'doc::'], function () {
     'uses' => 'DocCliController@showDetail'
   ]);
 });
+
+Route::group(['as' => 'scad::'], function () {
+  Route::get('/scads', [
+    'as' => 'list',
+    'uses' => 'ScadCliController@index'
+  ]);
+  Route::post('/scads/filter', [
+    'as' => 'fltList',
+    'uses' => 'ScadCliController@fltIndex'
+  ]);
+  Route::get('/client/{codice}/scads', [
+    'as' => 'client',
+    'uses' => 'ScadCliController@scadCli'
+  ]);
+  Route::get('/scad/{id_scad}', [
+    'as' => 'detail',
+    'uses' => 'ScadCliController@showDetail'
+  ]);
+});

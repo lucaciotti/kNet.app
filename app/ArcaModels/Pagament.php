@@ -15,4 +15,8 @@ class Pagament extends Model
   public function client(){
     return $this->belongsTo('knet\ArcaModels\Client', 'pag', 'codice');
   }
+
+  public function scadenza(){
+    return $this->belongsTo('knet\ArcaModels\Scadenza', 'codpag', 'codice');
+  }
 }

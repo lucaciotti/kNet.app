@@ -24,7 +24,7 @@
       <ul class="nav nav-tabs">
         <li class="active"><a href="#DatiDoc" data-toggle="tab" aria-expanded="true">Dati Documento</a></li>
         <li class=""><a href="#Sped" data-toggle="tab" aria-expanded="false">Dati Spedizione</a></li>
-        <li class=""><a href="#Val" data-toggle="tab" aria-expanded="false">Totale Documento</a></li>
+        <li class=""><a href="#Val" data-toggle="tab" aria-expanded="false">Totali Documento</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="DatiDoc">
@@ -48,12 +48,29 @@
 
             <dt>Riferimento Doc.</dt>
             <dd>{{$head->numerodocf}}</dd>
+
+            <hr>
+
+            <dt>Tot. Documento</dt>
+            <dd><strong>{{$head->totdoc}} €</strong></dd>
+
+            @if($head->tipomodulo == 'F' || $head->tipomodulo == 'N')
+              <br>
+
+              @if($head->scontocass)
+              <dt>Sconto Cassa</dt>
+              <dd>{{$head->scontocass}} %</dd>
+              @endif
+
+              <dt>Totale a Pagare</dt>
+              <dd>{{$head->totdoc}} €</dd>
+            @endif
           </dl>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="Sped">
+          @if($head->tipomodulo == 'B')
           <dl class="dl-horizontal">
-            @if($head->tipomodulo == 'B')
             <dt>N° Colli</dt>
             <dd>{{$head->colli}}</dd>
 
@@ -76,24 +93,28 @@
 
             <dt>Partenza Vettore</dt>
             <dd>{{$head->v1data->format('d/m/Y')}} - {{$head->v1ora}}</dd>
-            @else
-              <div class="callout callout-danger">
-                <p>Visualizzabile solo nei Documenti di tipo Bolle!</p>
-              </div>
+
+            <br>
+            @if($destinaz)
+            <dt>Destinazione Merce</dt>
+            <dd>{{$destinaz->ragionesoc}}</dd>
+            <dd>{{$destinaz->cap}}, {{$destinaz->localita}} ({{$destinaz->pv}}) - {{$destinaz->u_nazione}}</dd>
+            <dd>{{$destinaz->indirizzo}}</dd>
+            <dd>{{$destinaz->telefono}}</dd>
             @endif
+          @else
+            <div class="callout callout-danger">
+              <p>Visualizzabile solo nei Documenti di tipo Bolle!</p>
+            </div>
           </dl>
+          @endif
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="Val">
           <dl class="dl-horizontal">
             @if($head->sconti)
             <dt>Sconto Merce</dt>
-            <dd>{{$head->sconti}}</dd>
-            @endif
-
-            @if($head->scontocass)
-            <dt>Sconto Cassa</dt>
-            <dd>{{$head->scontocass}}</dd>
+            <dd>{{$head->sconti}} %</dd>
             @endif
 
             <br>
@@ -102,14 +123,12 @@
             <dd>{{$head->totmerce}} €</dd>
 
             <dt>Spese Trasporto</dt>
-            <dd>{{$head->speseim}} €</dd>
+            <dd>{{$head->speseim + $head->spesetr}} €</dd>
 
             <br>
 
             <dt>Tot. Imponibile</dt>
             <dd>{{$head->totimp}} €</dd>
-
-            <br>
 
             <dt>Tot. IVA</dt>
             <dd>{{$head->totiva}} €</dd>
@@ -119,13 +138,16 @@
             <dt>Tot. Documento</dt>
             <dd><strong>{{$head->totdoc}} €</strong></dd>
 
+            @if($head->tipomodulo == 'F' || $head->tipomodulo == 'N')
+              <br>
 
-            @if($head->tipomodulo == 'F')
+              @if($head->scontocass)
+              <dt>Sconto Cassa</dt>
+              <dd>{{$head->scontocass}} %</dd>
+              @endif
+
               <dt>Totale a Pagare</dt>
-              <dd>{{$head->totdoc}}</dd>
-
-              {{-- <dt>Prevista Consegna</dt>
-              <dd>{{$head->datacons->format('d/m/Y')}}</dd> --}}
+              <dd>{{$head->totdoc}} €</dd>
             @endif
           </dl>
         </div>
@@ -134,7 +156,7 @@
       <!-- /.tab-content -->
     </div>
 
-    @if($head->tipomodulo=='F')
+    @if($head->tipomodulo == 'F')
       <div class="box box-warning">
         <div class="box-header with-border">
           <h3 class="box-title" data-widget="collapse">Scadenze</h3>
@@ -193,7 +215,7 @@
           <h4>Documenti Prelevati</h4>
             @foreach($prevDocs as $doc)
               <a type="button" class="btn btn-default btn-block" href="{{ route('doc::detail', $doc->id) }}">
-                {{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}
+                <strong>{{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}</strong>
               </a>
             @endforeach
         @endif
@@ -201,8 +223,8 @@
         @if($nextDocs->count()>0)
           <h4>Documenti Successivi</h4>
             @foreach($nextDocs as $doc)
-              <a type="button" class="btn btn-default btn-block" href="{{ route('doc::detail', $doc->id) }}">
-                {{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}
+              <a type="button" class="btn btn-primary btn-block" href="{{ route('doc::detail', $doc->id) }}">
+                <strong>{{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}</strong>
               </a>
             @endforeach
         @endif
@@ -219,7 +241,7 @@
         </div>
       </div>
       <div class="box-body">
-        @include('docs.partials.tblDetail', $rows)
+        @include('docs.partials.tblDetail', [$rows, $head])
       </div>
     </div>
   </div>

@@ -9,5 +9,17 @@
             radioClass: 'iradio_flat-aero',
             increaseArea: '20%' // optional
         });
+
+        $('#noDate').on('ifChecked', function(event){
+          // alert(event.type + ' callback');
+          $('.daterange-btn span').html('');
+          $('.daterange-btn').prop('disabled', true);
+          $('input[name="startDate"]').val('');
+          $('input[name="endDate"]').val('');
+        }).on('ifUnchecked',  function(event){
+          // alert(event.type + ' callback');
+          $('.daterange-btn span').html('Seleziona Data');
+          $('.daterange-btn').prop('disabled', false);
+        });
     });
 </script>

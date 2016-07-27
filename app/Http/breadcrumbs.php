@@ -57,3 +57,10 @@ Breadcrumbs::register('docsDetail', function($breadcrumbs, $head)
     $docPush = $head->tipodoc." ".$head->numerodoc;
     $breadcrumbs->push($docPush, route('doc::detail', $head->id));
 });
+
+// Home > Scads
+Breadcrumbs::register('scads', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Scadenze', route('scad::list'));
+});

@@ -9,6 +9,8 @@ class DocRow extends Model
   protected $table = 'docrig';
   public $timestamps = false;
 
+  protected $dates = ['dataconseg', 'u_dtpronto'];
+
   // JOIN Tables
   public function doccli(){
     return $this->belongsTo('knet\DocCli', 'id_testa', 'id');

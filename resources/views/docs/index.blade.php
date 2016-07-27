@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - {{$descModulo}}
+    - {{$descModulo or 'Documenti'}}
 @endsection
 
 @section('contentheader_title')
-    Lista {{$descModulo}}
+    Lista {{$descModulo or 'Documenti'}}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -42,36 +42,7 @@
         </div>
       </div>
       <div class="box-body">
-        <form action="{{ route('client::fltList') }}" method="post">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <div class="form-group">
-            <label>Ragione Sociale</label>
-            <div class="input-group">
-              <span class="input-group-btn">
-                <select type="button" class="btn btn-warning dropdown-toggle" name="ragsocOp">
-                  <option value="eql">=</option>
-                  <option value="stw">[]...</option>
-                  <option value="cnt" selected>...[]...</option>
-                </select>
-              </span>
-              <input type="text" class="form-control" name="ragsoc">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Data Documento:</label>
-            <div class="input-group">
-              <button type="button" class="btn btn-default pull-right daterange-btn" id="">
-                <span>
-                  <i class="fa fa-calendar"></i> Date range picker
-                </span>
-                <i class="fa fa-caret-down"></i>
-              </button>
-            </div>
-          </div>
-          <div>
-            <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
-          </div>
-        </form>
+        @include('docs.partials.formIndex')
       </div>
     </div>
 

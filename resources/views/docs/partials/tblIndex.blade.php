@@ -19,14 +19,14 @@
           <a href="{{ route('doc::detail', $doc->id) }}"> {{ $doc->numerodoc }} </a>
         </td>
         <td><span>{{$doc->datadoc->format('Ymd')}}</span>{{ $doc->datadoc->format('d-m-Y') }}</td>
-        <td>{{ $doc->codicecf }}</td>
+        <td>{{ $doc->client->descrizion }} [{{ $doc->codicecf }}]</td>
         <td>{{ $doc->numerodocf }}</td>
         <td>{{ $doc->totdoc }}</td>
       </tr>
     @endforeach
   </tbody>
 </table>
-{{-- 
+{{--
 @push('scripts')
     <script>
     $(document).ready(function() {
