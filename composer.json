@@ -11,7 +11,8 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "acacha/admin-lte-template-laravel": "2.*",
         "laravelista/ekko": "~1.2",
-        "davejamesmiller/laravel-breadcrumbs": "^3.0"
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

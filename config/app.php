@@ -167,6 +167,9 @@ return [
 
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 
+        // Entrust
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -223,6 +226,8 @@ return [
         'Ekko' => Laravelista\Ekko\Facades\Ekko::class,
 
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
