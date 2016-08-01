@@ -19,7 +19,9 @@ class DocCliController extends Controller
       $docs = $docs->where('tipomodulo', $tipomodulo);
     }
     $docs = $docs->where('datadoc', '>=', Carbon::now()->subMonth());
-    $docs = $docs->with('client');
+    $docs = $docs->with(['client' => function($query) {
+      // $query->withoutGlobalScope('superAgent');
+    }]);
     $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
     // dd($docs);
 

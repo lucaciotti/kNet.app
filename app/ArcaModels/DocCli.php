@@ -4,6 +4,7 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Auth;
 
 class DocCli extends Model
 {
@@ -21,6 +22,12 @@ class DocCli extends Model
       static::addGlobalScope('doccli', function(Builder $builder) {
           $builder->where('codicecf', 'LIKE', 'C%');
       });
+
+      // if (!Auth::check()){
+      //   static::addGlobalScope('agent', function(Builder $builder) {
+      //       $builder->where('agente', 'AM2');
+      //   });
+      // }
   }
 
   // JOIN Tables

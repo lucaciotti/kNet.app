@@ -17,7 +17,7 @@ class ScadCliController extends Controller
     $scads = ScadCli::select('id', 'id_doc', 'numfatt', 'datafatt', 'datascad', 'codcf', 'tipomod', 'tipo', 'insoluto', 'u_insoluto', 'pagato', 'impeffval', 'importopag', 'idragg', 'tipoacc');
     $scads = $scads->where('datascad', '<', Carbon::now())->where('pagato',0)->whereIn('tipoacc', ['F', '']);
     $scads = $scads->with(array('client' => function($query) {
-      $query->select('codice', 'descrizion');
+      // $query->select('codice', 'descrizion');
     }));
     $scads = $scads->orderBy('datascad', 'desc')->orderBy('id', 'desc')->get();
     // dd($scads);
@@ -81,32 +81,11 @@ class ScadCliController extends Controller
     ]);
   }
 
-  public function showDetail (Request $req, $id_testa){
-    $tipoDoc = DocCli::select('tipomodulo')->findOrFail($id_testa);
-    $head = DocCli::with('client');
-    if ($tipoDoc->tipomodulo=='F'){
-        $head = $head->with('scadenza');
-    } elseif ($tipoDoc->tipomodulo=='B') {
-        $head = $head->with('vettore', 'detBeni');
-    }
-    $head = $head->findOrFail($id_testa);
-    if ($tipoDoc->tipomodulo == 'B'){
-      $destDiv = Destinaz::where('codicecf', $head->codicecf)->where('codicedes', $head->destdiv)->first();
-    } else {
-      $destDiv = null;
-    }
-    $rows = DocRow::where('id_testa', $id_testa)->orderBy('numeroriga', 'asc')->get();
-    $prevIds = DocRow::distinct('riffromt')->where('id_testa', $id_testa)->where('riffromt', '!=', 0)->get();
-    $prevDocs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc')->whereIn('id', $prevIds->pluck('riffromt'))->get();
-    $nextIds = DocRow::distinct('id_testa')->where('riffromt', $id_testa)->get();
-    $nextDocs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc')->whereIn('id', $nextIds->pluck('id_testa'))->get();
+  public function showDetail (Request $req, $id){
+    $scad = ScadCli::findOrFail($id);
     // dd($nextDocs);
     return view('scad.detail', [
-      'head' => $head,
-      'rows' => $rows,
-      'prevDocs' => $prevDocs,
-      'nextDocs' => $nextDocs,
-      'destinaz' => $destDiv,
+      'scad' => $scad,
     ]);
   }
 }

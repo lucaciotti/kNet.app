@@ -1,14 +1,14 @@
 <table class="table table-hover table-condensed dtTbls_light">
   <thead>
     <th>Data Scad.</th>
+    <th>Stato</th>
     <th>Num. Fatt.</th>
     <th>Data Fatt.</th>
     <th>Cliente</th>
-    <th>Accorpata?</th>
-    <th>Stato</th>
+    <th>Tipologia</th>
     <th>Tipo Pag.</th>
-    <th>Importo Scad.</th>
-    <th>Importo Pagato</th>
+    <th>Imp. Scad.</th>
+    <th>Imp. Pagato</th>
   </thead>
   <tbody>
     @if($scads->count()>0)
@@ -23,6 +23,17 @@
           <td>
             <span>{{$scad->datascad->format('Ymd')}}</span>
             <a href="{{ route('scad::detail', $scad->id ) }}"> {{ $scad->datascad->format('d-m-Y') }}</a>
+          </td>
+          <td>
+            @if($scad->pagato==1)
+              Pagato
+            @elseif($scad->insoluto==1)
+              Insoluto
+            @elseif($scad->u_insoluto==1)
+              Moroso
+            @else
+              Non Pagato
+            @endif
           </td>
           <td>
             <a href="{{ route('doc::detail', $scad->id_doc ) }}">
@@ -42,19 +53,7 @@
               <a href="{{ route('scad::detail', $scad->idragg ) }}"> Accorpata</a>
             @endif
           </td>
-          <td>
-            @if($scad->pagato==1)
-              Pagato
-            @elseif($scad->insoluto==1)
-              Insoluto
-            @elseif($scad->u_insoluto==1)
-              Moroso
-            @else
-              Non Pagato
-            @endif
-          </td>
-
-          <td>{{ $scad->tipo }}</td>
+          <td>{{ $scad->desc_pag }}</td>
           <td>{{ $scad->impeffval }}</td>
           <td>{{ $scad->importopag }}</td>
         </tr>

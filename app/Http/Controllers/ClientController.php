@@ -12,8 +12,17 @@ use knet\ArcaModels\Settore;
 use knet\ArcaModels\Zona;
 use knet\ArcaModels\ScadCli;
 
+use knet\Scopes\AgentCliScope;
+
 class ClientController extends Controller
 {
+
+    // public function __construct(){
+    //   if (!Auth::check()){
+    //     Client::addGlobalScope(new AgentCliScope);
+    //   }
+    // }
+
     public function index (Request $req){
 
       $clients = Client::where('statocf', 'T')->where('agente', '!=', '');

@@ -33,7 +33,7 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ Ekko::isActiveURL('home') }}"><a href="{{ url('/blankPage') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Ekko::isActiveURL('home') }}"><a href="{{ url('/home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-users'></i> <span>Lista Cliente</span></a></li>
             <li class="treeview {{ Ekko::isActiveRoute('doc::*') }}">
                 <a href="{{ route('doc::list') }}"><i class='fa fa-copy'></i> <span>Documenti</span> <i class="fa fa-angle-left pull-right"></i></a>

@@ -13,14 +13,14 @@ class Product extends Model
   public $incrementing = false;
 
   // Scope that garante to find only Supplier from anagrafe
-  // protected static function boot()
-  // {
-  //     parent::boot();
-  //
-  //     static::addGlobalScope('Listino', function(Builder $builder) {
-  //         $builder->where('u_artlis', '=', true);
-  //     });
-  // }
+  protected static function boot()
+  {
+      parent::boot();
+
+      static::addGlobalScope('Listino', function(Builder $builder) {
+          $builder->where('u_artlis', '=', true);
+      });
+  }
 
   // JOIN Tables
   public function doccli(){

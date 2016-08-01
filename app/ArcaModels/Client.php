@@ -5,6 +5,8 @@ namespace knet\ArcaModels;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
+use Auth;
+
 class Client extends Model
 {
     protected $table = 'anagrafe';
@@ -20,6 +22,17 @@ class Client extends Model
         static::addGlobalScope('client', function(Builder $builder) {
             $builder->where('codice', 'like', 'C%');
         });
+
+        // if (!Auth::check()){
+        //   // static::addGlobalScope('agent', function(Builder $builder) {
+        //   //     $builder->where('agente', 'AM1');
+        //   // });
+        //   static::addGlobalScope('superAgent', function(Builder $builder) {
+        //     $builder->whereHas('agent', function ($query){
+        //       $query->where('u_capoa', 'AM2');
+        //     });
+        //   });
+        // }
     }
 
     // JOIN Tables
