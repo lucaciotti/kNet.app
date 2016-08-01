@@ -4,7 +4,4 @@
 /public/assets
 Homestead.yaml
 Homestead.json
-.env.*.php
-.env.php
 .env
-.env*
