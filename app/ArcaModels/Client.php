@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 use Auth;
+// use knet\User;
 
 class Client extends Model
 {
@@ -19,20 +20,29 @@ class Client extends Model
     {
         parent::boot();
 
-        static::addGlobalScope('client', function(Builder $builder) {
+        static::addGlobalScope('clients', function(Builder $builder) {
             $builder->where('codice', 'like', 'C%');
         });
 
-        // if (!Auth::check()){
-        //   // static::addGlobalScope('agent', function(Builder $builder) {
-        //   //     $builder->where('agente', 'AM1');
-        //   // });
-        //   static::addGlobalScope('superAgent', function(Builder $builder) {
-        //     $builder->whereHas('agent', function ($query){
-        //       $query->where('u_capoa', 'AM2');
-        //     });
-        //   });
-        // }
+        if (Auth::check()){
+          if (Auth::user()->hasRole('agent')){
+            static::addGlobalScope('agent', function(Builder $builder) {
+                $builder->where('agente', Auth::user()->codag);
+            });
+          }
+          if (Auth::user()->hasRole('superAgent')){
+            static::addGlobalScope('superAgent', function(Builder $builder) {
+              $builder->whereHas('agent', function ($query){
+                  $query->where('u_capoa', Auth::user()->codag);
+                });
+            });
+          }
+          if (Auth::user()->hasRole('client')){
+            static::addGlobalScope('client', function(Builder $builder) {
+                $builder->where('codice', Auth::user()->codcli);
+            });
+          }
+        }
     }
 
     // JOIN Tables

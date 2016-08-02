@@ -23,11 +23,25 @@ class DocCli extends Model
           $builder->where('codicecf', 'LIKE', 'C%');
       });
 
-      // if (!Auth::check()){
-      //   static::addGlobalScope('agent', function(Builder $builder) {
-      //       $builder->where('agente', 'AM2');
-      //   });
-      // }
+      if (Auth::check()){
+        if (Auth::user()->hasRole('agent')){
+          static::addGlobalScope('agent', function(Builder $builder) {
+              $builder->where('agente', Auth::user()->codag);
+          });
+        }
+        if (Auth::user()->hasRole('superAgent')){
+          static::addGlobalScope('superAgent', function(Builder $builder) {
+            $builder->whereHas('agent', function ($query){
+                $query->where('u_capoa', Auth::user()->codag);
+              });
+          });
+        }
+        if (Auth::user()->hasRole('client')){
+          static::addGlobalScope('client', function(Builder $builder) {
+              $builder->where('codicecf', Auth::user()->codcli);
+          });
+        }
+      }
   }
 
   // JOIN Tables

@@ -23,12 +23,26 @@ class ScadCli extends Model
       static::addGlobalScope('scadClient', function(Builder $builder) {
           $builder->where('codcf', 'like', 'C%');
       });
-      // 
-      // if (!Auth::check()){
-      //   static::addGlobalScope('agent', function(Builder $builder) {
-      //       $builder->where('codag', 'AM2');
-      //   });
-      // }
+
+      if (Auth::check()){
+        if (Auth::user()->hasRole('agent')){
+          static::addGlobalScope('agent', function(Builder $builder) {
+              $builder->where('codag', Auth::user()->codag);
+          });
+        }
+        if (Auth::user()->hasRole('superAgent')){
+          static::addGlobalScope('superAgent', function(Builder $builder) {
+            $builder->whereHas('agent', function ($query){
+                $query->where('u_capoa', Auth::user()->codag);
+              });
+          });
+        }
+        if (Auth::user()->hasRole('client')){
+          static::addGlobalScope('client', function(Builder $builder) {
+              $builder->where('codcf', Auth::user()->codcli);
+          });
+        }
+      }
   }
 
   public function getDescPagAttribute()

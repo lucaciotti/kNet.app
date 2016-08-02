@@ -14,16 +14,31 @@ use knet\ArcaModels\ScadCli;
 
 use knet\Scopes\AgentCliScope;
 
+use Auth;
+use knet\User;
+
 class ClientController extends Controller
 {
 
-    // public function __construct(){
-    //   if (!Auth::check()){
-    //     Client::addGlobalScope(new AgentCliScope);
+    // public function __construct(Request $req){
+    //   dd($req->user);
+    //   if (Auth::check() && $req->user->hasRole('agent')){
+    //     static::addGlobalScope('agent', function(Builder $builder) {
+    //         $builder->where('agente', 'AM1');
+    //     });
+    //     // static::addGlobalScope('superAgent', function(Builder $builder) {
+    //     //   $builder->whereHas('agent', function ($query){
+    //     //     $query->where('u_capoa', 'AM2');
+    //     //   });
+    //     // });
     //   }
     // }
 
     public function index (Request $req){
+
+      if(Auth::user()->hasRole('client')){
+        return redirect()->action('ClientController@detail', Auth::user()->codcli);
+      }
 
       $clients = Client::where('statocf', 'T')->where('agente', '!=', '');
       $clients = $clients->select('codice', 'descrizion', 'codnazione', 'agente', 'localita', 'settore');
