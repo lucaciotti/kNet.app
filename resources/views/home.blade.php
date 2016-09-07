@@ -1,90 +1,92 @@
 @extends('layouts.app')
-
 @section('htmlheader_title')
-	Home
+    Home
 @endsection
 
+@section('contentheader_title')
+    HomePage
+@endsection
+
+@section('contentheader_description')
+    Benvenuto {{ Auth::user()->name }}
+@endsection
+
+@section('contentheader_breadcrumb')
+  {!! Breadcrumbs::render('home') !!}
+@endsection
 
 @section('main-content')
-	{{-- <div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="panel panel-default">
-					<div class="panel-heading">Home</div>
 
-					<div class="panel-body">
-						{{ trans('adminlte_lang::message.logged') }}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
+	<br><br><br>
+
 	<div class="row">
-        <div class="col-lg-3 col-xs-6">
+		<div class="container">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
-
+              <h3>{{ $nOrdini }}</h3>
               <p>Ordini da Evadere</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-ios-cart-outline"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('doc::orderDeliver') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
+				<div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>5</h3>
-
-              <p>Spedizioni da Confermare</p>
+              <h3>{{ $nBolle }}</h3>
+              <p>Spedizioni in arrivo</p>
             </div>
             <div class="icon">
-              <i class="fa fa-truck"></i>
+              <i class="fa fa-truck fa-flip-horizontal"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('doc::ddtReceive') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
               {{-- <h3>53<sup style="font-size: 20px">%</sup></h3> --}}
-	            <h3>5</h3>
-
-              <p>Scadenze Rimaste</p>
+	            <h3>{{ $nArticoli }}</h3>
+              <p>Nuovi Prodotti K-Group</p>
             </div>
             <div class="icon">
-              <i class="ion ion-ios-timer-outline"></i>
+              <i class="fa fa-barcode"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('prod::newProd') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
+              <h3>{{ $nScadenze }}</h3>
+              <p>Scadenze da saldare</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="ion ion-cash"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('scad::list') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
+				</div>
       </div>
-      <!-- /.row -->
 
+      <!-- /.row -->
+{{--
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
@@ -348,5 +350,5 @@
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
-
+ 		--}}
 @endsection

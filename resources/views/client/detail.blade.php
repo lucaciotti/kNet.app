@@ -28,11 +28,14 @@
       </div>
       <div class="box-body">
         <dl class="dl-horizontal">
+          <dt>Ragione Sociale</dt>
+          <dd>
+            <big><strong>{{$client->descrizion}}</strong></big>
+            <small>{{$client->supragsoc}}</small>
+          </dd>
+
           <dt>Codice Cliente</dt>
           <dd>{{$client->codice}}</dd>
-
-          <dt>Ragione Sociale</dt>
-          <dd><strong>{{$client->descrizion}} {{$client->supragsoc}}</strong></dd>
 
           <dt>Partita Iva</dt>
           <dd>{{$client->partiva}}</dd>
@@ -116,21 +119,21 @@
 
           <hr>
 
-          <dt>Email Generale</dt>
+          <dt>eMail Generale</dt>
           <dd>{{$client->email}}</dd>
 
           <hr>
 
-          <dt>Email Amministrazione</dt>
+          <dt>eMail Amministrazione</dt>
           <dd>{{$client->emailam}}</dd>
 
-          <dt>Email Invio Ordini</dt>
+          <dt>eMail Invio Ordini</dt>
           <dd>{{$client->emailut}}</dd>
 
-          <dt>Email Invio Bolle</dt>
+          <dt>eMail Invio Bolle</dt>
           <dd>{{$client->emailav}}</dd>
 
-          <dt>Email Invio Fatture</dt>
+          <dt>eMail Invio Fatture</dt>
           <dd>{{$client->emailpec}}</dd>
 
         </dl>

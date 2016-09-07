@@ -12,6 +12,9 @@ class Product extends Model
   protected $primaryKey = 'codice';
   public $incrementing = false;
 
+  protected $dates = ['u_datacrea'];
+  protected $appends = ['master_clas', 'master_grup', 'listino', 'tipo_prod'];
+
   // Scope that garante to find only Supplier from anagrafe
   protected static function boot()
   {
@@ -22,6 +25,41 @@ class Product extends Model
       });
   }
 
+  //Accessors
+  public function getMasterClasAttribute(){
+      return substr($this->attributes['classe'],0,3);
+  }
+
+  public function getMasterGrupAttribute(){
+      return substr($this->attributes['gruppo'],0,3);
+  }
+
+  public function getTipoProdAttribute(){
+      if (substr($this->attributes['gruppo'],0,3)=="B06"){
+        $tipo = "Kubica";
+      } elseif (substr($this->attributes['gruppo'],0,1)=="B") {
+        $tipo = "Koblenz";
+      } elseif (substr($this->attributes['gruppo'],0,1)=="A") {
+        $tipo = "Krona";
+      } elseif (substr($this->attributes['gruppo'],0,1)=="C") {
+        $tipo = "Grass";
+      } elseif (substr($this->attributes['gruppo'],0,1)=="2") {
+        $tipo = "Campioni";
+      } else {
+        $tipo = "KK";
+      }
+      return $tipo;
+  }
+
+  public function getListinoAttribute(){
+      if(substr($this->attributes['gruppo'],0,1)=='B'){
+        $listino = $this->attributes['listino6'];
+      } else {
+        $listino = $this->attributes['listino1'];
+      }
+      return $listino;
+  }
+
   // JOIN Tables
   public function doccli(){
     return $this->hasMany('knet\ArcaModels\DocCli', 'codicearti', 'codice');
@@ -29,6 +67,22 @@ class Product extends Model
 
   public function docsup(){
     return $this->hasMany('knet\ArcaModels\DocSup', 'codicearti', 'codice');
+  }
+
+  public function masterClas(){
+    return $this->hasOne('knet\ArcaModels\ClasProd', 'codice', 'master_clas');
+  }
+
+  public function clasProd(){
+    return $this->hasOne('knet\ArcaModels\SubClasProd', 'codice', 'classe');
+  }
+
+  public function masterProd(){
+    return $this->hasOne('knet\ArcaModels\GrpProd', 'codice', 'master_grup');
+  }
+
+  public function grpProd(){
+    return $this->hasOne('knet\ArcaModels\SubGrpProd', 'codice', 'gruppo');
   }
 
   //Multator

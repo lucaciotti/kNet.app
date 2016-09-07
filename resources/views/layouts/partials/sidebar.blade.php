@@ -44,7 +44,7 @@
                 </ul>
             </li>
             <li class="{{ Ekko::isActiveRoute('scad::*') }}"><a href="{{ route('scad::list') }}"><i class='fa fa-dashboard'></i> <span>Scadenze</span></a></li>
-            <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-barcode'></i> <span>Prodotti</span></a></li>
+            <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('prod::list') }}"><i class='fa fa-barcode'></i> <span>Prodotti</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

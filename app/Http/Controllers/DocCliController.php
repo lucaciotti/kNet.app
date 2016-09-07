@@ -112,7 +112,12 @@ class DocCliController extends Controller
 
   public function showDetail (Request $req, $id_testa){
     $tipoDoc = DocCli::select('tipomodulo')->findOrFail($id_testa);
-    $head = DocCli::with('client');
+    $head = DocCli::with(['client' => function($query) {
+      $query
+      ->withoutGlobalScope('agent')
+      ->withoutGlobalScope('superAgent')
+      ->withoutGlobalScope('client');
+    }]);
     if ($tipoDoc->tipomodulo=='F'){
         $head = $head->with('scadenza');
     } elseif ($tipoDoc->tipomodulo=='B') {
@@ -136,6 +141,52 @@ class DocCliController extends Controller
       'prevDocs' => $prevDocs,
       'nextDocs' => $nextDocs,
       'destinaz' => $destDiv,
+    ]);
+  }
+
+  public function showOrderToDeliver(Request $req){
+    $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc');
+    $docs = $docs->where('tipomodulo', 'O');
+    $docs = $docs->where('numrighepr', '>', 0);
+    $docs = $docs->with(['client' => function($query) {
+      $query
+      ->withoutGlobalScope('agent')
+      ->withoutGlobalScope('superAgent')
+      ->withoutGlobalScope('client');
+    }]);
+    $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
+    // dd($docs);
+
+    $tipomodulo = 'O';
+    $descModulo = ($tipomodulo == 'O' ? 'Ordini' : ($tipomodulo == 'B' ? 'Bolle' : ($tipomodulo == 'F' ? 'Fatture' : $tipomodulo)));
+
+    return view('docs.index', [
+      'docs' => $docs,
+      'tipomodulo' => $tipomodulo,
+      'descModulo' => $descModulo,
+    ]);
+  }
+
+  public function showDdtToReceive(Request $req){
+    $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc');
+    $docs = $docs->where('tipomodulo', 'B');
+    $docs = $docs->where('numrighepr', '>', 0);
+    $docs = $docs->with(['client' => function($query) {
+      $query
+      ->withoutGlobalScope('agent')
+      ->withoutGlobalScope('superAgent')
+      ->withoutGlobalScope('client');
+    }]);
+    $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
+    // dd($docs);
+
+    $tipomodulo = 'B';
+    $descModulo = ($tipomodulo == 'O' ? 'Ordini' : ($tipomodulo == 'B' ? 'Bolle' : ($tipomodulo == 'F' ? 'Fatture' : $tipomodulo)));
+
+    return view('docs.index', [
+      'docs' => $docs,
+      'tipomodulo' => $tipomodulo,
+      'descModulo' => $descModulo,
     ]);
   }
 

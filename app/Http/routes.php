@@ -55,6 +55,36 @@ Route::group(['as' => 'doc::'], function () {
     'as' => 'detail',
     'uses' => 'DocCliController@showDetail'
   ]);
+
+  Route::get('/docs_deliver', [
+    'as' => 'orderDeliver',
+    'uses' => 'DocCliController@showOrderToDeliver'
+  ]);
+  Route::get('/docs_receive', [
+    'as' => 'ddtReceive',
+    'uses' => 'DocCliController@showDdtToReceive'
+  ]);
+});
+
+Route::group(['as' => 'prod::'], function () {
+  Route::get('/prods', [
+    'as' => 'list',
+    'uses' => 'ProductController@index'
+  ]);
+  Route::post('/prods/filter', [
+    'as' => 'fltList',
+    'uses' => 'ProductController@fltIndex'
+  ]);
+  Route::get('/prod/{codice}', [
+    'as' => 'detail',
+    'uses' => 'ProductController@showDetail'
+  ]);
+
+
+  Route::get('/prods_new', [
+    'as' => 'newProd',
+    'uses' => 'ProductController@showNewProducts'
+  ]);
 });
 
 Route::group(['as' => 'scad::'], function () {
