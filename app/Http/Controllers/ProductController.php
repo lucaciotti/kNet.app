@@ -176,4 +176,12 @@ class ProductController extends Controller
     ]);
   }
 
+  public function showDetail (Request $req, $codArt){
+    $product = Product::with(['grpProd', 'clasProd'])->findOrFail($codArt);
+    // dd($product);
+    return view('prods.detail', [
+      'prod' => $product,
+    ]);
+  }
+
 }
