@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('htmlheader_title')
     - Dettaglio Cliente
 @endsection
@@ -18,7 +19,7 @@
 @section('main-content')
 {{-- <div class="container"> --}}
 <div class="row">
-  <div class="col-lg-5">
+  <div class="col-lg-4">
     <div class="box box-default">
       <div class="box-header with-border">
         <h3 class="box-title">Dati Anagrafica</h3>
@@ -49,8 +50,8 @@
           <dd>{{$client->settore}} - @if($client->detSect) {{$client->detSect->descrizion}} @endif</dd>
         </dl>
 
-        <h4> Località </h4>
-        <hr>
+        <h4><strong> Località </strong> </h4>
+        <hr style="padding-top: 0; margin-top:0;">
         <dl class="dl-horizontal">
 
           <dt>Località</dt>
@@ -66,8 +67,8 @@
           <dd>@if($client->detZona) {{$client->detZona->descrizion}} @endif</dd>
         </dl>
 
-        <h4> Situazione Cliente </h4>
-        <hr>
+        <h4><strong> Situazione Cliente</strong> </h4>
+        <hr style="padding-top: 0; margin-top:0;">
         <dl class="dl-horizontal">
 
           <dt>Stato Cliente</dt>
@@ -86,7 +87,7 @@
     </div>
   </div>
 
-  <div class="col-lg-5">
+  <div class="col-lg-4">
     <div class="box box-default">
       <div class="box-header with-border">
         <h3 class="box-title">Contatti</h3>
@@ -141,23 +142,31 @@
     </div>
   </div>
 
-</div>
-
-<div class="row">
-  <div class="col-lg-6">
-    <div class="box box-default">  {{-- collapsed-box --}}
+  <div class="col-lg-4">
+    <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title">Annotazioni</h3>
+        <h3 class="box-title">Mapps</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
-        <strong>{!! $client->note !!}</strong>
+        <div style="height: 400px; width: 100%;">
+          @if($mapsException=='')
+            {!! Mapper::render() !!}
+          @else
+            {{ $mapsException }}
+          @endif
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-4">
+
+</div>
+
+<div class="row">
+
+  <div class="col-lg-6">
     <div class="box box-default collapsed-box">
       <div class="box-header with-border">
         <h3 class="box-title" data-widget="collapse">Documenti del Cliente</h3>
@@ -175,12 +184,12 @@
       </div>
     </div>
 
-    <div class="box box-default collapsed-box">
+    <div class="box box-default">
       <div class="box-header with-border">
         <h3 class="box-title" data-widget="collapse">Scadenze del Cliente</h3>
         <span class="badge bg-yellow">{{$scads->count()}}</span>
         <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
@@ -188,7 +197,47 @@
       </div>
     </div>
   </div>
+
+    <div class="col-lg-6">
+      <div class="box box-default collapsed-box">  {{-- collapsed-box --}}
+        <div class="box-header with-border">
+          <h3 class="box-title" data-widget="collapse">Annotazioni</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <strong>{!! $client->note !!}</strong>
+        </div>
+      </div>
+    </div>
 </div>
+
+<script type="text/javascript">
+
+    function onMapLoad(map)
+    {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    var marker = new google.maps.Marker({
+                      position: pos,
+                      map: map,
+                      label: "#",
+                      title: "You Are Here"
+                    });
+
+                    // map.setCenter(pos);
+                }
+            );
+        }
+    }
+</script>
 
 {{-- </div> --}}
 @endsection

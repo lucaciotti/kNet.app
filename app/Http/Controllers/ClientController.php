@@ -4,6 +4,7 @@ namespace knet\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 use knet\Http\Requests;
 use knet\ArcaModels\Client;
@@ -48,6 +49,7 @@ class ClientController extends Controller
       $nazioni = Nazione::all();
       $settori = Settore::all();
       $zone = Zona::all();
+
       // $clients = $clients->paginate(25);
       // dd($clients);
       return view('client.index', [
@@ -55,6 +57,7 @@ class ClientController extends Controller
         'nazioni' => $nazioni,
         'settori' => $settori,
         'zone' => $zone,
+        'mapsException' => ''
       ]);
     }
 
@@ -102,10 +105,27 @@ class ClientController extends Controller
     public function detail (Request $req, $codCli){
       $client = Client::with(['agent', 'detNation', 'detZona', 'detSect', 'clasCli', 'detPag', 'detStato'])->findOrFail($codCli);
       $scadToPay = ScadCli::where('codcf', $codCli)->where('pagato',0)->whereIn('tipoacc', ['F', ''])->orderBy('datascad','desc')->get();
+      $address = $client->indirizzo.", ".$client->localita.", ".$client->nazione;
+      $expt = '';
+      try {
+        Mapper::location($address)
+                ->map([
+                  'zoom' => 14,
+                  'center' => true,
+                  'markers' => [
+                    'title' => $client->descrizion,
+                    'animation' => 'DROP'
+                  ],
+                  'eventAfterLoad' => 'onMapLoad(maps[0].map);'
+                ]);
+      } catch (\Exception $e) {
+        $expt = $e->getMessage();
+      }
       // dd($client);
       return view('client.detail', [
         'client' => $client,
         'scads' => $scadToPay,
+        'mapsException' => $expt,
       ]);
     }
 

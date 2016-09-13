@@ -12,7 +12,8 @@
         "acacha/admin-lte-template-laravel": "2.*",
         "laravelista/ekko": "~1.2",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
-        "zizaco/entrust": "5.2.x-dev"
+        "zizaco/entrust": "5.2.x-dev",
+        "cornford/googlmapper": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

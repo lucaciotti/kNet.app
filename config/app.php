@@ -170,6 +170,9 @@ return [
         // Entrust
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+        //GoogleMapper
+        Cornford\Googlmapper\MapperServiceProvider::class,
+
     ],
 
     /*
@@ -228,6 +231,8 @@ return [
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 
     ],
 
