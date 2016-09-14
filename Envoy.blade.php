@@ -1,9 +1,9 @@
-@servers(['web' => 'ced@172.16.9.39'])
+@servers(['web' => 'luca@172.16.9.39'])
 
 @setup
   $repo = 'https://github.com/lucaciotti/kNet.app.git';
-  $release_dir = '/home/ced/releases';
-  $app_dir = '/var/www/html/kNet2';
+  $release_dir = '/home/luca/releases';
+  $app_dir = '/var/www/html/kNet2/';
   $release = 'release_' . date('YmdHis');
 @endsetup
 
@@ -18,7 +18,7 @@
     [ -d {{ $release_dir }} ] || mkdir {{ $release_dir }};
     cd {{ $release_dir }};
     {{-- git clone -b master {{ $repo }} {{ $release }}; --}}
-    git clone -b dev {{ $repo }} {{ $release }};
+    git clone -b dev --depth=1 {{ $repo }} {{ $release }};
 @endtask
 
 @task('run_composer')
