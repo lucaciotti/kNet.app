@@ -88,19 +88,22 @@ class ProductController extends Controller
       $products = $products->whereIn('gruppo', $req->input('gruppo'));
     }
 
-    if($req->input('chkTipo') && !$req->input('chkCamp')) {
-      if(in_array("KR",$req->input('chkTipo'))){
-        $products = $products->where('gruppo', 'LIKE', 'A%');
-      } elseif (in_array("KO",$req->input('chkTipo')) && !in_array("KU",$req->input('chkTipo'))){
-        $products = $products->where('gruppo', 'LIKE', 'B%')->where('gruppo', 'NOT LIKE', 'B06%');
-      } elseif (in_array("KO",$req->input('chkTipo')) && in_array("KU",$req->input('chkTipo'))){
-        $products = $products->where('gruppo', 'LIKE', 'B%');
-      } elseif (in_array("KU",$req->input('chkTipo'))){
-        $products = $products->where('gruppo', 'LIKE', 'B06%');
-      } elseif (in_array("GR",$req->input('chkTipo'))){
-        $products = $products->where('gruppo', 'LIKE', 'C%');
-      }
-    }
+    // if($req->input('chkTipo') && !$req->input('chkCamp')) {
+    //   if(in_array("KR",$req->input('chkTipo'))){
+    //     $products = $products->where('gruppo', 'LIKE', 'A%');
+    //   }
+    //   if (in_array("KO",$req->input('chkTipo')) && !in_array("KU",$req->input('chkTipo'))){
+    //     $products = $products->where('gruppo', 'LIKE', 'B%')->where('gruppo', 'NOT LIKE', 'B06%');
+    //   } elseif (in_array("KO",$req->input('chkTipo')) && in_array("KU",$req->input('chkTipo'))){
+    //     $products = $products->where('gruppo', 'LIKE', 'B%');
+    //   }
+    //   if (in_array("KU",$req->input('chkTipo'))){
+    //     $products = $products->where('gruppo', 'LIKE', 'B06%');
+    //   }
+    //   if (in_array("GR",$req->input('chkTipo'))){
+    //     $products = $products->where('gruppo', 'LIKE', 'C%');
+    //   }
+    // }
 
     if($req->input('chkCamp')) {
       $products = $products->where('gruppo', 'LIKE', '2%');

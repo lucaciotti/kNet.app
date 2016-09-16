@@ -92,7 +92,7 @@
             <dd>@if($head->vettore) {{$head->vettore->descrizion}} @endif</dd>
 
             <dt>Partenza Vettore</dt>
-            <dd>{{$head->v1data->format('d/m/Y')}} - {{$head->v1ora}}</dd>
+            <dd>@if($head->v1data) {{$head->v1data->format('d/m/Y')}} - {{$head->v1ora}} @else -- @endif</dd>
 
             <br>
             @if($destinaz)

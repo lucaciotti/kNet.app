@@ -42,7 +42,7 @@
     </select>
   </div>
 
-  <div class="form-group">
+  {{-- <div class="form-group">
     <label>Tipologia Prodotto</label>
     <div class="checkbox">
       <label>
@@ -86,7 +86,7 @@
         > Grass
       </label>
     </div>
-  </div>
+  </div> --}}
 
   <div class="form-group">
     <label>Extra</label>

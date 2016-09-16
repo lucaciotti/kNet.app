@@ -145,7 +145,7 @@
   <div class="col-lg-4">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title">Mapps</h3>
+        <h3 class="box-title">Mappa</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
@@ -224,7 +224,7 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-                    
+
                     var marker = new google.maps.Marker({
                       position: pos,
                       map: map,
