@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoleTableSeeder::class);
-        $this->command->info('Roles seeds finished.');
+        // $this->call(RoleTableSeeder::class);
+        // $this->command->info('Roles seeds finished.');
+        $this->call(UserTableSeeder::class);
     }
 }

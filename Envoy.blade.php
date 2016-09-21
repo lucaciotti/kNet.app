@@ -1,13 +1,20 @@
-@servers(['web' => 'luca@172.16.9.39'])
+@servers(['web' => 'luca@172.16.9.39', 'web2' => 'ced@213.152.198.49'])
 
 @setup
   $repo = 'https://github.com/lucaciotti/kNet.app.git';
-  $release_dir = '/home/luca/releases';
-  $app_dir = '/var/www/html/kNet2/';
+  $release_dir = '/home/ced/releases';
+  $app_dir = '/var/www/html/kNet/';
   $release = 'release_' . date('YmdHis');
 @endsetup
 
 @macro('deploy', ['on' => 'web'])
+    fetch_repo
+    run_composer
+    update_permissions
+    update_symlinks
+@endmacro
+
+@macro('deploy-kuantica', ['on' => 'web2'])
     fetch_repo
     run_composer
     update_permissions

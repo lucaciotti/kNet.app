@@ -23,6 +23,18 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::group(['as' => 'user::'], function () {
+  Route::resource('users', 'UserController');
+  Route::get('/users_import', [
+    'as' => 'import',
+    'uses' => 'UserController@showImport'
+  ]);
+  Route::post('/users_import', [
+    'as' => 'import',
+    'uses' => 'UserController@doImport'
+  ]);
+});
+
 Route::group(['as' => 'client::'], function () {
   Route::get('/clients', [
     'as' => 'list',
@@ -79,7 +91,6 @@ Route::group(['as' => 'prod::'], function () {
     'as' => 'detail',
     'uses' => 'ProductController@showDetail'
   ]);
-
 
   Route::get('/prods_new', [
     'as' => 'newProd',
