@@ -5,7 +5,7 @@
 @endsection
 
 @section('contentheader_title')
-    Tabella per la Gestione degli Utenti
+    Gestione degli Utenti
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -14,8 +14,8 @@
 
 @section('main-content')
   <div class="row">
-
-    <div class="col-lg-7">
+    <div class="container">
+    <div class="col-lg-12">
       <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title" data-widget="collapse">Lista degli Utenti</h3>
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="box-body">
-          <table class="table table-hover table-condensed dtTbls_light">
+          <table class="table table-hover table-condensed dtTbls_full">
             <thead>
               <th>Nome</th>
               <th>eMail</th>
@@ -43,11 +43,15 @@
                     <td>@foreach ($user->roles as $role)
                       {{ $role->display_name }}
                     @endforeach</td>
-                    <td>{{ $user->codag }}</td>
-                    <td>{{ $user->codcli }}</td>
+                    <td>@if ($user->codag!="")
+                      {{ $user->codag }} - {{ $user->agent->descrizion }}
+                    @endif</td>
+                    <td>@if ($user->codcli!="")
+                      {{ $user->client->descrizion }}
+                    @endif</td>
                     <td>
-                      <a href="{{ route('user::users.show', $user->id ) }}">
-                        <button type="submit" id="modify-user-{{ $user->id }}" class="btn">
+                      <a href="{{ route('user::users.edit', $user->id ) }}">
+                        <button type="submit" id="edit-user-{{ $user->id }}" class="btn">
                             <i class="fa fa-btn fa-pencil">
                             </i>
                         </button>
@@ -83,6 +87,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 @endsection
 

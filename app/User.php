@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function client(){
+      return $this->hasOne('knet\ArcaModels\Client', 'codice', 'codcli');
+    }
+
+    public function agent(){
+      return $this->hasOne('knet\ArcaModels\Agent', 'codice', 'codag');
+    }
 }

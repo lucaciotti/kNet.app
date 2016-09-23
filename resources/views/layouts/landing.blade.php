@@ -208,7 +208,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 </div><!--/ #features --> --}}
 
 
-<section id="showcase" name="showcase"></section>
+{{-- <section id="showcase" name="showcase"></section>
 <div id="showcase">
     <div class="container">
         <div class="row">
@@ -238,7 +238,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <br>
         <br>
     </div><!-- /container -->
-</div>
+</div> --}}
 
 
 <section id="contact" name="contact"></section>

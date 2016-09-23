@@ -29,7 +29,8 @@
           <td>{{ $row->sconti }}</td>
           <td>{{ $row->prezzotot }}</td>
         </tr>
-      @elseif($head->tipomodulo=='O' && $row->rifstato!='X')        
+      @elseif($head->tipomodulo=='O' && $row->rifstato!='X')
+        <tr>
           <td>{{ $row->numeroriga }}</td>
           <td><a href="#"> {{ $row->codicearti }} </a></td>
           <td>{{ $row->descrizion }}</td>
