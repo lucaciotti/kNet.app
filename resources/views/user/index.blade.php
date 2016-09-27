@@ -33,6 +33,7 @@
               <th>Cod. Cliente</th>
               <th>&nbsp;</th>
               <th>&nbsp;</th>
+              <th>&nbsp;</th>
             </thead>
             <tbody>
               @if (count($users) > 1)
@@ -47,8 +48,17 @@
                       {{ $user->codag }} - {{ $user->agent->descrizion }}
                     @endif</td>
                     <td>@if ($user->codcli!="")
-                      {{ $user->client->descrizion }}
+                      {{ $user->codcli }}
+                      {{-- {{ $user->codcli }} - {{ $user->client->descrizion }} --}}
                     @endif</td>
+                    <td>
+                      <a href="{{ route('user::actLike', $user->id ) }}">
+                        <button type="submit" id="act-user-{{ $user->id }}" class="btn btn-warning">
+                            <i class="fa fa-btn fa-user-secret">
+                            </i>
+                        </button>
+                      </a>
+                    </td>
                     <td>
                       <a href="{{ route('user::users.edit', $user->id ) }}">
                         <button type="submit" id="edit-user-{{ $user->id }}" class="btn">
@@ -61,7 +71,6 @@
                       <form action="{{ route('user::users.destroy', $user->id) }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
-
                           <button type="submit" id="delete-user-{{ $user->id }}" class="btn btn-danger">
                               <i class="fa fa-btn fa-trash"></i>
                           </button>

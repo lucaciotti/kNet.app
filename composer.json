@@ -13,7 +13,8 @@
         "laravelista/ekko": "~1.2",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "zizaco/entrust": "5.2.x-dev",
-        "cornford/googlmapper": "2.*"
+        "cornford/googlmapper": "2.*",
+        "maatwebsite/excel": "~2.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

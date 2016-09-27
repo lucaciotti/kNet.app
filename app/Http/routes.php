@@ -33,6 +33,10 @@ Route::group(['as' => 'user::'], function () {
     'as' => 'import',
     'uses' => 'UserController@doImport'
   ]);
+  Route::get('/actLike/{id}', [
+    'as' => 'actLike',
+    'uses' => 'UserController@actLike'
+  ]);
 });
 
 Route::group(['as' => 'client::'], function () {

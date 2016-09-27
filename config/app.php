@@ -173,6 +173,9 @@ return [
         //GoogleMapper
         Cornford\Googlmapper\MapperServiceProvider::class,
 
+        //Excel
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*
@@ -233,6 +236,8 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

@@ -54,7 +54,7 @@
                             <p>Tabella della Gestione Utenti</p>
                         </div>
                     </a>
-                    <a href='javascript::;'>
+                    <a href="{{route('user::import')}}">
                         <i class="menu-icon fa fa-user-plus bg-yellow"></i>
                         <div class="menu-info">
                             <h4 class="control-sidebar-subheading">Import Utenti</h4>
