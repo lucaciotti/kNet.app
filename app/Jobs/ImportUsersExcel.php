@@ -6,6 +6,7 @@ use knet\Jobs\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Log;
 
 use knet\User;
 use knet\Role;
@@ -35,7 +36,7 @@ class ImportUsersExcel extends Job implements ShouldQueue
     public function handle()
     {
       $destinationPath = 'public/usersFiles';
-      $file = '95493.xlsx';
+      $file = '82893.xlsx';
       $rows = Excel::load($destinationPath."/".$file, function($reader) {})->all();
       $roleClient = Role::where('name', 'client')->first();
       $roleAgent = Role::where('name', 'agent')->first();
@@ -58,6 +59,7 @@ class ImportUsersExcel extends Job implements ShouldQueue
                 $user->codag = $row->codice;
                 $user->attachRole($roleAgent->id);
               }
+            Log::info($user->name.' caricato');
             $user->save();
             // Session::flash('success', 'Upload successfully');
             // dd($user);

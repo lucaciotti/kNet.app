@@ -25,6 +25,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['as' => 'user::'], function () {
   Route::resource('users', 'UserController');
+  Route::get('/cli_users', [
+    'as' => 'usersCli',
+    'uses' => 'UserController@indexCli'
+  ]);
   Route::get('/users_import', [
     'as' => 'import',
     'uses' => 'UserController@showImport'

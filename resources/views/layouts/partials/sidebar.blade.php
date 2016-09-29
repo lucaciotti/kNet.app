@@ -31,7 +31,7 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
+            <li class="header">Arca Web</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ Ekko::isActiveURL('home') }}"><a href="{{ url('/home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-users'></i> <span>Lista Cliente</span></a></li>
@@ -45,6 +45,12 @@
             </li>
             <li class="{{ Ekko::isActiveRoute('scad::*') }}"><a href="{{ route('scad::list') }}"><i class='fa fa-dashboard'></i> <span>Scadenze</span></a></li>
             <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('prod::list') }}"><i class='fa fa-barcode'></i> <span>Prodotti</span></a></li>
+            <li><i class='fa fa-empty'></i></li>
+
+            <li class="header">Funzioni Web</li>
+            <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li>
+            <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

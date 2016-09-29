@@ -13,15 +13,15 @@ class DocRow extends Model
 
   // JOIN Tables
   public function doccli(){
-    return $this->belongsTo('knet\DocCli', 'id_testa', 'id');
+    return $this->belongsTo('knet\ArcaModels\DocCli', 'id_testa', 'id');
   }
 
   public function docsup(){
-    return $this->belongsTo('knet\DocSup', 'id_testa', 'id');
+    return $this->belongsTo('knet\ArcaModels\DocSup', 'id_testa', 'id');
   }
 
   public function product(){
-    return $this->belongsTo('knet\Product', 'codicearti', 'codice');
+    return $this->belongsTo('knet\ArcaModels\Product', 'codicearti', 'codice');
   }
 
 }

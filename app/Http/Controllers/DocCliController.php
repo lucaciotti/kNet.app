@@ -71,7 +71,12 @@ class DocCliController extends Controller
         });
       }
     }
-    $docs = $docs->with('client');
+    $docs = $docs->with(['client' => function($query) {
+      $query
+      ->withoutGlobalScope('agent')
+      ->withoutGlobalScope('superAgent')
+      ->withoutGlobalScope('client');
+    }]);
     $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
 
     $descModulo = ($req->input('optTipoDoc') == 'O' ? 'Ordini' : ($req->input('optTipoDoc') == 'B' ? 'Bolle' : ($req->input('optTipoDoc') == 'F' ? 'Fatture' : 'Documenti')));

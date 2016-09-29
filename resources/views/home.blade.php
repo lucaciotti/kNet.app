@@ -4,11 +4,11 @@
 @endsection
 
 @section('contentheader_title')
-    HomePage
+    Ciao,<br> <strong>{{ Auth::user()->name }}</strong><br>
 @endsection
 
 @section('contentheader_description')
-    Benvenuto {{ Auth::user()->name }}
+    HomePage
 @endsection
 
 @section('contentheader_breadcrumb')

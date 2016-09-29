@@ -19,10 +19,27 @@ use knet\ArcaModels\Agent;
 class UserController extends Controller
 {
     public function index(Request $req){
-      $users = User::with(['roles', 'client', 'agent'])->orderBy('id')->get();
-      // dd($users);
+      $users = User::with(['roles', 'client', 'agent'])
+                ->whereHas('roles', function($q){$q->whereNotIn('name', ['agent', 'superAgent', 'client']);})
+                ->orderBy('id')->get();
+
+      $agents = User::with(['roles', 'client', 'agent'])
+                ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'superAgent']);})
+                ->orderBy('id')->get();
+
       return view('user.index', [
         'users' => $users,
+        'agents' => $agents,
+      ]);
+    }
+
+    public function indexCli(Request $req){
+      $clients = User::with(['roles', 'client', 'agent'])
+                ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'client']);})
+                ->orderBy('id')->get();
+
+      return view('user.indexCli', [
+        'clients' => $clients,
       ]);
     }
 
@@ -76,34 +93,6 @@ class UserController extends Controller
       Session::flash('success', 'Upload successfully');
       $this->dispatch(new ImportUsersExcel($fileName));
       return Redirect::back();
-
-      // $rows = Excel::load($req->file('file'), function($reader) {})->all();
-      // $roleClient = Role::where('name', 'client')->first();
-      // $roleAgent = Role::where('name', 'agent')->first();
-      // foreach ($rows as $row) {
-  		// 	    // dd($row);
-      //       if(!empty($row->email) && in_array($row->ruolo, ['A', 'C']) and strpos($row->email,"@")>0){
-      //         $user = User::where("email", $row->email)->first();
-      //         if($user==null){
-      //           $user = User::create([
-      //             'name'  => $row->nome,
-      //             'email' => $row->email,
-      //             'password' => bcrypt($row->password),
-      //           ]);
-      //         }
-      //         $user->roles()->detach();
-      //         if($row->ruolo == 'C'){
-      //           $user->codcli = $row->codice;
-      //           $user->attachRole($roleClient->id);
-      //         } elseif($row->ruolo == 'A'){
-      //           $user->codag = $row->codice;
-      //           $user->attachRole($roleAgent->id);
-      //         }
-      //       $user->save();
-      //       // dd($user);
-      //     }
-			// }
-      // return Redirect::route('user::users.index');
     }
 
     public function actLike(Request $req, $id){

@@ -51,9 +51,20 @@
                         <i class="menu-icon fa fa-users bg-info"></i>
                         <div class="menu-info">
                             <h4 class="control-sidebar-subheading">Gestione Utenti</h4>
-                            <p>Tabella della Gestione Utenti</p>
+                            <p>Tabella della Gestione Utenti K-Group</p>
                         </div>
                     </a>
+                </li>
+                <li>
+                    <a href="{{route('user::usersCli')}}">
+                        <i class="menu-icon fa fa-users bg-info"></i>
+                        <div class="menu-info">
+                            <h4 class="control-sidebar-subheading">Gestione Clienti</h4>
+                            <p>Tabella della Gestione Clienti K-Group</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('user::import')}}">
                         <i class="menu-icon fa fa-user-plus bg-yellow"></i>
                         <div class="menu-info">

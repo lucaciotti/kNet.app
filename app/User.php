@@ -35,4 +35,8 @@ class User extends Authenticatable
     public function agent(){
       return $this->hasOne('knet\ArcaModels\Agent', 'codice', 'codag');
     }
+
+    public function roles(){
+        return $this->belongsToMany('knet\Role');
+    }
 }

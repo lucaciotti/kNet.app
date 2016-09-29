@@ -16,31 +16,19 @@
   <div class="row">
     <div class="container">
     <div class="col-lg-12">
+
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title" data-widget="collapse">Lista dei Clienti</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          @include('user.partial.tblIndex', ['users' => $clients])
+        </div>
+      </div>
       
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Lista degli Utenti</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          </div>
-        </div>
-        <div class="box-body">
-          @include('user.partial.tblIndex', ['users' => $users])
-        </div>
-      </div>
-
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Lista degli Agenti</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          </div>
-        </div>
-        <div class="box-body">
-          @include('user.partial.tblIndex', ['users' => $agents])
-        </div>
-      </div>
-
     </div>
   </div>
   </div>
