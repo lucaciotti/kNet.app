@@ -124,3 +124,19 @@ Route::group(['as' => 'scad::'], function () {
     'uses' => 'ScadCliController@showDetail'
   ]);
 });
+
+Route::post('ddtConfirm/{id}', [
+  'as' => 'ddtConfirm',
+  'uses' => 'DdtOkController@store'
+]);
+
+Route::group(['as' => 'visit::'], function(){
+  Route::get('/visit/insert/{codice?}', [
+    'as' => 'insert',
+    'uses' => 'VisitController@index'
+  ]);
+  Route::post('/visit/store', [
+    'as' => 'store',
+    'uses' => 'VisitController@store'
+  ]);
+});

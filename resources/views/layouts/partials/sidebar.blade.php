@@ -49,7 +49,7 @@
 
             <li class="header">Funzioni Web</li>
             <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li>
-            <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
+            <li class=""><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
     </section>

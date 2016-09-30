@@ -10,6 +10,7 @@ use knet\ArcaModels\Client;
 use knet\ArcaModels\DocCli;
 use knet\ArcaModels\Destinaz;
 use knet\ArcaModels\DocRow;
+use knet\WebModels\wDdtOk;
 
 class DocCliController extends Controller
 {
@@ -131,8 +132,10 @@ class DocCliController extends Controller
     $head = $head->findOrFail($id_testa);
     if ($tipoDoc->tipomodulo == 'B'){
       $destDiv = Destinaz::where('codicecf', $head->codicecf)->where('codicedes', $head->destdiv)->first();
+      $ddtOk = wDdtOk::where('id_testa', $head->id)->first();
     } else {
       $destDiv = null;
+      $ddtOk = null;
     }
     $rows = DocRow::where('id_testa', $id_testa)->orderBy('numeroriga', 'asc')->get();
     $prevIds = DocRow::distinct('riffromt')->where('id_testa', $id_testa)->where('riffromt', '!=', 0)->get();
@@ -146,6 +149,7 @@ class DocCliController extends Controller
       'prevDocs' => $prevDocs,
       'nextDocs' => $nextDocs,
       'destinaz' => $destDiv,
+      'ddtOk' => $ddtOk,
     ]);
   }
 

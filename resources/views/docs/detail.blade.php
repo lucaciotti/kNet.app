@@ -102,6 +102,20 @@
             <dd>{{$destinaz->indirizzo}}</dd>
             <dd>{{$destinaz->telefono}}</dd>
             @endif
+
+            <hr>
+            @if (empty($ddtOk))
+              @include('docs.partials.mdlFormDdtOk', ['head' => $head])
+            @else
+              <dt>Data Conferma Ricezione</dt>
+              <dd>{{$ddtOk->created_at->format('d/m/Y')}}</dd>
+
+              <dt>Firma Ricezione</dt>
+              <dd>{{$ddtOk->firma}}</dd>
+
+              <dt>Note</dt>
+              <dd>{{$ddtOk->note or ''}}</dd>
+            @endif
           @else
             <div class="callout callout-danger">
               <p>Visualizzabile solo nei Documenti di tipo Bolle!</p>
