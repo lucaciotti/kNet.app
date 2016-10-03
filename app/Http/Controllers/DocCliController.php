@@ -99,10 +99,19 @@ class DocCliController extends Controller
     } else {
       $docs = $docs->where('codicecf', $codice);
     }
-    $docs = $docs->with('client');
+    $docs = $docs->with(['client' => function($query) {
+      $query
+      ->withoutGlobalScope('agent')
+      ->withoutGlobalScope('superAgent')
+      ->withoutGlobalScope('client');
+    }]);
     $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
 
-    $client = Client::select('codice', 'descrizion')->findOrFail($codice);
+    $client = Client::select('codice', 'descrizion')
+                      ->withoutGlobalScope('agent')
+                      ->withoutGlobalScope('superAgent')
+                      ->withoutGlobalScope('client')
+                      ->findOrFail($codice);
 
     $descModulo = ($tipomodulo == 'O' ? 'Ordini' : ($tipomodulo == 'B' ? 'Bolle' : ($tipomodulo == 'F' ? 'Fatture' : 'Documenti')));
 

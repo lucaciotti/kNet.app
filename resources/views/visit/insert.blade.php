@@ -31,8 +31,10 @@
             <div class="form-group">
               <label>Cliente</label>
               <select name="codcli" class="form-control select2" style="width: 100%;">
-                @if (count($client)>1)
-                  <option value=""> </option>
+                @if ($client instanceof Illuminate\Database\Eloquent\Collection)
+                  @if ($client->count()>1)
+                    <option value=""> </option>
+                  @endif
                   @foreach ($client as $cli)
                     <option value="{{ $cli->codice }}">[{{$cli->codice}}] {{ $cli->descrizion }}</option>
                   @endforeach
@@ -46,10 +48,11 @@
               <label>Tipologia</label>
               <select name="tipo" class="form-control select2" style="width: 100%;">
                 <option value=""> </option>
-                <option value="M">Meeting</option>
-                <option value="P">Presentazione Prodotto</option>
-                <option value="S">Scadenza</option>
-                <option value="N">Non Conformità</option>
+                <option value="Meet">Meeting</option>
+                <option value="Mail">Mail</option>
+                <option value="Prod">Presentazione Prodotto</option>
+                <option value="Scad">Scadenza</option>
+                <option value="RNC">Non Conformità</option>
               </select>
             </div>
 
@@ -91,7 +94,7 @@
             @endpush
 
             <div>
-              <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+              <button type="submit" class="btn btn-primary">Salva</button>
             </div>
           </form>
 

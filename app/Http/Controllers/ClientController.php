@@ -12,6 +12,7 @@ use knet\ArcaModels\Nazione;
 use knet\ArcaModels\Settore;
 use knet\ArcaModels\Zona;
 use knet\ArcaModels\ScadCli;
+use knet\WebModels\wVisit;
 
 use knet\Scopes\AgentCliScope;
 
@@ -121,11 +122,15 @@ class ClientController extends Controller
       } catch (\Exception $e) {
         $expt = $e->getMessage();
       }
-      // dd($client);
+      $visits = wVisit::where('codicecf', $codCli)->with('user')->take(3)->orderBy('data', 'desc')->orderBy('id')->get();
+      // dd($visits->isEmpty());
+      // dd($visits);
       return view('client.detail', [
         'client' => $client,
         'scads' => $scadToPay,
         'mapsException' => $expt,
+        'visits' => $visits,
+        'dateNow' => Carbon::now(),
       ]);
     }
 

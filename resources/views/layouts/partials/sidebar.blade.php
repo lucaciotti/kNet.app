@@ -34,7 +34,11 @@
             <li class="header">Arca Web</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ Ekko::isActiveURL('home') }}"><a href="{{ url('/home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-users'></i> <span>Lista Cliente</span></a></li>
+            @if (Auth::user()->hasRole('client'))
+              <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-user'></i> <span>Anagrafica Cliente</span></a></li>
+            @else
+              <li class="{{ Ekko::isActiveRoute('client::*') }}"><a href="{{ route('client::list') }}"><i class='fa fa-users'></i> <span>Lista Cliente</span></a></li>
+            @endif
             <li class="treeview {{ Ekko::isActiveRoute('doc::*') }}">
                 <a href="{{ route('doc::list') }}"><i class='fa fa-copy'></i> <span>Documenti</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -43,13 +47,13 @@
                     <li class="{{ Ekko::isActiveRoute('doc::list','F') }}"><a href="{{ route('doc::list', 'F') }}">FATTURE</a></li>
                 </ul>
             </li>
-            <li class="{{ Ekko::isActiveRoute('scad::*') }}"><a href="{{ route('scad::list') }}"><i class='fa fa-dashboard'></i> <span>Scadenze</span></a></li>
-            <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('prod::list') }}"><i class='fa fa-barcode'></i> <span>Prodotti</span></a></li>
+            <li class="{{ Ekko::isActiveRoute('scad::*') }}"><a href="{{ route('scad::list') }}"><i class='fa fa-money'></i> <span>Scadenze</span></a></li>
+            <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('prod::list') }}"><i class='fa fa-cube'></i> <span>Prodotti</span></a></li>
             <li><i class='fa fa-empty'></i></li>
 
             <li class="header">Funzioni Web</li>
             <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li>
-            <li class=""><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
+            <li class="{{ Ekko::isActiveRoute('visit::*') }}"><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
     </section>

@@ -187,4 +187,14 @@ class ProductController extends Controller
     ]);
   }
 
+
+  // API Function
+  public function show (Request $req, $codArt) {
+    $product = Product::with(['grpProd', 'clasProd'])->findOrFail($codArt);
+    // dd($product);
+    return response()->json([
+      'prod' => $product,
+    ]);
+  }
+
 }
