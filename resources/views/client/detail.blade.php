@@ -96,8 +96,11 @@
             <hr>
 
             <dt>Telefono</dt>
-            <dd>{{$client->telefono}}</dd>
-
+            <dd>{{$client->telefono}}
+              @if (!empty($client->telefono))
+                  &nbsp;<a href="tel:{{$client->telefono}}"><i class="btn btn-xs fa fa-phone bg-green"></i></a>
+              @endif
+            </dd>
             <dt>Fax</dt>
             <dd>{{$client->fax}}</dd>
 
@@ -105,26 +108,50 @@
             <dd>{{$client->telex}}</dd>
 
             <dt>Cellulare</dt>
-            <dd>{{$client->telcell}}</dd>
+            <dd>{{$client->telcell}}
+              @if (!empty($client->telcell))
+                  &nbsp;<a href="tel:{{$client->telcell}}"><i class="btn btn-xs fa fa-phone bg-green"></i></a>
+              @endif
+            </dd>
 
             <hr>
 
             <dt>eMail Generale</dt>
-            <dd>{{$client->email}}</dd>
+            <dd>{{$client->email}}
+              @if (!empty($client->email))
+                  &nbsp;<a href="mailto:{{$client->email}}"><i class="btn btn-xs fa fa-envelope-o bg-red"></i></a>
+              @endif
+            </dd>
 
             <hr>
 
             <dt>eMail Amministrazione</dt>
-            <dd>{{$client->emailam}}</dd>
+            <dd>{{$client->emailam}}
+              @if (!empty($client->emailam))
+                  &nbsp;<a href="mailto:{{$client->emailam}}"><i class="btn btn-xs fa fa-envelope-o bg-red"></i></a>
+              @endif
+            </dd>
 
             <dt>eMail Invio Ordini</dt>
-            <dd>{{$client->emailut}}</dd>
+            <dd>{{$client->emailut}}
+              @if (!empty($client->emailut))
+                  &nbsp;<a href="mailto:{{$client->emailut}}"><i class="btn btn-xs fa fa-envelope-o bg-red"></i></a>
+              @endif
+            </dd>
 
             <dt>eMail Invio Bolle</dt>
-            <dd>{{$client->emailav}}</dd>
+            <dd>{{$client->emailav}}
+              @if (!empty($client->emailav))
+                  &nbsp;<a href="mailto:{{$client->emailav}}"><i class="btn btn-xs fa fa-envelope-o bg-red"></i></a>
+              @endif
+            </dd>
 
             <dt>eMail Invio Fatture</dt>
-            <dd>{{$client->emailpec}}</dd>
+            <dd>{{$client->emailpec}}
+              @if (!empty($client->emailpec))
+                  &nbsp;<a href="mailto:{{$client->emailpec}}"><i class="btn btn-xs fa fa-envelope-o bg-red"></i></a>
+              @endif
+            </dd>
 
           </dl>
         </div>

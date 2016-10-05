@@ -145,6 +145,16 @@ Route::group(['as' => 'visit::'], function(){
   ]);
 });
 
+Route::group(['as' => 'stFatt::'], function(){
+  Route::get('/stFatt', [
+    'as' => 'index',
+    'uses' => 'StFattController@index'
+  ]);
+  Route::post('/stFatt', [
+    'as' => 'fltIndex',
+    'uses' => 'StFattController@fltIndex'
+  ]);
+});
 // API ROUTES ==================================
 // Route::group(['prefix' => 'api'], function() {
 //

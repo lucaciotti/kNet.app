@@ -54,6 +54,10 @@
             <li class="header">Funzioni Web</li>
             <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li>
             <li class="{{ Ekko::isActiveRoute('visit::*') }}"><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
+            <li><i class='fa fa-empty'></i></li>
+
+            <li class="header">Statistiche</li>
+            <li class=""><a href="{{ route('stFatt::index') }}"><i class='fa fa-line-chart'></i> <span>Statistiche Fatturato</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
     </section>
