@@ -17,7 +17,10 @@ class ScadCliController extends Controller
     $scads = ScadCli::select('id', 'id_doc', 'numfatt', 'datafatt', 'datascad', 'codcf', 'tipomod', 'tipo', 'insoluto', 'u_insoluto', 'pagato', 'impeffval', 'importopag', 'idragg', 'tipoacc');
     $scads = $scads->where('datascad', '<', Carbon::now())->where('pagato',0)->whereIn('tipoacc', ['F', '']);
     $scads = $scads->with(array('client' => function($query) {
-      // $query->select('codice', 'descrizion');
+      $query->select('codice', 'descrizion')
+            ->withoutGlobalScope('agent')
+            ->withoutGlobalScope('superAgent')
+            ->withoutGlobalScope('client');
     }));
     $scads = $scads->orderBy('datascad', 'desc')->orderBy('id', 'desc')->get();
     // dd($scads);
@@ -45,18 +48,27 @@ class ScadCliController extends Controller
     if($req->input('ragsoc')) {
       $ragsoc = strtoupper($req->input('ragsoc'));
       if($req->input('ragsocOp')=='eql'){
-        $scads = $scads->with(array('client' => function($query) use ($ragsoc) {
-          $query->where('descrizion', $ragsoc);
+        $scads = $scads->whereHas(array('client' => function($query) use ($ragsoc) {
+          $query->where('descrizion', $ragsoc)
+                ->withoutGlobalScope('agent')
+                ->withoutGlobalScope('superAgent')
+                ->withoutGlobalScope('client');
         }));
       }
       if($req->input('ragsocOp')=='stw'){
-        $scads = $scads->with(array('client' => function($query) use ($ragsoc){
-          $query->where('descrizion', 'LIKE', $ragsoc.'%');
+        $scads = $scads->whereHas(array('client' => function($query) use ($ragsoc){
+          $query->where('descrizion', 'LIKE', $ragsoc.'%')
+                ->withoutGlobalScope('agent')
+                ->withoutGlobalScope('superAgent')
+                ->withoutGlobalScope('client');
         }));
       }
       if($req->input('ragsocOp')=='cnt'){
         $scads = $scads->whereHas('client', function ($query) use ($ragsoc){
-          $query->where('descrizion', 'like', '%'.$ragsoc.'%');
+          $query->where('descrizion', 'like', '%'.$ragsoc.'%')
+                ->withoutGlobalScope('agent')
+                ->withoutGlobalScope('superAgent')
+                ->withoutGlobalScope('client');
         });
       }
     }
@@ -65,7 +77,10 @@ class ScadCliController extends Controller
     }
 
     $scads = $scads->with(array('client' => function($query) {
-      $query->select('codice', 'descrizion');
+      $query->select('codice', 'descrizion')
+            ->withoutGlobalScope('agent')
+            ->withoutGlobalScope('superAgent')
+            ->withoutGlobalScope('client');
     }));
     $scads = $scads->orderBy('datascad', 'desc')->orderBy('id', 'desc')->get();
 

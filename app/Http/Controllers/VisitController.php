@@ -37,6 +37,18 @@ class VisitController extends Controller
         'note' => $req->input('note')
       ]);
 
-      return Redirect::route('visit::insert', $req->input('codcli'));
+      return Redirect::route('visit::show', $req->input('codcli'));
+    }
+
+    public function show(Request $req, $codCli){
+      // dd($req);
+      $visits = wVisit::where('codicecf', $codCli)->with('user')->orderBy('data', 'desc')->orderBy('id')->get();
+      $client = Client::findOrFail($codCli);
+
+      return view('visit.show', [
+        'visits' => $visits,
+        'client' => $client,
+        'dateNow' => Carbon::now(),
+        ]);
     }
 }

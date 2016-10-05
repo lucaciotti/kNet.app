@@ -17,7 +17,7 @@ class Agent extends Model
     }
 
     public function scadenza(){
-      return $this->hasMany('knet\ArcaModels\Scadenza', 'codice', 'cadag');
+      return $this->hasMany('knet\ArcaModels\Scadenza', 'codice', 'codag');
     }
 
 }

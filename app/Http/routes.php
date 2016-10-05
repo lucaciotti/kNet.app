@@ -135,6 +135,10 @@ Route::group(['as' => 'visit::'], function(){
     'as' => 'insert',
     'uses' => 'VisitController@index'
   ]);
+  Route::get('/visit/{codice}', [
+    'as' => 'show',
+    'uses' => 'VisitController@show'
+  ]);
   Route::post('/visit/store', [
     'as' => 'store',
     'uses' => 'VisitController@store'

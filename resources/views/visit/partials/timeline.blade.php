@@ -81,7 +81,6 @@
     <i class='fa fa-clock-o bg-gray'></i>
     <span class="timeline-item">
       <a class="btn btn-sm btn-default" href="{{ route('visit::insert', $codcli) }}"> <i class="fa fa-plus"></i> <span>Inserisci Evento</span></a>
-      <a class="btn btn-sm btn-primary" href="{{ route('visit::show', $codcli) }}">  <span>TimeLine Completa... </span></a>
     </span>
   </li>
 </ul>
