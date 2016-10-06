@@ -146,13 +146,21 @@ Route::group(['as' => 'visit::'], function(){
 });
 
 Route::group(['as' => 'stFatt::'], function(){
-  Route::get('/stFatt', [
-    'as' => 'index',
-    'uses' => 'StFattController@index'
+  Route::get('/stFatt/{codag?}', [
+    'as' => 'idxAg',
+    'uses' => 'StFattController@idxAg'
+  ]);
+  Route::get('/stFatt/{codcli?}', [
+    'as' => 'idxCli',
+    'uses' => 'StFattController@indCli'
   ]);
   Route::post('/stFatt', [
-    'as' => 'fltIndex',
-    'uses' => 'StFattController@fltIndex'
+    'as' => 'idxAg',
+    'uses' => 'StFattController@idxAg'
+  ]);
+  Route::post('/stFatt', [
+    'as' => 'idxCli',
+    'uses' => 'StFattController@indCli'
   ]);
 });
 // API ROUTES ==================================

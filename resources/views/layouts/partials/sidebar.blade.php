@@ -57,7 +57,13 @@
             <li><i class='fa fa-empty'></i></li>
 
             <li class="header">Statistiche</li>
-            <li class=""><a href="{{ route('stFatt::index') }}"><i class='fa fa-line-chart'></i> <span>Statistiche Fatturato</span></a></li>
+            <li class="treeview {{ Ekko::isActiveRoute('stFatt::*') }}">
+                <a href="{{ route('stFatt::idxAg') }}"><i class='fa fa-line-chart'></i> <span>Statistiche Fatturato</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li class="{{ Ekko::isActiveRoute('stFatt::idxAg','O') }}"><a href="{{ route('stFatt::idxAg', 'O') }}">Agente</a></li>
+                    <li class="{{ Ekko::isActiveRoute('stFatt::idxCli','B') }}"><a href="{{ route('stFatt::idxCli', 'B') }}">Cliente</a></li>
+                </ul>
+            </li>
 
         </ul><!-- /.sidebar-menu -->
     </section>

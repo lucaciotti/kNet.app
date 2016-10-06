@@ -44,4 +44,8 @@ class StatFatt extends Model
   public function agent(){
     return $this->belongsTo('knet\ArcaModels\Agent', 'agente', 'codice');
   }
+
+  public function grpProd(){
+    return $this->belongsTo('knet\ArcaModels\GrpProd', 'gruppo', 'codice');
+  }
 }
