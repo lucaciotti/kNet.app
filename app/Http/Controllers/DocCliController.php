@@ -186,9 +186,11 @@ class DocCliController extends Controller
   }
 
   public function showDdtToReceive(Request $req){
-    $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc');
-    $docs = $docs->where('tipomodulo', 'B');
-    $docs = $docs->where('numrighepr', '>', 0);
+    $lastMonth = new Carbon('first day of last month');
+    $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc')
+                    ->where('tipomodulo', 'B')
+                    ->where('datadoc', '>=', $lastMonth)
+                    ->doesntHave('wDdtOk');
     $docs = $docs->with(['client' => function($query) {
       $query
       ->withoutGlobalScope('agent')

@@ -38,9 +38,10 @@ class HomeController extends Controller
     public function index()
     {
         $dt = Carbon::now();
+        $lastMonth = new Carbon('first day of last month');
 
         $ordini = DocCli::where('tipomodulo', 'O')->where('numrighepr', '>', 0)->count();
-        $bolle = DocCli::where('tipomodulo', 'B')->where('numrighepr', '>', 0)->count();
+        $bolle = DocCli::where('tipomodulo', 'B')->where('datadoc', '>=', $lastMonth)->doesntHave('wDdtOk')->count();
         $scadenze = ScadCli::where('datascad', '<', $dt)->where('pagato',0)->whereIn('tipoacc', ['M', ''])->count();
 
         $articoli = Product::whereIn('statoart', ['1','8'])

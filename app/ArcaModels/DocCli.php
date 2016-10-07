@@ -69,6 +69,10 @@ class DocCli extends Model
     return $this->hasOne('knet\ArcaModels\ScadCli', 'id_doc', 'id');
   }
 
+  public function wDdtOk(){
+    return $this->hasOne('knet\WebModels\wDdtOk', 'id_testa', 'id');
+  }
+
   // public function destinaz(){
   //   return $this->hasOne('knet\ArcaModels\Destinaz', 'codicedes', 'destdiv')->join('codicecf', $this->codicecf);
   // }

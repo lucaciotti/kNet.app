@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "36bdf59a686ac0211886ca129f3375c3",
-    "content-hash": "f9593c9b29896cc033fb062e1d3a819c",
+    "hash": "b07212ae429a7509f6f444bfd5afcacb",
+    "content-hash": "3349f933cabc6352f82520dd91a4eda1",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -2668,6 +2668,64 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2015-12-08 16:14:14"
+        },
+        {
+            "name": "torann/currency",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Torann/laravel-currency.git",
+                "reference": "b0eeb526ee51861691a16748db7809e5058edecf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Torann/laravel-currency/zipball/b0eeb526ee51861691a16748db7809e5058edecf",
+                "reference": "b0eeb526ee51861691a16748db7809e5058edecf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.1",
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "illuminate/database": "Allows for storing of currencies in the database"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Torann/Currency/helpers.php"
+                ],
+                "psr-4": {
+                    "Torann\\Currency\\": "src/Torann/Currency"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Stainback",
+                    "email": "daniel@lyften.com"
+                }
+            ],
+            "description": "This provides Laravel 5 with currency functions such as currency formatting and conversion using up-to-date exchange rates.",
+            "keywords": [
+                "currency",
+                "exchange rate",
+                "finance",
+                "laravel",
+                "money",
+                "openexchangerates",
+                "yahoo finance"
+            ],
+            "time": "2016-10-01 17:00:25"
         },
         {
             "name": "vlucas/phpdotenv",

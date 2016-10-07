@@ -158,9 +158,7 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
-        /*
-         * Acacha AdminLTE template provider
-         */
+        // Acacha AdminLTE template provider
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 
         Laravelista\Ekko\EkkoServiceProvider::class,
@@ -176,6 +174,7 @@ return [
         //Excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        \Torann\Currency\CurrencyServiceProvider::class,
     ],
 
     /*
@@ -238,6 +237,8 @@ return [
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        'Currency' => \Torann\Currency\Facades\Currency::class,
 
     ],
 

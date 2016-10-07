@@ -56,15 +56,16 @@
             <li class="{{ Ekko::isActiveRoute('visit::*') }}"><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
             <li><i class='fa fa-empty'></i></li>
 
+            @if (!Auth::user()->hasRole('client'))
             <li class="header">Statistiche</li>
             <li class="treeview {{ Ekko::isActiveRoute('stFatt::*') }}">
                 <a href="{{ route('stFatt::idxAg') }}"><i class='fa fa-line-chart'></i> <span>Statistiche Fatturato</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li class="{{ Ekko::isActiveRoute('stFatt::idxAg','O') }}"><a href="{{ route('stFatt::idxAg', 'O') }}">Agente</a></li>
-                    <li class="{{ Ekko::isActiveRoute('stFatt::idxCli','B') }}"><a href="{{ route('stFatt::idxCli', 'B') }}">Cliente</a></li>
+                    <li class="{{ Ekko::isActiveRoute('stFatt::idxAg') }}"><a href="{{ route('stFatt::idxAg') }}">Agente</a></li>
+                    <li class="{{ Ekko::isActiveRoute('stFatt::idxCli') }}"><a href="{{ route('stFatt::idxCli') }}">Cliente</a></li>
                 </ul>
             </li>
-
+            @endif
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
