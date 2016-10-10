@@ -213,8 +213,8 @@ class StFattController extends Controller
       $fatM = 0;
       for($i=1; $i<=$mese; $i++){
         $valMese = 'valore' . $i;
-        $fatM += $fat->first()->$valMese;
-        $tgtM = $tgt->first()->$valMese;
+        $fatM += $fat->isEmpty() ? 0 : $fat->first()->$valMese;
+        $tgtM = $tgt->isEmpty() ? 0 : $tgt->first()->$valMese;
         $dt = Carbon::createFromDate(null, $i, null);
         $data = [
           'm' => $dt->year.'-'.$dt->month,

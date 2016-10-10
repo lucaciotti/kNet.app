@@ -26,12 +26,12 @@
     @php
       $fat = $fatturato->first();
       $tgt = $target->first();
-      $fatMese = $fat->valore1;
-      $tgtMese = $tgt->valore1;
+      $fatMese = empty($fat) ? 0 : $fat->valore1;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore1;
       $fatProg = $fatMese;
       $tgtProg = $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Gennaio
@@ -47,12 +47,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore2;
-      $tgtMese = $tgt->valore2 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore2;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore2 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Febbraio
@@ -68,12 +68,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore3;
-      $tgtMese = $tgt->valore3 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore3;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore3 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Marzo
@@ -89,12 +89,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore4;
-      $tgtMese = $tgt->valore4 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore4;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore4 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Aprile
@@ -110,12 +110,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore5;
-      $tgtMese = $tgt->valore5 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore5;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore5 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Maggio
@@ -131,12 +131,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore6;
-      $tgtMese = $tgt->valore6 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore6;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore6 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Giugno
@@ -152,12 +152,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore7;
-      $tgtMese = $tgt->valore7 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore7;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore7 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Luglio
@@ -173,12 +173,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore8;
-      $tgtMese = $tgt->valore8 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore8;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore8 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Agosto
@@ -194,12 +194,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore9;
-      $tgtMese = $tgt->valore9 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore9;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore9 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Settembre
@@ -215,12 +215,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore10;
-      $tgtMese = $tgt->valore10 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore10;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore10 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Ottobre
@@ -236,12 +236,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore11;
-      $tgtMese = $tgt->valore11 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore11;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore11 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Novembre
@@ -257,12 +257,12 @@
       <td><strong>{{ $deltaProg }} %</strong></td>
     </tr>
     @php
-      $fatMese = $fat->valore12;
-      $tgtMese = $tgt->valore12 - $tgtProg;
+      $fatMese = empty($fat) ? 0 : $fat->valore12;
+      $tgtMese = empty($tgt) ? 0 : $tgt->valore12 - $tgtProg;
       $fatProg += $fatMese;
       $tgtProg += $tgtMese;
-      $deltaMese = round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
-      $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
+      $deltaMese = $tgtMese==0 ? 0 : round((($tgtMese-$fatMese) / $tgtMese) * 100,2);
+      $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
       <th>Dicembre

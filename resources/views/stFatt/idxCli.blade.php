@@ -61,9 +61,9 @@
       <div class="box-body text-center">
         @php
           $valMese = 'valore' . $prevMonth;
-          $tgtMese = $target->first()->$valMese;
-          $fatMese = $fatTot->first()->fattmese;
-          $deltaProg = round((($fatMese) / $tgtMese) * 100,2);
+          $tgtMese = $target->isEmpty() ? 0 : $target->first()->$valMese;
+          $fatMese = $fatTot->isempty() ? 0 : $fatTot->first()->fattmese;
+          $deltaProg = $tgtMese==0 ? 0 : round((($fatMese) / $tgtMese) * 100,2);
           $deltaProg = $deltaProg > 100 ? 100 : $deltaProg;
           $colorDelta = ($deltaProg < 33) ? 'red' : ($deltaProg > 33 && $deltaProg < 66) ? 'orange' : 'green';
         @endphp
