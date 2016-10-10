@@ -150,8 +150,12 @@ Route::group(['as' => 'stFatt::'], function(){
     'as' => 'idxAg',
     'uses' => 'StFattController@idxAg'
   ]);
-  Route::get('/stFattCli/{codcli?}', [
+  Route::get('/stFattCli', [
     'as' => 'idxCli',
+    'uses' => 'StFattController@idxCli'
+  ]);
+  Route::get('/stFattCli/{codcli}', [
+    'as' => 'fltCli',
     'uses' => 'StFattController@idxCli'
   ]);
   Route::post('/stFattAg', [

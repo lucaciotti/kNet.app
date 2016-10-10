@@ -1,12 +1,12 @@
 <table class="table table-hover table-striped" id="statFattTot" style="text-align: center;">
-  <col width="80">
+  <col width="10">
   <col width="80">
   <col width="50">
   <col width="50">
   <thead>
     <tr>
       <th rowspan="2">&nbsp;</th>
-      <th rowspan="2" style="text-align: center;">Mese</th>
+      <th rowspan="2">&nbsp;</th>
       <th colspan="2" style="text-align: center;">FATTURATO</th>
     </tr>
     <tr>

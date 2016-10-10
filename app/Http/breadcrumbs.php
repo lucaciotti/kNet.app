@@ -64,3 +64,45 @@ Breadcrumbs::register('scads', function($breadcrumbs)
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Scadenze', route('scad::list'));
 });
+
+// Home > Prods
+Breadcrumbs::register('prods', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Prodotti', route('prod::list'));
+});
+
+// Home > [Client] > StatCli
+Breadcrumbs::register('clientStFat', function($breadcrumbs, $codClient)
+{
+    $breadcrumbs->parent('client', $codClient);
+    $breadcrumbs->push("St.Fatt.", route('stFatt::idxCli', $codClient));
+});
+
+// Home > StatAgent
+Breadcrumbs::register('agentStFat', function($breadcrumbs, $codAg)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push("St.Fatt. Agente", route('stFatt::idxCli', $codAg));
+});
+
+// Home > [Client] > ShowVisite
+Breadcrumbs::register('visitShwCli', function($breadcrumbs, $codClient)
+{
+    $breadcrumbs->parent('client', $codClient);
+    $breadcrumbs->push("Visite", route('visit::show', $codClient));
+});
+
+// Home > [Client] > InsVisite
+Breadcrumbs::register('visitInsCli', function($breadcrumbs, $codClient)
+{
+    $breadcrumbs->parent('client', $codClient);
+    $breadcrumbs->push("Ins. Visita", route('visit::insert', $codClient));
+});
+
+// Home > InsVisite
+Breadcrumbs::register('visitIns', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push("Ins. Visita", route('visit::insert'));
+});

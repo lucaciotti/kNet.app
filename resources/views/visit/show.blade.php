@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_breadcrumb')
-  {!! Breadcrumbs::render('clients') !!}
+  {!! Breadcrumbs::render('visitShwCli', $client->codice) !!}
 @endsection
 
 @section('main-content')

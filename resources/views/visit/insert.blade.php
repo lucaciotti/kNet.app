@@ -9,7 +9,11 @@
 @endsection
 
 @section('contentheader_breadcrumb')
-  {!! Breadcrumbs::render('clients') !!}
+  @if ($client instanceof Illuminate\Database\Eloquent\Collection)
+    {!! Breadcrumbs::render('visitIns') !!}
+  @else
+    {!! Breadcrumbs::render('visitInsCli', $client->codice) !!}
+  @endif
 @endsection
 
 @section('main-content')

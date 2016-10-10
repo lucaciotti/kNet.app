@@ -34,7 +34,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Gennaio</th>
+      <th>Gennaio
+        @if ($prevMonth==1)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -51,7 +55,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Febbraio</th>
+      <th>Febbraio
+        @if ($prevMonth==2)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -68,7 +76,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Marzo</th>
+      <th>Marzo
+        @if ($prevMonth==3)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -85,7 +97,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Aprile</th>
+      <th>Aprile
+        @if ($prevMonth==4)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -102,7 +118,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Maggio</th>
+      <th>Maggio
+        @if ($prevMonth==5)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -119,7 +139,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Giugno</th>
+      <th>Giugno
+        @if ($prevMonth==6)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -136,7 +160,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Luglio</th>
+      <th>Luglio
+        @if ($prevMonth==7)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -153,7 +181,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Agosto</th>
+      <th>Agosto
+        @if ($prevMonth==8)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -170,7 +202,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Settembre</th>
+      <th>Settembre
+        @if ($prevMonth==9)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -187,7 +223,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Ottobre</th>
+      <th>Ottobre
+        @if ($prevMonth==10)
+          &nbsp; >>
+        @endif
+      </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -204,7 +244,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Novembre</th>
+      <th>Novembre
+        @if ($prevMonth==11)
+          &nbsp; >>
+        @endif
+        </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>
@@ -221,7 +265,11 @@
       $deltaProg = round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Dicembre</th>
+      <th>Dicembre
+        @if ($prevMonth==12)
+          &nbsp; >>
+        @endif
+        </th>
       <td><strong>{{ currency($fatMese) }}</strong></td>
       <td>{{ currency($tgtMese) }}</td>
       <td><strong>{{ $deltaMese }} %</strong></td>

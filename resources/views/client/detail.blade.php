@@ -209,6 +209,19 @@
         @include('scads.partials.tblGeneric', $scads)
       </div>
     </div>
+
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <h3 class="box-title" data-widget="collapse">Statistiche Cliente</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+      </div>
+      <div class="box-body">
+        <a type="button" class="btn btn-default btn-block" href="{{ route('stFatt::fltCli', $client->codice) }}">Fatturato</a>
+      </div>
+    </div>
+
   </div>
 
 </div>

@@ -5,11 +5,11 @@
 @endsection
 
 @section('contentheader_title')
-    Statistiche Agente
+    Statistiche Cliente
 @endsection
 
 @section('contentheader_breadcrumb')
-    {!! Breadcrumbs::render('agentStFat', $agente) !!}
+    {!! Breadcrumbs::render('clientStFat', $cliente) !!}
 @endsection
 
 @push('css-head')
@@ -22,25 +22,25 @@
   <div class="col-lg-3">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Agente</h3>
+        <h3 class="box-title" data-widget="collapse">Cliente</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
         </div>
       </div>
       <div class="box-body">
-        <form action="{{ route('stFatt::idxAg') }}" method="post">
+        <form action="{{ route('stFatt::idxCli') }}" method="post">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group">
-            <label>Seleziona Agente</label>
-            <select name="codag" class="form-control select2" style="width: 100%;">
+            <label>Seleziona Cliente</label>
+            <select name="codcli" class="form-control select2" style="width: 100%;">
               <option value=""> </option>
-              @foreach ($agents as $agent)
-                <option value="{{ $agent->agente }}"
-                  @if($agent->agente==$agente)
+              @foreach ($clients as $client)
+                <option value="{{ $client->codicecf }}"
+                  @if($client->codicecf==$cliente)
                       selected
                   @endif
-                  >{{ $agent->agent->descrizion }}</option>
+                  >{{ $client->client->descrizion }}</option>
               @endforeach
             </select>
           </div>
@@ -70,7 +70,7 @@
           <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="{{ $deltaProg }}" data-width="120" data-height="120" data-fgColor="{{ $colorDelta }}">
 
           <div class="knob-label"><strong>% Target Mese</strong></div>
-      </div>
+        </div>
     </div>
   </div>
 
