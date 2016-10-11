@@ -179,7 +179,7 @@
           </div>
         </div>
         <div class="box-body">
-          @if($head->scadenza->count()>0)
+          @if(!empty($head->scadenza))
             <h4>Scadenza Associata</h4>
             <table class="table table-hover table-condensed dtTbls_light">
               <thead>

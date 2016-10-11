@@ -15,6 +15,11 @@ use knet\ArcaModels\Agent;
 
 class StFattController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+    
     public function idxAg (Request $req, $codAg=null) {
       $agents = StatFatt::select('agente')
                           ->where('agente', '!=', '00')

@@ -19,6 +19,10 @@ Route::get('/blankPage', function () {
     return view('vendor._blankPage');
 });
 
+Route::get('/todo', function () {
+    return view('todo');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

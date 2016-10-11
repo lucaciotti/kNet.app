@@ -209,7 +209,7 @@
         @include('scads.partials.tblGeneric', $scads)
       </div>
     </div>
-
+    @if (!Auth::user()->hasRole('client'))
     <div class="box box-default">
       <div class="box-header with-border">
         <h3 class="box-title" data-widget="collapse">Statistiche Cliente</h3>
@@ -221,11 +221,11 @@
         <a type="button" class="btn btn-default btn-block" href="{{ route('stFatt::fltCli', $client->codice) }}">Fatturato</a>
       </div>
     </div>
-
+    @endif
   </div>
 
 </div>
-
+@if (!Auth::user()->hasRole('client'))
 <div class="row">
 
   <div class="col-lg-6">
@@ -251,7 +251,7 @@
 
   </div>
 </div>
-
+@endif
 <script type="text/javascript">
 
     function onMapLoad(map)

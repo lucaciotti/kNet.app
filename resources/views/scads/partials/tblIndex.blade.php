@@ -22,7 +22,8 @@
         @endif
           <td>
             <span>{{$scad->datascad->format('Ymd')}}</span>
-            <a href="{{ route('scad::detail', $scad->id ) }}"> {{ $scad->datascad->format('d-m-Y') }}</a>
+            {{-- <a href="{{ route('scad::detail', $scad->id ) }}"> {{ $scad->datascad->format('d-m-Y') }}</a> --}}
+            {{ $scad->datascad->format('d-m-Y') }}
           </td>
           <td>
             @if($scad->pagato==1)
@@ -50,7 +51,8 @@
           </td>
           <td>
             @if($scad->idragg>0)
-              <a href="{{ route('scad::detail', $scad->idragg ) }}"> Accorpata</a>
+              {{-- <a href="{{ route('scad::detail', $scad->idragg ) }}"> Accorpata</a> --}}
+              <a href="#"> Accorpata</a>
             @endif
           </td>
           <td>{{ $scad->desc_pag }}</td>

@@ -22,19 +22,9 @@ use knet\User;
 class ClientController extends Controller
 {
 
-    // public function __construct(Request $req){
-    //   dd($req->user);
-    //   if (Auth::check() && $req->user->hasRole('agent')){
-    //     static::addGlobalScope('agent', function(Builder $builder) {
-    //         $builder->where('agente', 'AM1');
-    //     });
-    //     // static::addGlobalScope('superAgent', function(Builder $builder) {
-    //     //   $builder->whereHas('agent', function ($query){
-    //     //     $query->where('u_capoa', 'AM2');
-    //     //   });
-    //     // });
-    //   }
-    // }
+    public function __construct(){
+      $this->middleware('auth');
+    }
 
     public function index (Request $req){
 

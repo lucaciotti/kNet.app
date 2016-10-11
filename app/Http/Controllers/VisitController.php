@@ -14,6 +14,11 @@ use Auth;
 
 class VisitController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+    
     public function index(Request $req, $codCli=null){
       // Redirect to Form Page
       if (empty($codCli)) {

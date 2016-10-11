@@ -3,6 +3,7 @@
 namespace knet\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 use knet\Http\Requests;
@@ -10,12 +11,17 @@ use knet\ArcaModels\ScadCli;
 
 class ScadCliController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+    
   public function index (Request $req){
     $startDate = Carbon::now()->subMonth();
     $endDate = Carbon::now();
 
     $scads = ScadCli::select('id', 'id_doc', 'numfatt', 'datafatt', 'datascad', 'codcf', 'tipomod', 'tipo', 'insoluto', 'u_insoluto', 'pagato', 'impeffval', 'importopag', 'idragg', 'tipoacc');
-    $scads = $scads->where('datascad', '<', Carbon::now())->where('pagato',0)->whereIn('tipoacc', ['F', '']);
+    $scads = $scads->where('datascad', '<', Carbon::now())->whereIn('tipoacc', ['F', ''])->whereRaw("(`insoluto` = 1 OR `u_insoluto` = 1) AND `pagato` = 0");
     $scads = $scads->with(array('client' => function($query) {
       $query->select('codice', 'descrizion')
             ->withoutGlobalScope('agent')

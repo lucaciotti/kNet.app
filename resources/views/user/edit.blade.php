@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" class="form-control" name="email" value="{{$user->email}}">
+              <input type="text" class="form-control" name="email" value="{{$user->email}}" disabled>
             </div>
             <div class="form-group">
               <label>Ruolo</label>

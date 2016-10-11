@@ -8,7 +8,7 @@
   <tbody>
     @foreach ($products as $prod)
       <tr>
-        <td><a href="{{ route('prod::detail', $prod->codice) }}"> {{ $prod->codice }} </a>
+        <td><a href="#"> {{ $prod->codice }} </a>
           @if($prod->u_perscli==1)
             &nbsp&nbsp<small class="label bg-yellow">Personal.</small>
           @endif

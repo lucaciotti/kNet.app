@@ -254,7 +254,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </p>
         </div>
 
-        <div class="col-lg-7">
+        {{-- <div class="col-lg-7">
             <h3>{{ trans('adminlte_lang::message.dropus') }}</h3>
             <br>
             <form role="form" action="#" method="post" enctype="plain">
@@ -273,7 +273,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <br>
                 <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
             </form>
-        </div>
+        </div> --}}
     </div>
 </div>
 <div id="c">

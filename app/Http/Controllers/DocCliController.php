@@ -14,6 +14,11 @@ use knet\WebModels\wDdtOk;
 
 class DocCliController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+    
   public function index (Request $req, $tipomodulo=null){
     $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc');
     if ($tipomodulo){
@@ -54,21 +59,27 @@ class DocCliController extends Controller
     if($req->input('ragsoc')) {
       $ragsoc = strtoupper($req->input('ragsoc'));
       if($req->input('ragsocOp')=='eql'){
-        $docs = $docs->with(array('client' => function($query) {
-          $query->where('descrizion', strtoupper($req->input('ragsoc')));
-        }));
+        $docs = $docs->whereHas('client', function ($query) use ($ragsoc){
+          $query->where('descrizion', $ragsoc)
+          ->withoutGlobalScope('agent')
+          ->withoutGlobalScope('superAgent')
+          ->withoutGlobalScope('client');
+        });
       }
       if($req->input('ragsocOp')=='stw'){
-        $docs = $docs->with(array('client' => function($query) {
-          $query->where('descrizion', 'LIKE', strtoupper($req->input('ragsoc')).'%');
-        }));
+        $docs = $docs->whereHas('client', function ($query) use ($ragsoc){
+          $query->where('descrizion', 'like', $ragsoc.'%')
+          ->withoutGlobalScope('agent')
+          ->withoutGlobalScope('superAgent')
+          ->withoutGlobalScope('client');
+        });
       }
       if($req->input('ragsocOp')=='cnt'){
-        // $docs = $docs->with(array('client' => function($query) {
-        //   $query->where('descrizion', 'LIKE', '%'.strtoupper($req->input('ragsoc')).'%');
-        // }));
         $docs = $docs->whereHas('client', function ($query) use ($ragsoc){
-          $query->where('descrizion', 'like', '%'.$ragsoc.'%');
+          $query->where('descrizion', 'like', '%'.$ragsoc.'%')
+          ->withoutGlobalScope('agent')
+          ->withoutGlobalScope('superAgent')
+          ->withoutGlobalScope('client');
         });
       }
     }
@@ -134,7 +145,12 @@ class DocCliController extends Controller
       ->withoutGlobalScope('client');
     }]);
     if ($tipoDoc->tipomodulo=='F'){
-        $head = $head->with('scadenza');
+        $head = $head->with(['scadenza' => function($query) {
+          $query
+          ->withoutGlobalScope('agent')
+          ->withoutGlobalScope('superAgent')
+          ->withoutGlobalScope('client');
+        }]);
     } elseif ($tipoDoc->tipomodulo=='B') {
         $head = $head->with('vettore', 'detBeni');
     }
@@ -151,7 +167,7 @@ class DocCliController extends Controller
     $prevDocs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc')->whereIn('id', $prevIds->pluck('riffromt'))->get();
     $nextIds = DocRow::distinct('id_testa')->where('riffromt', $id_testa)->get();
     $nextDocs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc')->whereIn('id', $nextIds->pluck('id_testa'))->get();
-    // dd($nextDocs);
+    // dd($head);
     return view('docs.detail', [
       'head' => $head,
       'rows' => $rows,

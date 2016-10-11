@@ -15,6 +15,10 @@ use knet\User;
 class ProductController extends Controller
 {
 
+    public function __construct(){
+      $this->middleware('auth');
+    }
+
   public function index (Request $req){
 
     $products = Product::select('codice', 'descrizion', 'unmisura', 'gruppo', 'classe', 'listino1', 'listino6', 'u_perscli')

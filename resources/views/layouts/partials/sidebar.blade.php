@@ -51,12 +51,12 @@
             <li class="{{ Ekko::isActiveRoute('prod::*') }}"><a href="{{ route('prod::list') }}"><i class='fa fa-cube'></i> <span>Prodotti</span></a></li>
             <li><i class='fa fa-empty'></i></li>
 
+            @if (!Auth::user()->hasRole('client'))
             <li class="header">Funzioni Web</li>
-            <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li>
+            {{-- <li class=""><a href="{{ route('doc::list', 'O') }}"><i class='fa fa-pencil-square-o'></i> <span>Pre-Ordini via Web</span></a></li> --}}
             <li class="{{ Ekko::isActiveRoute('visit::*') }}"><a href="{{ route('visit::insert') }}"><i class='fa fa-weixin'></i> <span>Inserimento Visite Clienti</span></a></li>
             <li><i class='fa fa-empty'></i></li>
 
-            @if (!Auth::user()->hasRole('client'))
             <li class="header">Statistiche</li>
             <li class="treeview {{ Ekko::isActiveRoute('stFatt::*') }}">
                 <a href="{{ route('stFatt::idxAg') }}"><i class='fa fa-line-chart'></i> <span>Statistiche Fatturato</span> <i class="fa fa-angle-left pull-right"></i></a>

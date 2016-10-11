@@ -18,6 +18,11 @@ use knet\ArcaModels\Agent;
 
 class UserController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+    
     public function index(Request $req){
       $users = User::with(['roles', 'client', 'agent'])
                 ->whereHas('roles', function($q){$q->whereNotIn('name', ['agent', 'superAgent', 'client']);})
