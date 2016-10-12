@@ -19,7 +19,7 @@ class StFattController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
     public function idxAg (Request $req, $codAg=null) {
       $agents = StatFatt::select('agente')
                           ->where('agente', '!=', '00')
@@ -124,7 +124,6 @@ class StFattController extends Controller
                             }
                             ])
                           ->get();
-      // dd($clients->first());
       $codCli = ($req->input('codcli')) ? $req->input('codcli') : $codCli;
       $cliente = (!empty($codCli)) ? $codCli : $clients->first()->codicecf;
       $fatDet = StatFatt::select('codicecf', 'tipologia', 'gruppo',
@@ -202,6 +201,7 @@ class StFattController extends Controller
       $prevMonth = (Carbon::now()->month)-1;
       $stats = $this->makeFatTgtJson($fatTot, $target, $prevMonth);
       // dd($stats);
+      // dd($clients->first());
       return view('stFatt.idxCli', [
         'clients' => $clients,
         'cliente' => $cliente,
