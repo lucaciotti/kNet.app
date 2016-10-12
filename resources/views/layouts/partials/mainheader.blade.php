@@ -127,7 +127,7 @@
                                 <img src="{{asset('/img/avatar_default.jpg')}}" class="img-circle" alt="User Image" />
                                 <p>
                                     {{ Auth::user()->name }}
-                                    <small>{{ trans('adminlte_lang::message.login') }} Nov. 2012</small>
+                                    <small>{{ trans('adminlte_lang::message.login') }}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->

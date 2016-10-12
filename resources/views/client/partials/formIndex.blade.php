@@ -30,7 +30,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label>Gruppo Cliente</label>
+    <label>Zona Cliente</label>
     <select name="zona[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Zona" style="width: 100%;">
       @foreach ($zone as $zona)
         <option value="{{ $zona->codice }}">{{ $zona->descrizion }}</option>

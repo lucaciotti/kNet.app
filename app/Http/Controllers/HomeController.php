@@ -42,7 +42,16 @@ class HomeController extends Controller
 
         $ordini = DocCli::where('tipomodulo', 'O')->where('numrighepr', '>', 0)->count();
         $bolle = DocCli::where('tipomodulo', 'B')->where('datadoc', '>=', $lastMonth)->doesntHave('wDdtOk')->count();
-        $scadenze = ScadCli::where('datascad', '<', $dt)->whereRaw("(`insoluto` = 1 OR `u_insoluto` = 1) AND `pagato` = 0")->whereIn('tipoacc', ['M', ''])->count();
+        $scadenze = ScadCli::where('datascad', '<', $dt)
+                      ->whereRaw("(`insoluto` = 1 OR `u_insoluto` = 1) AND `pagato` = 0")
+                      ->whereIn('tipoacc', ['M', ''])
+                      ->whereHas('client', function($query){
+                        $query->whereNotIn('statocf', ['C', 'S', 'L'])
+                              ->withoutGlobalScope('agent')
+                              ->withoutGlobalScope('superAgent')
+                              ->withoutGlobalScope('client');
+                            })
+                      ->count();
 
         $articoli = Product::whereIn('statoart', ['1','8'])
                       ->where('classe', 'NOT LIKE', 'DIC%')

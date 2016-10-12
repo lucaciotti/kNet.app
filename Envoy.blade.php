@@ -24,16 +24,16 @@
 @task('fetch_repo')
     [ -d {{ $release_dir }} ] || mkdir {{ $release_dir }};
     cd {{ $release_dir }};
-    {{-- git clone -b master {{ $repo }} {{ $release }}; --}}
-    git clone -b dev --depth=1 {{ $repo }} {{ $release }};
+    git clone -b master --depth=1 {{ $repo }} {{ $release }};
+    {{-- git clone -b dev --depth=1 {{ $repo }} {{ $release }}; --}}
 @endtask
 
 @task('run_composer')
     cd {{ $release_dir }}/{{ $release }};
-    composer install --prefer-dist;
-    {{-- composer install --prefer-dist --no-scripts; --}}
-    {{-- php artisan clear-compiled --env=production;
-    php artisan optimize --env=production; --}}
+    {{-- composer install --prefer-dist; --}}
+    composer install --prefer-dist --no-scripts;
+    php artisan clear-compiled --env=production;
+    php artisan optimize --env=production;
 @endtask
 
 @task('update_permissions')

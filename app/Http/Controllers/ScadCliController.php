@@ -15,13 +15,19 @@ class ScadCliController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
   public function index (Request $req){
     $startDate = Carbon::now()->subMonth();
     $endDate = Carbon::now();
 
     $scads = ScadCli::select('id', 'id_doc', 'numfatt', 'datafatt', 'datascad', 'codcf', 'tipomod', 'tipo', 'insoluto', 'u_insoluto', 'pagato', 'impeffval', 'importopag', 'idragg', 'tipoacc');
     $scads = $scads->where('datascad', '<', Carbon::now())->whereIn('tipoacc', ['F', ''])->whereRaw("(`insoluto` = 1 OR `u_insoluto` = 1) AND `pagato` = 0");
+    $scads = $scads->whereHas('client', function($query){
+      $query->whereNotIn('statocf', ['C', 'S', 'L'])
+            ->withoutGlobalScope('agent')
+            ->withoutGlobalScope('superAgent')
+            ->withoutGlobalScope('client');
+          });
     $scads = $scads->with(array('client' => function($query) {
       $query->select('codice', 'descrizion')
             ->withoutGlobalScope('agent')
@@ -81,6 +87,13 @@ class ScadCliController extends Controller
     if($req->input('chkStato_T')!='T'){
       $scads = ($req->input('chkStato_P')=='P') ? $scads->where('pagato',1) : $scads->where('pagato',0);
     }
+
+    $scads = $scads->whereHas('client', function($query){
+      $query->whereNotIn('statocf', ['C', 'S', 'L'])
+            ->withoutGlobalScope('agent')
+            ->withoutGlobalScope('superAgent')
+            ->withoutGlobalScope('client');
+          });
 
     $scads = $scads->with(array('client' => function($query) {
       $query->select('codice', 'descrizion')
