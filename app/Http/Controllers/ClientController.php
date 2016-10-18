@@ -5,6 +5,7 @@ namespace knet\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
+use Illuminate\Support\Facades\DB;
 
 use knet\Http\Requests;
 use knet\ArcaModels\Client;

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'kNet_it'),
+    'default' => env('DB_CNCT_DEFAULT', 'kNet'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,16 +46,23 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver'   => 'sqlite',
-            'database' => database_path('database.sqlite'),
-            'prefix'   => '',
-        ],
-
         'kNet' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
+            'database'  => env('DB_APP', 'kNet'),
+            'username'  => env('DB_USERNAME', ''),
+            'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
+        'kNet_it' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_IT', 'kNet_it'),
             'username'  => env('DB_USERNAME', 'forge'),
             'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
@@ -64,44 +71,37 @@ return [
             'strict'    => false,
             'engine'    => null,
         ],
-        //
-        // 'kki' => [
-        //     'driver'    => 'mysql',
-        //     'host'      => env('DB_HOST', 'localhost'),
-        //     'database'  => 'kkiWH',
-        //     'username'  => env('DB_USERNAME', 'forge'),
-        //     'password'  => env('DB_PASSWORD', ''),
-        //     'charset'   => 'utf8',
-        //     'collation' => 'utf8_unicode_ci',
-        //     'prefix'    => '',
-        //     'strict'    => false,
-        //     'engine'    => null,
-        // ],
-        //
-        // 'kkf' => [
-        //     'driver'    => 'mysql',
-        //     'host'      => env('DB_HOST', 'localhost'),
-        //     'database'  => env('kkfWH', 'forge'),
-        //     'username'  => env('DB_USERNAME', 'forge'),
-        //     'password'  => env('DB_PASSWORD', ''),
-        //     'charset'   => 'utf8',
-        //     'collation' => 'utf8_unicode_ci',
-        //     'prefix'    => '',
-        //     'strict'    => false,
-        //     'engine'    => null,
-        // ],
-        //
-        // 'kke' => [
-        //     'driver'    => 'mysql',
-        //     'host'      => env('DB_HOST', 'localhost'),
-        //     'database'  => env('kkeWH', 'forge'),
-        //     'username'  => env('DB_USERNAME', 'forge'),
-        //     'password'  => env('DB_PASSWORD', ''),
-        //     'charset'   => 'utf8',
-        //     'collation' => 'utf8_unicode_ci',
-        //     'prefix'    => '',
-        //     'strict'    => false,
-        //     'engine'    => null,
+
+        'kNet_es' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_ES', 'kNet_es'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
+        'kNet_fr' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_FR', 'kNet_fr'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
+        // 'sqlite' => [
+        //     'driver'   => 'sqlite',
+        //     'database' => database_path('database.sqlite'),
+        //     'prefix'   => '',
         // ],
 
     ],
