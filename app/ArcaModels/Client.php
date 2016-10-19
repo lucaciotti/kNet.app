@@ -4,6 +4,8 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
+use Torann\Registry\Facades\Registry;
 
 use Auth;
 // use knet\User;
@@ -14,6 +16,7 @@ class Client extends Model
     public $timestamps = false;
     protected $primaryKey = 'codice';
     public $incrementing = false;
+    protected $connection = '';
 
     // Scope that garante to find only Client from anagrafe
     protected static function boot()
@@ -43,6 +46,13 @@ class Client extends Model
             });
           }
         }
+    }
+
+    public function __construct()
+    {
+      //Imposto la Connessione al Database
+      // dd(Registry::get('ditta_DB'));
+      $this->setConnection(Registry::get('ditta_DB'));
     }
 
     // JOIN Tables

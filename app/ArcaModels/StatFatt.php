@@ -4,6 +4,7 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 
 use Auth;
 
@@ -11,6 +12,14 @@ class StatFatt extends Model
 {
   protected $table = 'u_statfatt';
   public $timestamps = false;
+  protected $connection = '';
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
 
   protected static function boot() {
     parent::boot();

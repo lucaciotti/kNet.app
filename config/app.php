@@ -175,6 +175,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
         \Torann\Currency\CurrencyServiceProvider::class,
+        \Torann\Registry\RegistryServiceProvider::class,
     ],
 
     /*
@@ -240,6 +241,7 @@ return [
 
         'Currency' => \Torann\Currency\Facades\Currency::class,
 
+        'Registry' => \Torann\Registry\Facades\Registry::class,
     ],
 
 ];

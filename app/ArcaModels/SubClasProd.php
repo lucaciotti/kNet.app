@@ -4,6 +4,7 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 
 class SubClasProd extends Model
 {
@@ -11,8 +12,14 @@ class SubClasProd extends Model
   public $timestamps = false;
   protected $primaryKey = 'codice';
   public $incrementing = false;
+  protected $connection = '';
 
-  // JOIN Tables LEN(column_name)
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
 
   protected static function boot()
   {

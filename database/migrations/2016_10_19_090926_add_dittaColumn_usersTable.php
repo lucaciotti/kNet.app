@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterListiniTable extends Migration
+class AddDittaColumnUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class AlterListiniTable extends Migration
      */
     public function up()
     {
-        Schema::table('listini', function (Blueprint $table) {
-            $table->renameColumn('listino', 'u_listino');
-        });
+      Schema::table('users', function (Blueprint $table) {
+        $table->string('ditta',2)->default('')->comment('Ditta visibile all\'utente: kNet_it, _es, _fr ');
+      });
     }
 
     /**
@@ -24,8 +24,8 @@ class AlterListiniTable extends Migration
      */
     public function down()
     {
-        Schema::table('listini', function (Blueprint $table) {
-            $table->renameColumn('u_listino', 'listino');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn(['ditta']);
         });
     }
 }

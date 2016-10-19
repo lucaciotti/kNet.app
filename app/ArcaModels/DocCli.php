@@ -4,6 +4,8 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
+
 use Auth;
 
 class DocCli extends Model
@@ -12,7 +14,15 @@ class DocCli extends Model
   public $timestamps = false;
   // protected $primaryKey = 'codice';
   // public $incrementing = false;
+  protected $connection = '';
   protected $dates = ['datadoc', 'v1data'];
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
 
   // Scope that garante to find only Supplier from anagrafe
   protected static function boot()

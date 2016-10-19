@@ -4,6 +4,7 @@ namespace knet;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 
 class DocSup extends Model
 {
@@ -11,6 +12,14 @@ class DocSup extends Model
   public $timestamps = false;
   // protected $primaryKey = 'codice';
   // public $incrementing = false;
+  protected $connection = '';
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
 
   // Scope that garante to find only Supplier from anagrafe
   protected static function boot()

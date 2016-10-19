@@ -23,6 +23,8 @@ use knet\User;
 class ClientController extends Controller
 {
 
+    protected $connection = '';
+
     public function __construct(){
       $this->middleware('auth');
     }
@@ -32,7 +34,7 @@ class ClientController extends Controller
       if(Auth::user()->hasRole('client')){
         return redirect()->action('ClientController@detail', Auth::user()->codcli);
       }
-
+      // on($this->connection)->
       $clients = Client::where('statocf', 'T')->where('agente', '!=', '');
       $clients = $clients->select('codice', 'descrizion', 'codnazione', 'agente', 'localita', 'settore');
       $clients = $clients->with(['agent']);

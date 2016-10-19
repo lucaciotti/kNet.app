@@ -4,6 +4,7 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 
 class Product extends Model
 {
@@ -11,6 +12,7 @@ class Product extends Model
   public $timestamps = false;
   protected $primaryKey = 'codice';
   public $incrementing = false;
+  protected $connection = '';
 
   protected $dates = ['u_datacrea'];
   protected $appends = ['master_clas', 'master_grup', 'listino', 'tipo_prod'];
@@ -23,6 +25,13 @@ class Product extends Model
       static::addGlobalScope('Listino', function(Builder $builder) {
           $builder->where('u_artlis', '=', true);
       });
+  }
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
   }
 
   //Accessors

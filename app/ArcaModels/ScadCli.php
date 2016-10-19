@@ -4,6 +4,8 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
+
 use Auth;
 
 class ScadCli extends Model
@@ -12,6 +14,7 @@ class ScadCli extends Model
   public $timestamps = false;
   // protected $primaryKey = 'codice';
   // public $incrementing = false;
+  protected $connection = '';
   protected $dates = ['datafatt', 'datascad', 'datasollec'];
   protected $appends = ['desc_pag'];
 
@@ -43,6 +46,13 @@ class ScadCli extends Model
           });
         }
       }
+  }
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
   }
 
   public function getDescPagAttribute()

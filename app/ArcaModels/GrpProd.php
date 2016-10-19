@@ -4,6 +4,7 @@ namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 
 class GrpProd extends Model
 {
@@ -11,8 +12,7 @@ class GrpProd extends Model
   public $timestamps = false;
   protected $primaryKey = 'codice';
   public $incrementing = false;
-
-  // JOIN Tables LEN(column_name)
+  protected $connection = '';
 
   protected static function boot()
   {
@@ -22,4 +22,12 @@ class GrpProd extends Model
         $builder->whereRaw('length(codice)=3');
       });
   }
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
+
 }

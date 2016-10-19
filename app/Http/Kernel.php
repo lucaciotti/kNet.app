@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \knet\Http\Middleware\VerifyCsrfToken::class,
             // \knet\Http\Middleware\Ajaxify::class,
+            \knet\Http\Middleware\SetConnectionDB::class,
         ],
 
         'api' => [

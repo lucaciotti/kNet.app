@@ -22,13 +22,14 @@ class UserController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
     public function index(Request $req){
-      $users = User::with(['roles', 'client', 'agent'])
+      // $users = User::with(['roles', 'client', 'agent'])
+      $users = User::with(['roles'])
                 ->whereHas('roles', function($q){$q->whereNotIn('name', ['agent', 'superAgent', 'client']);})
                 ->orderBy('id')->get();
 
-      $agents = User::with(['roles', 'client', 'agent'])
+      $agents = User::with(['roles'])
                 ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'superAgent']);})
                 ->orderBy('id')->get();
 
@@ -39,7 +40,8 @@ class UserController extends Controller
     }
 
     public function indexCli(Request $req){
-      $clients = User::with(['roles', 'client', 'agent'])
+      // $clients = User::with(['roles', 'client', 'agent'])
+      $clients = User::with(['roles'])
                 ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'client']);})
                 ->orderBy('id')->get();
 

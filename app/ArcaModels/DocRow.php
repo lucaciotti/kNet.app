@@ -3,13 +3,22 @@
 namespace knet\ArcaModels;
 
 use Illuminate\Database\Eloquent\Model;
+use Torann\Registry\Facades\Registry;
 
 class DocRow extends Model
 {
   protected $table = 'docrig';
   public $timestamps = false;
+  protected $connection = '';
 
   protected $dates = ['dataconseg', 'u_dtpronto'];
+
+  public function __construct()
+  {
+    //Imposto la Connessione al Database
+    // dd(Registry::get('ditta_DB'));
+    $this->setConnection(Registry::get('ditta_DB'));
+  }
 
   // JOIN Tables
   public function doccli(){
