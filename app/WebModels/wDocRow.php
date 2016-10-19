@@ -3,12 +3,21 @@
 namespace knet\WebModels;
 
 use Illuminate\Database\Eloquent\Model;
+use Torann\Registry\Facades\Registry;
 
 class wDocRow extends Model
 {
     protected $table = 'w_docrig';
 
     protected $dates = ['dataconseg', 'u_dtpronto'];
+    protected $connection = '';
+
+    public function __construct()
+    {
+      //Imposto la Connessione al Database
+      // dd(Registry::get('ditta_DB'));
+      $this->setConnection(Registry::get('ditta_DB'));
+    }
 
     // JOIN Tables
     public function doccli(){

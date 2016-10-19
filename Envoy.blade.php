@@ -1,4 +1,4 @@
-@servers(['web' => 'luca@172.16.9.39', 'web2' => 'ced@213.152.198.49'])
+@servers(['kuantica' => 'ced@213.152.198.49'])
 
 @setup
   $repo = 'https://github.com/lucaciotti/kNet.app.git';
@@ -7,40 +7,52 @@
   $release = 'release_' . date('YmdHis');
 @endsetup
 
-@macro('deploy', ['on' => 'web'])
-    fetch_repo
-    run_composer
+@macro('deploy-dev', ['on' => 'kuantica'])
+    fetch_repo_dev
+    run_composer_dev
     update_permissions
     update_symlinks
 @endmacro
 
-@macro('deploy-kuantica', ['on' => 'web2'])
-    fetch_repo
-    run_composer
+@macro('deploy-master', ['on' => 'kuantica'])
+    fetch_repo_master
+    run_composer_master
     update_permissions
     update_symlinks
 @endmacro
 
-@task('fetch_repo')
+@task('fetch_repo_master')
     [ -d {{ $release_dir }} ] || mkdir {{ $release_dir }};
     cd {{ $release_dir }};
     git clone -b master --depth=1 {{ $repo }} {{ $release }};
-    {{-- git clone -b dev --depth=1 {{ $repo }} {{ $release }}; --}}
 @endtask
 
-@task('run_composer')
+@task('fetch_repo_dev')
+    [ -d {{ $release_dir }} ] || mkdir {{ $release_dir }};
+    cd {{ $release_dir }};
+    git clone -b dev --depth=1 {{ $repo }} {{ $release }};
+@endtask
+
+
+@task('run_composer_master')
     cd {{ $release_dir }}/{{ $release }};
-    {{-- composer install --prefer-dist; --}}
     composer install --prefer-dist --no-scripts;
     php artisan clear-compiled --env=production;
     php artisan optimize --env=production;
 @endtask
+
+@task('run_composer_dev')
+    cd {{ $release_dir }}/{{ $release }};
+    composer install --prefer-dist;
+@endtask
+
 
 @task('update_permissions')
     cd {{ $release_dir }};
     chgrp -R www-data {{ $release }};
     chmod -R ug+rwx {{ $release }};
 @endtask
+
 
 @task('update_symlinks')
     ln -nfs {{ $release_dir }}/{{ $release }} {{ $app_dir }};

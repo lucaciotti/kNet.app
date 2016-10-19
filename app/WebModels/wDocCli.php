@@ -4,12 +4,21 @@ namespace knet\WebModels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Torann\Registry\Facades\Registry;
 use Auth;
 
 class wDocCli extends Model
 {
     protected $table = 'w_doctes';
     protected $dates = ['datadoc', 'v1data'];
+    protected $connection = '';
+
+    public function __construct()
+    {
+      //Imposto la Connessione al Database
+      // dd(Registry::get('ditta_DB'));
+      $this->setConnection(Registry::get('ditta_DB'));
+    }
 
     protected static function boot()
     {
