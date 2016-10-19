@@ -18,7 +18,7 @@ class GrpCli extends Model
     //Imposto la Connessione al Database
     // dd(Registry::get('ditta_DB'));
     $this->setConnection(Registry::get('ditta_DB'));
-  }ssssssssssssssssssssss
+  }
 
   // JOIN Tables
   public function client(){

@@ -16,6 +16,7 @@ class SubClasProd extends Model
 
   public function __construct()
   {
+    self::boot();
     //Imposto la Connessione al Database
     // dd(Registry::get('ditta_DB'));
     $this->setConnection(Registry::get('ditta_DB'));
