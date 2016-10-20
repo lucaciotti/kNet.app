@@ -48,9 +48,10 @@ class Client extends Model
         }
     }
 
-    public function __construct()
+    public function __construct ($attributes = array())
     {
       self::boot();
+      parent::__construct($attributes);
       //Imposto la Connessione al Database
       // dd(Registry::get('ditta_DB'));
       $this->setConnection(Registry::get('ditta_DB'));

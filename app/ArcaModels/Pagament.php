@@ -13,8 +13,9 @@ class Pagament extends Model
   public $incrementing = false;
   protected $connection = '';
 
-  public function __construct()
+  public function __construct ($attributes = array())
   {
+    parent::__construct($attributes);
     //Imposto la Connessione al Database
     // dd(Registry::get('ditta_DB'));
     $this->setConnection(Registry::get('ditta_DB'));

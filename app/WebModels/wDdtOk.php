@@ -12,13 +12,13 @@ class wDdtOk extends Model
   protected $fillable = ['firma', 'note', 'id_testa', 'user_id'];
   protected $connection = '';
 
-  public function __construct()
+  public function __construct ($attributes = array())
   {
+    parent::__construct($attributes);
     //Imposto la Connessione al Database
     // dd(Registry::get('ditta_DB'));
     $this->setConnection(Registry::get('ditta_DB'));
   }
-
   // JOIN Tables
   public function doccli(){
     return $this->belongsTo('knet\ArcaModels\DocCli', 'id_testa', 'id');

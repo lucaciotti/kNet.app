@@ -13,8 +13,9 @@ class DocRow extends Model
 
   protected $dates = ['dataconseg', 'u_dtpronto'];
 
-  public function __construct()
+  public function __construct ($attributes = array())
   {
+    parent::__construct($attributes);
     //Imposto la Connessione al Database
     // dd(Registry::get('ditta_DB'));
     $this->setConnection(Registry::get('ditta_DB'));
