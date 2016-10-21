@@ -15,7 +15,7 @@ use knet\ArcaModels\Zona;
 use knet\ArcaModels\ScadCli;
 use knet\WebModels\wVisit;
 
-use knet\Scopes\AgentCliScope;
+use Torann\Registry\Facades\Registry;
 
 use Auth;
 use knet\User;

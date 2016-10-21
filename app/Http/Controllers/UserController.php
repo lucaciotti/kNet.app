@@ -8,6 +8,7 @@ use Excel;
 use Illuminate\Support\Facades\Input;
 use Session;
 use knet\Jobs\ImportUsersExcel;
+use Illuminate\Support\Facades\DB;
 
 use knet\Http\Requests;
 use Auth;
@@ -29,7 +30,7 @@ class UserController extends Controller
                 ->whereHas('roles', function($q){$q->whereNotIn('name', ['agent', 'superAgent', 'client']);})
                 ->orderBy('id')->get();
 
-      $agents = User::with(['roles'])
+      $agents = User::with(['roles', 'agent'])
                 ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'superAgent']);})
                 ->orderBy('id')->get();
 
@@ -40,8 +41,8 @@ class UserController extends Controller
     }
 
     public function indexCli(Request $req){
-      // $clients = User::with(['roles', 'client', 'agent'])
-      $clients = User::with(['roles'])
+      // $clients = User::with(['roles'])
+      $clients = User::with(['roles', 'client'])
                 ->whereHas('roles', function($q){$q->whereIn('name',['agent', 'client']);})
                 ->orderBy('id')->get();
 
@@ -65,6 +66,25 @@ class UserController extends Controller
       $agents = Agent::select('codice', 'descrizion')->get();
       // dd($user->roles->contains(33));
       return view('user.edit', [
+        'user' => $user,
+        'roles' => $roles,
+        'clients' => $clients,
+        'agents' => $agents,
+      ]);
+    }
+
+    public function show(Request $req, $id){
+      $user=User::with('roles')->findOrFail($id);
+      $roles = Role::all();
+      // DB::disconnect();
+      $clients = Client::select('codice', 'descrizion')
+                  ->withoutGlobalScope('agent')
+                  ->withoutGlobalScope('superAgent')
+                  ->withoutGlobalScope('client')->get();
+      // dd($clients);
+      $agents = Agent::select('codice', 'descrizion')->get();
+      // dd($user->roles->contains(33));
+      return view('user.profile', [
         'user' => $user,
         'roles' => $roles,
         'clients' => $clients,

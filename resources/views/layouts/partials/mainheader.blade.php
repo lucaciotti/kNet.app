@@ -127,7 +127,8 @@
                                 <img src="{{asset('/img/avatar_default.jpg')}}" class="img-circle" alt="User Image" />
                                 <p>
                                     {{ Auth::user()->name }}
-                                    <small>{{ trans('adminlte_lang::message.login') }}</small>
+                                    {{-- <small>{{ trans('adminlte_lang::message.login') }}</small> --}}
+                                    <small>Ditta: {{ Registry::get('ditta_DB') }}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
@@ -144,11 +145,9 @@
                             </li> --}}
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                              @if (!Auth::user()->hasRole('client') && !Auth::user()->hasRole('agent') && !Auth::user()->hasRole('superAgent'))
                                 <div class="pull-left">
-                                    <a href="{{ route('user::users.edit', Auth::user()->id ) }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
+                                    <a href="{{ route('user::users.show', Auth::user()->id ) }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
                                 </div>
-                              @endif
                                 <div class="pull-right">
                                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.signout') }}</a>
                                 </div>
@@ -156,7 +155,7 @@
                         </ul>
                     </li>
                 @endif
-                @if (!Auth::user()->hasRole('client') && !Auth::user()->hasRole('agent') && !Auth::user()->hasRole('superAgent'))
+                @if (!in_array(Registry::get('role'), ['client', 'agent', 'superAgent', 'user']))
                   <!-- Control Sidebar Toggle Button -->
                   <li>
                       <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>

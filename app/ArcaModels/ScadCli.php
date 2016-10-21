@@ -27,24 +27,46 @@ class ScadCli extends Model
           $builder->where('codcf', 'like', 'C%');
       });
 
-      if (Auth::check()){
-        if (Auth::user()->hasRole('agent')){
+      // if (Auth::check()){
+      //   if (Auth::user()->hasRole('agent')){
+      //     static::addGlobalScope('agent', function(Builder $builder) {
+      //         $builder->where('codag', Auth::user()->codag);
+      //     });
+      //   }
+      //   if (Auth::user()->hasRole('superAgent')){
+      //     static::addGlobalScope('superAgent', function(Builder $builder) {
+      //       $builder->whereHas('agent', function ($query){
+      //           $query->where('u_capoa', Auth::user()->codag);
+      //         });
+      //     });
+      //   }
+      //   if (Auth::user()->hasRole('client')){
+      //     static::addGlobalScope('client', function(Builder $builder) {
+      //         $builder->where('codcf', Auth::user()->codcli);
+      //     });
+      //   }
+      // }
+      switch (Registry::get('role')) {
+        case 'agent':
           static::addGlobalScope('agent', function(Builder $builder) {
-              $builder->where('codag', Auth::user()->codag);
+              $builder->where('codag', Registry::get('codag'));
           });
-        }
-        if (Auth::user()->hasRole('superAgent')){
+          break;
+        case 'superAgent':
           static::addGlobalScope('superAgent', function(Builder $builder) {
             $builder->whereHas('agent', function ($query){
-                $query->where('u_capoa', Auth::user()->codag);
+                $query->where('u_capoa', Registry::get('codag'));
               });
           });
-        }
-        if (Auth::user()->hasRole('client')){
+          break;
+        case 'client':
           static::addGlobalScope('client', function(Builder $builder) {
-              $builder->where('codcf', Auth::user()->codcli);
+              $builder->where('codcf', Registry::get('codcli'));
           });
-        }
+          break;
+
+        default:
+          break;
       }
   }
 

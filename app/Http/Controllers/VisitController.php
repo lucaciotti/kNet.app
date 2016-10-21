@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
 
 use knet\Http\Requests;
+use Torann\Registry\Facades\Registry;
 
 use knet\ArcaModels\Client;
 use knet\WebModels\wVisit;
@@ -18,7 +19,7 @@ class VisitController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
     public function index(Request $req, $codCli=null){
       // Redirect to Form Page
       if (empty($codCli)) {

@@ -8,6 +8,7 @@ use Carbon\Carbon;
 
 use knet\Http\Requests;
 use knet\ArcaModels\ScadCli;
+use Torann\Registry\Facades\Registry;
 
 class ScadCliController extends Controller
 {

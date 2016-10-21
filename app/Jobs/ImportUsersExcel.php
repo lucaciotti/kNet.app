@@ -18,14 +18,16 @@ class ImportUsersExcel extends Job implements ShouldQueue
 {
     use InteractsWithQueue, SerializesModels;
 
+    protected $file = '';
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($file)
     {
-        //
+        $this->file = $file;
     }
 
     /**
@@ -36,7 +38,7 @@ class ImportUsersExcel extends Job implements ShouldQueue
     public function handle()
     {
       $destinationPath = 'public/usersFiles';
-      $file = '82893.xlsx';
+      $file = $this->file;
       $rows = Excel::load($destinationPath."/".$file, function($reader) {})->all();
       $roleClient = Role::where('name', 'client')->first();
       $roleAgent = Role::where('name', 'agent')->first();
@@ -45,11 +47,23 @@ class ImportUsersExcel extends Job implements ShouldQueue
             if(!empty($row->email) && in_array($row->ruolo, ['A', 'C']) and strpos($row->email,"@")>0){
               $user = User::where("email", $row->email)->first();
               if($user==null){
-                $user = User::create([
-                  'name'  => $row->nome,
-                  'email' => $row->email,
-                  'password' => bcrypt($row->password),
-                ]);
+                if($row->ruolo == 'C'){
+                  $user = User::create([
+                    'name'  => $row->nome,
+                    'nickname' => $row->codice."@kNet.".$row->ditta,
+                    'email' => $row->email,
+                    'password' => bcrypt($row->password),
+                    'ditta' => $row->ditta
+                  ]);
+                } else {
+                  $user = User::create([
+                    'name'  => $row->nome,
+                    'nickname' => $row->email,
+                    'email' => $row->email,
+                    'password' => bcrypt($row->password),
+                    'ditta' => $row->ditta
+                  ]);
+                }
               }
               $user->roles()->detach();
               if($row->ruolo == 'C'){

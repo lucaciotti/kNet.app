@@ -32,7 +32,11 @@
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email" value="{{ old('email') }}"/>
+                    <input id="nickname" type="email" class="form-control" placeholder="Nickname Autocomplete..." name="nickname" value="{{ old('nickname') }}" readonly="readonly"/>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email" value="{{ old('email') }}" onchange=" updNickName(this) "/>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
@@ -69,6 +73,13 @@
             <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
+
+    <script>
+       function updNickName(obj){
+         $("#nickname").val(obj.value);
+         console.log(obj.value);
+       }
+    </script>
 
     @include('layouts.partials.scripts_auth')
 

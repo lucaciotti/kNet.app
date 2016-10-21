@@ -5,7 +5,6 @@
 @endsection
 
 @section('contentheader_title')
-    Gestione degli Utenti
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -14,8 +13,14 @@
 
 @section('main-content')
   <div class="row">
-      <div class="container">
-      <div class="col-lg-12">
+    <div class="col-lg-10 col-lg-offset-1">
+      <img src="{{asset('/img/avatar_default.jpg')}}" style="width:120px; height:120px; float:left; border-radius:50%; margin-right:25px;"/>
+      <h2>{{ $user->name }}'s Profile</h2>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
       <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title" data-widget="collapse">Modifica Utente</h3>

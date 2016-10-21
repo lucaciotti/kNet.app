@@ -157,25 +157,19 @@ return [
         knet\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
-
         // Acacha AdminLTE template provider
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
-
         Laravelista\Ekko\EkkoServiceProvider::class,
-
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
-
         // Entrust
         Zizaco\Entrust\EntrustServiceProvider::class,
-
         //GoogleMapper
         Cornford\Googlmapper\MapperServiceProvider::class,
-
         //Excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
-        \Torann\Currency\CurrencyServiceProvider::class,
-        \Torann\Registry\RegistryServiceProvider::class,
+        Torann\Currency\CurrencyServiceProvider::class,
+        Torann\Registry\RegistryServiceProvider::class,
+        A6digital\Image\DefaultProfileImageServiceProvider::class,
     ],
 
     /*
@@ -223,25 +217,15 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
-        /*
-         * Acacha AdminLTE template alias
-         */
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
-
         'Ekko' => Laravelista\Ekko\Facades\Ekko::class,
-
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
-
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
-        'Currency' => \Torann\Currency\Facades\Currency::class,
-
-        'Registry' => \Torann\Registry\Facades\Registry::class,
+        'Currency' => Torann\Currency\Facades\Currency::class,
+        'Registry' => Torann\Registry\Facades\Registry::class,
+        'DefaultProfileImage' => A6digital\Image\Facades\DefaultProfileImage::class,
     ],
 
 ];

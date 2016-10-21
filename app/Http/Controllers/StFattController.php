@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 use knet\Http\Requests;
+use Torann\Registry\Facades\Registry;
 
 use knet\ArcaModels\StatFatt;
 use knet\ArcaModels\Client;

@@ -27,24 +27,46 @@ class Client extends Model
             $builder->where('codice', 'like', 'C%');
         });
 
-        if (Auth::check()){
-          if (Auth::user()->hasRole('agent')){
+        // if (Auth::check()){
+        //   if (Auth::user()->hasRole('agent')){
+        //     static::addGlobalScope('agent', function(Builder $builder) {
+        //         $builder->where('agente', Auth::user()->codag);
+        //     });
+        //   }
+        //   if (Auth::user()->hasRole('superAgent')){
+        //     static::addGlobalScope('superAgent', function(Builder $builder) {
+        //       $builder->whereHas('agent', function ($query){
+        //           $query->where('u_capoa', Auth::user()->codag);
+        //         });
+        //     });
+        //   }
+        //   if (Auth::user()->hasRole('client')){
+        //     static::addGlobalScope('client', function(Builder $builder) {
+        //         $builder->where('codice', Auth::user()->codcli);
+        //     });
+        //   }
+        // }
+        switch (Registry::get('role')) {
+          case 'agent':
             static::addGlobalScope('agent', function(Builder $builder) {
-                $builder->where('agente', Auth::user()->codag);
+                $builder->where('agente', Registry::get('codag'));
             });
-          }
-          if (Auth::user()->hasRole('superAgent')){
+            break;
+          case 'superAgent':
             static::addGlobalScope('superAgent', function(Builder $builder) {
               $builder->whereHas('agent', function ($query){
-                  $query->where('u_capoa', Auth::user()->codag);
+                  $query->where('u_capoa', Registry::get('codag'));
                 });
             });
-          }
-          if (Auth::user()->hasRole('client')){
+            break;
+          case 'client':
             static::addGlobalScope('client', function(Builder $builder) {
-                $builder->where('codice', Auth::user()->codcli);
+                $builder->where('codice', Registry::get('codcli'));
             });
-          }
+            break;
+
+          default:
+            break;
         }
     }
 

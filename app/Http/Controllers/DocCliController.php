@@ -11,6 +11,7 @@ use knet\ArcaModels\DocCli;
 use knet\ArcaModels\Destinaz;
 use knet\ArcaModels\DocRow;
 use knet\WebModels\wDdtOk;
+use Torann\Registry\Facades\Registry;
 
 class DocCliController extends Controller
 {
@@ -18,7 +19,7 @@ class DocCliController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
   public function index (Request $req, $tipomodulo=null){
     $docs = DocCli::select('id', 'tipodoc', 'numerodoc', 'datadoc', 'codicecf', 'numerodocf', 'numrighepr', 'totdoc');
     if ($tipomodulo){
