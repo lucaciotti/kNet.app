@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1e869466d4642d3eb92695f949c5965",
+    "hash": "91cf7834ae57bd1633a023d9f6c69fbf",
     "content-hash": "7a7dd9a7b429a7e4bb03bfa8b8a03cd5",
     "packages": [
         {
@@ -210,16 +210,16 @@
         },
         {
             "name": "cornford/googlmapper",
-            "version": "v2.18.0",
+            "version": "v2.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bradcornford/Googlmapper.git",
-                "reference": "8268a1f32b46ab040735b7766d4d20cd5a18fb3d"
+                "reference": "4c95746a8fcf95359d029a494a38d1fc2bb930b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bradcornford/Googlmapper/zipball/8268a1f32b46ab040735b7766d4d20cd5a18fb3d",
-                "reference": "8268a1f32b46ab040735b7766d4d20cd5a18fb3d",
+                "url": "https://api.github.com/repos/bradcornford/Googlmapper/zipball/4c95746a8fcf95359d029a494a38d1fc2bb930b1",
+                "reference": "4c95746a8fcf95359d029a494a38d1fc2bb930b1",
                 "shasum": ""
             },
             "require": {
@@ -256,7 +256,7 @@
                 "maps",
                 "streetview"
             ],
-            "time": "2016-10-19 07:24:58"
+            "time": "2016-10-20 08:38:20"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -1254,16 +1254,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.30",
+            "version": "1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198"
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/75138bb14160f3ba963750aa95e08d1d394fb198",
-                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
                 "shasum": ""
             },
             "require": {
@@ -1333,7 +1333,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-18 16:20:02"
+            "time": "2016-10-19 20:38:46"
         },
         {
             "name": "maatwebsite/excel",

@@ -45,6 +45,10 @@ Route::group(['as' => 'user::'], function () {
     'as' => 'actLike',
     'uses' => 'UserController@actLike'
   ]);
+  Route::post('/user_changeDB', [
+    'as' => 'changeDB',
+    'uses' => 'UserController@changeSelfDitta'
+  ]);
 });
 
 Route::group(['as' => 'client::'], function () {

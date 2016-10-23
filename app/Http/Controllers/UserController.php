@@ -126,4 +126,11 @@ class UserController extends Controller
       Auth::loginUsingId($id);
       return redirect()->action('HomeController@index');
     }
+
+    public function changeSelfDitta(Request $req) {
+      $user = Auth::user();
+      $user->ditta = $req->input('ditta');
+      $user->save();
+      return redirect()->action('HomeController@index');
+    }
 }
