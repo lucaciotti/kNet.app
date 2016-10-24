@@ -14,7 +14,7 @@
     update_symlinks
 @endmacro
 
-@macro('deploy-master', ['on' => 'kuantica'])
+@macro('deploy-master', ['on' => 'kNet'])
     fetch_repo_master
     run_composer_master
     update_permissions
