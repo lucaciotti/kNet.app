@@ -45,9 +45,9 @@ class ImportUsersExcel extends Job implements ShouldQueue
       foreach ($rows as $row) {
       	    // dd($row);
             if(!empty($row->email) && in_array($row->ruolo, ['A', 'C']) and strpos($row->email,"@")>0){
-              $user = User::where("email", $row->email)->first();
-              if($user==null){
-                if($row->ruolo == 'C'){
+              if($row->ruolo == 'C'){
+                $user = User::where("nickname", $row->codice."@kNet.".$row->ditta)->first();
+                if($user==null){ // Creo l'Utente
                   $user = User::create([
                     'name'  => $row->nome,
                     'nickname' => $row->codice."@kNet.".$row->ditta,
@@ -55,7 +55,10 @@ class ImportUsersExcel extends Job implements ShouldQueue
                     'password' => bcrypt($row->password),
                     'ditta' => $row->ditta
                   ]);
-                } else {
+                }
+              } else {
+                $user = User::where("nickname", $row->email)->first();
+                if($user==null){ // Creo l'Utente
                   $user = User::create([
                     'name'  => $row->nome,
                     'nickname' => $row->email,
