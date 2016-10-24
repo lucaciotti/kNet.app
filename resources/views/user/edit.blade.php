@@ -38,8 +38,12 @@
               <input type="text" class="form-control" name="name" value="{{$user->name}}">
             </div>
             <div class="form-group">
+              <label>NickName</label>
+              <input type="text" class="form-control" name="nickname" value="{{$user->nickname}}" readonly="readonly">
+            </div>
+            <div class="form-group">
               <label>Email</label>
-              <input type="text" class="form-control" name="email" value="{{$user->email}}" disabled>
+              <input type="text" class="form-control" name="email" value="{{$user->email}}" required>
             </div>
             <div class="form-group">
               <label>Ruolo</label>
@@ -54,10 +58,6 @@
                 @endforeach
               </select>
             </div>
-            {{-- <div class="form-group">
-              <label>Cod. Agente</label>
-              <input type="text" class="form-control" name="codag" value="{{$user->codag}}">
-            </div> --}}
             <div class="form-group">
               <label>Cod. Agente</label>
               <select name="codag" class="form-control select2" style="width: 100%;">
@@ -71,10 +71,6 @@
                 @endforeach
               </select>
             </div>
-            {{-- <div class="form-group">
-              <label>Cod. Cliente</label>
-              <input type="text" class="form-control" name="codcli" value="{{$user->codcli}}">
-            </div> --}}
             <div class="form-group">
               <label>Cod. Cliente</label>
               <select name="codcli" class="form-control select2" style="width: 100%;">
@@ -88,6 +84,21 @@
                 @endforeach
               </select>
             </div>
+
+            <div class="form-group">
+              <label>Ditta</label>
+              @if (Registry::get('role')=='admin')
+                <select name="ditta" class="form-control" style="width: 100%;">
+                  <option value="it" @if ($user->ditta=='it') selected="selected" @endif>kNet Italia</option>
+                  <option value="es" @if ($user->ditta=='es') selected="selected" @endif>kNet Spagna</option>
+                  <option value="fr" @if ($user->ditta=='fr') selected="selected" @endif>kNet Francia</option>
+                </select>
+              @else
+                <input type="text" class="form-control" name="ditta" value="kNet_{{$user->ditta}}" readonly="readonly">
+              @endif
+
+            </div>
+
             <div>
               <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
             </div>

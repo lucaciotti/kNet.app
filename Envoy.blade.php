@@ -1,4 +1,4 @@
-@servers(['kuantica' => 'ced@213.152.198.49'])
+@servers(['kNet' => 'ced@213.152.198.50', 'kuantica' => 'ced@213.152.198.49'])
 
 @setup
   $repo = 'https://github.com/lucaciotti/kNet.app.git';
@@ -62,10 +62,10 @@
     ln -nfs ../../.env .env;
     chgrp -h www-data .env;
 
-    rm -r {{ $release_dir }}/{{ $release }}/storage/logs;
+    {{-- rm -r {{ $release_dir }}/{{ $release }}/storage/logs;
     cd {{ $release_dir }}/{{ $release }}/storage;
     ln -nfs ../../../logs logs;
-    chgrp -h www-data logs;
+    chgrp -h www-data logs; --}}
 
     sudo service php5-fpm reload;
 @endtask

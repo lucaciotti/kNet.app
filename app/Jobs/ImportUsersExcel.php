@@ -39,11 +39,14 @@ class ImportUsersExcel extends Job implements ShouldQueue
     {
       $destinationPath = 'public/usersFiles';
       $file = $this->file;
+      Log::info("INIZIO IMPORTAZIONE UTENTI da file: ".$this->file);
       $rows = Excel::load($destinationPath."/".$file, function($reader) {})->all();
+      Log::info("Numero di Righe: ".count($rows));
       $roleClient = Role::where('name', 'client')->first();
       $roleAgent = Role::where('name', 'agent')->first();
       foreach ($rows as $row) {
       	    // dd($row);
+            Log::info($row->codice);
             if(!empty($row->email) && in_array($row->ruolo, ['A', 'C']) and strpos($row->email,"@")>0){
               if($row->ruolo == 'C'){
                 $user = User::where("nickname", $row->codice."@kNet.".$row->ditta)->first();
@@ -76,11 +79,12 @@ class ImportUsersExcel extends Job implements ShouldQueue
                 $user->codag = $row->codice;
                 $user->attachRole($roleAgent->id);
               }
-            Log::info($user->name.' caricato');
+            Log::info($row->codice.' '.$user->name.' caricato');
             $user->save();
             // Session::flash('success', 'Upload successfully');
             // dd($user);
           }
       }
+    Log::info('FINE PROCEDURA IMPORT UTENTI!');
     }
 }

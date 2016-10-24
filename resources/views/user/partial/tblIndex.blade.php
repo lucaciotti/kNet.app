@@ -10,7 +10,6 @@
     <th>&nbsp;</th>
   </thead>
   <tbody>
-    @if (count($users) > 1)
       @foreach ($users as $user)
         <tr>
           <td>
@@ -53,18 +52,6 @@
           </td>
         </tr>
       @endforeach
-    @else
-      <tr>
-        <td>
-          <a href="{{ route('user::users.show', $users->id ) }}"> {{ $users->id }}</a>
-        </td>
-        <td>{{ $users->name }}</td>
-        <td>{{ $users->email }}</td>
-        <td>@foreach ($users->roles as $role)
-          {{ $role->display_name }}
-        @endforeach</td>
-      </tr>
-    @endif
 
   </tbody>
 </table>
