@@ -25,8 +25,8 @@ class SetConnectionDB
                 'ditta_DB' => env('DB_CNCT_IT', 'kNet_it'),
                 'location' => 'it',
                 'role' => $user->roles()->first()->name,
-                'codag' => $user->codag,
-                'codcli' => $user->codcli
+                'codag' => (string)$user->codag,
+                'codcli' => (string)$user->codcli
               ];
               break;
             case 'fr':
@@ -34,8 +34,8 @@ class SetConnectionDB
                 'ditta_DB' => env('DB_CNCT_FR', 'kNet_fr'),
                 'location' => 'fr',
                 'role' => $user->roles()->first()->name,
-                'codag' => $user->codag,
-                'codcli' => $user->codcli
+                'codag' => (string)$user->codag,
+                'codcli' => (string)$user->codcli
               ];
               break;
             case 'es':
@@ -43,8 +43,8 @@ class SetConnectionDB
                 'ditta_DB' => env('DB_CNCT_ES', 'kNet_es'),
                 'location' => 'es',
                 'role' => $user->roles()->first()->name,
-                'codag' => $user->codag,
-                'codcli' => $user->codcli
+                'codag' => (string)$user->codag,
+                'codcli' => (string)$user->codcli
               ];
               break;
 
