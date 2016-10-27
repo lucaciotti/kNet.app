@@ -99,7 +99,9 @@ class StFattController extends Controller
                             }
                             ])
                           ->get();
-      $prevMonth = (Carbon::now()->month)-1;
+      $prevMonth = (Carbon::now()->month);
+      $valMese = 'valore' . $prevMonth;
+      $prevMonth = ($fatTot->first()->$valMese == 0) ? $prevMonth-1 : $prevMonth;
       $stats = $this->makeFatTgtJson($fatTot, $target, $prevMonth);
       return view('stFatt.idxAg', [
         'agents' => $agents,
@@ -199,7 +201,9 @@ class StFattController extends Controller
                             }
                             ])
                           ->get();
-      $prevMonth = (Carbon::now()->month)-1;
+      $prevMonth = (Carbon::now()->month);
+      $valMese = 'valore' . $prevMonth;
+      $prevMonth = $fatTot->isEmpty() ? $prevMonth : (($fatTot->first()->$valMese == 0) ? $prevMonth-1 : $prevMonth);
       $stats = $this->makeFatTgtJson($fatTot, $target, $prevMonth);
       // dd($stats);
       // dd($clients->first());
