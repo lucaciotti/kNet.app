@@ -10,7 +10,6 @@
       <a href="http://www.k-group.com">K-Group</a>.
     </strong>
     {{ trans('adminlte_lang::message.createdby') }}
-    <a href="https://github.com/lucaciotti">Luca Ciotti</a>.
-    {{-- {{ trans('adminlte_lang::message.seecode') }}
-    <a href="https://github.com/lucaciotti">Github</a> --}}
+    {{-- <a href="https://github.com/lucaciotti">Luca Ciotti</a>. --}}
+    <a href="#">Luca Ciotti</a>.
 </footer>

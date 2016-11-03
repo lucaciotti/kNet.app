@@ -69,7 +69,7 @@
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="Sped">
-          @if($head->tipomodulo == 'B')
+          @if($head->tipomodulo == 'B' || $head->tipodoc == 'BV' || $head->tipodo == 'EQ')
           <dl class="dl-horizontal">
             <dt>N° Colli</dt>
             <dd>{{$head->colli}}</dd>
