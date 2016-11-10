@@ -55,15 +55,15 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
+                <li class="active"><a href="#home" class="smoothScroll">{{ trans('_message.home') }}</a></li>
                 {{-- <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
                 <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li> --}}
-                <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
+                <li><a href="#contact" class="smoothScroll">{{ trans('_message.contact') }}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
-                    <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
+                    <li><a href="{{ url('/login') }}">{{ trans('_message.login') }}</a></li>
+                    <li><a href="{{ url('/register') }}">{{ trans('_message.register') }}</a></li>
                 @else
                     <li><a href="/home">{{ Auth::user()->name }}</a></li>
                 @endif
@@ -78,9 +78,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <div class="row centered">
             <div class="col-lg-12">
-                <h1>kNet <b><a href="http://intranet.krona.it">2.0</a></b></h1>
-                <h3>Un progetto per rinnovare i servizi di intranet aziendali volto ad offrire una migliore esperienza e servizio informatizzato ai nostri Clienti ed Agenti.</h3>
-                {{-- <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3> --}}
+                <h1>kNet <b><a href="http://knet.kronakoblenz.it">2.0</a></b></h1>
+                <h3>{{ trans('landing.knetMission') }}</h3>
             </div>
             {{-- <div class="col-lg-2">
                 <h5>{{ trans('adminlte_lang::message.amazing') }}</h5>
@@ -106,22 +105,22 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <h1>Servizi Offerti</h1>
+            <h1>{{ trans('landing.services') }}</h1>
             <br>
             <br>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro01.png') }}" alt="">
-                <h3>{{ trans('adminlte_lang::message.community') }}</h3>
+                <h3>{{ trans('_message.community') }}</h3>
                 {{-- <p>{{ trans('adminlte_lang::message.see') }} <a href="https://github.com/acacha/adminlte-laravel">{{ trans('adminlte_lang::message.githubproject') }}</a>, {{ trans('adminlte_lang::message.post') }} <a href="https://github.com/acacha/adminlte-laravel/issues">{{ trans('adminlte_lang::message.issues') }}</a> {{ trans('adminlte_lang::message.and') }} <a href="https://github.com/acacha/adminlte-laravel/pulls">{{ trans('adminlte_lang::message.pullrequests') }}</a></p> --}}
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro02.png') }}" alt="">
-                <h3>{{ trans('adminlte_lang::message.schedule') }}</h3>
+                <h3>{{ trans('_message.schedule') }}</h3>
                 {{-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> --}}
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro03.png') }}" alt="">
-                <h3>{{ trans('adminlte_lang::message.monitoring') }}</h3>
+                <h3>{{ trans('_message.monitoring') }}</h3>
                 {{-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> --}}
             </div>
         </div>
@@ -245,11 +244,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="footerwrap">
     <div class="container">
         <div class="col-lg-5">
-            <h3>{{ trans('adminlte_lang::message.address') }}</h3>
+            <h3>{{ trans('_message.address') }}</h3>
             <p>
                 via Piane 90,<br/>
                 Coriano, Rimini<br/>
-                47924<br/>
+                47853<br/>
                 Italia
             </p>
         </div>
@@ -280,7 +279,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <p>
             <a href="http://intranet.krona.it"></a><b>kNet 2.0</b></a>.<br/>
-            <strong>Copyright &copy; 2016.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="https://github.com/lucaciotti">Luca Ciotti</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/lucaciotti">Github</a>
+            <strong>Copyright &copy; 2016.</strong> {{ trans('_message.createdby') }} <a href="#">Luca Ciotti</a>.
         </p>
 
     </div>

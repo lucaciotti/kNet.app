@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Scadenze
+    - {{ trans('scad.headTitle_idx') }}
 @endsection
 
 @section('contentheader_title')
-    Lista Scadenze
+    {{ trans('scad.contentTitle_idx') }}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -17,7 +17,7 @@
   <div class="col-lg-7">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Lista Scadenze</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('scad.listScads') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
@@ -31,7 +31,7 @@
   <div class="col-lg-5">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Filtra</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('scad.filter') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}

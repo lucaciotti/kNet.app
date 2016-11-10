@@ -17,7 +17,8 @@
         "maatwebsite/excel": "~2.1.0",
         "torann/currency": "^0.3.4",
         "torann/registry": "0.2.*@dev",
-        "a6digital/laravel-default-profile-image": "^1.0"
+        "a6digital/laravel-default-profile-image": "^1.0",
+        "torann/geoip": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

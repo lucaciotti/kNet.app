@@ -9,17 +9,17 @@
   <thead>
     <tr>
       <th rowspan="2">&nbsp;</th>
-      <th colspan="3" style="text-align: center;">Mese</th>
-      <th colspan="3" style="text-align: center;">Progressivo</th>
+      <th colspan="3" style="text-align: center;">{{ trans('stFatt.monthly') }}</th>
+      <th colspan="3" style="text-align: center;">{{ trans('stFatt.cumulative') }}</th>
     </tr>
     <tr>
-      <th style="text-align: center;">FATTURATO</th>
-      <th style="text-align: center;">TARGET</th>
-      <th style="text-align: center;">% Mancante</th>
+      <th style="text-align: center;">{{ strtoupper(trans('stFatt.revenue')) }}</th>
+      <th style="text-align: center;">{{ strtoupper(trans('stFatt.target')) }}</th>
+      <th style="text-align: center;">% {{ trans('stFatt.missing') }}</th>
 
-      <th style="text-align: center;">FATTURATO</th>
-      <th style="text-align: center;">TARGET</th>
-      <th style="text-align: center;">% Mancante</th>
+      <th style="text-align: center;">{{ strtoupper(trans('stFatt.revenue')) }}</th>
+      <th style="text-align: center;">{{ strtoupper(trans('stFatt.target')) }}</th>
+      <th style="text-align: center;">% {{ trans('stFatt.missing') }}</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +34,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Gennaio
+      <th>{{ trans('stFatt.january') }}
         @if ($prevMonth==1)
           &nbsp; >>
         @endif
@@ -55,7 +55,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Febbraio
+      <th>{{ trans('stFatt.february') }}
         @if ($prevMonth==2)
           &nbsp; >>
         @endif
@@ -76,7 +76,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Marzo
+      <th>{{ trans('stFatt.march') }}
         @if ($prevMonth==3)
           &nbsp; >>
         @endif
@@ -97,7 +97,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Aprile
+      <th>{{ trans('stFatt.april') }}
         @if ($prevMonth==4)
           &nbsp; >>
         @endif
@@ -118,7 +118,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Maggio
+      <th>{{ trans('stFatt.may') }}
         @if ($prevMonth==5)
           &nbsp; >>
         @endif
@@ -139,7 +139,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Giugno
+      <th>{{ trans('stFatt.june') }}
         @if ($prevMonth==6)
           &nbsp; >>
         @endif
@@ -160,7 +160,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Luglio
+      <th>{{ trans('stFatt.july') }}
         @if ($prevMonth==7)
           &nbsp; >>
         @endif
@@ -181,7 +181,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Agosto
+      <th>{{ trans('stFatt.august') }}
         @if ($prevMonth==8)
           &nbsp; >>
         @endif
@@ -202,7 +202,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Settembre
+      <th>{{ trans('stFatt.september') }}
         @if ($prevMonth==9)
           &nbsp; >>
         @endif
@@ -223,7 +223,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Ottobre
+      <th>{{ trans('stFatt.october') }}
         @if ($prevMonth==10)
           &nbsp; >>
         @endif
@@ -244,7 +244,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Novembre
+      <th>{{ trans('stFatt.november') }}
         @if ($prevMonth==11)
           &nbsp; >>
         @endif
@@ -265,7 +265,7 @@
       $deltaProg = $tgtProg==0 ? 0 : round((($tgtProg-$fatProg) / $tgtProg) * 100,2);
     @endphp
     <tr>
-      <th>Dicembre
+      <th>{{ trans('stFatt.december') }}
         @if ($prevMonth==12)
           &nbsp; >>
         @endif
@@ -280,7 +280,7 @@
   </tbody>
   <tfoot class="bg-gray">
     <tr>
-      <th>TOTALE</th>
+      <th>{{ strtoupper(trans('stFatt.granTot')) }}</th>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>

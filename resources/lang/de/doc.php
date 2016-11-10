@@ -4,19 +4,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Voci della Pagina Scadenze -> Index Page
+    | Voci della Pagina Documenti -> Index Page
     |--------------------------------------------------------------------------
     |
     */
 
-    'headTitle_idx'           => 'Scadenze',
-    'contentTitle_idx'        => 'Lista Scadenze',
+    'headTitle_idx'           => 'Documenti',
+    'contentTitle_idx'        => 'Lista :tipoDoc',
     'contentDesc_idx'         => '',
 
-    'listScads'               => 'Lista Scadenze',
+    'listDocs'                => 'Lista Documenti',
     'filter'                  => 'Filtro',
+    'changeDoc'               => 'Cambia Tipologia Documento',
+    'forCli'                  => 'per :client',
 
-    //---------------Continua da Qui  <--
+    /*
+    |--------------------------------------------------------------------------
+    | Voci della Pagina Documenti -> Detail Page
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    'headTitle_dtl'           => '',
+    'contentTitle_dtl'        => '',
+    'contentDesc_dtl'         => 'del :date',
 
     'dataDoc'                 => 'Dati Documento',
     'dataSped'                => 'Dati Spedizione',
@@ -62,6 +73,39 @@ return [
     'carrierDelivery'         => 'Partenza Vettore',
     'goodsDestination'        => 'Destinazione Merce',
 
-    //-----------------------------------------------------------------Fine Prima Parte
+    'totMerce'                => 'Tot. Merce',
+    'deliveryCost'            => 'Spese Trasporto',
+    'totImp'                  => 'Tot. Imponibile',
+    'totVat'                  => 'Tot. IVA',
+
+    'lnkPayment'              => 'Scadenza Associata',
+    'datePay'                 => 'Data Scad.',
+    'numInvoice'              => 'Num. Fatt.',
+    'dateInvoice'             => 'Data Fatt.',
+    'merged'                  => 'Accorpata',
+    'valueToPay'              => 'Importo Scad.',
+    'valuePayed'              => 'Importo Pagato',
+
+    'prevDocs'                => 'Documenti Prelevati',
+    'nextDocs'                => 'Documenti Successivi',
+
+    '#Row'                    => '# Riga',
+    'codeArt'                 => 'Codice Articolo',
+    'descArt'                 => 'Descrizione Articolo',
+    'codeLot'                 => 'Codice Lotto',
+    'quantity_condensed'      => 'Qtà',
+    'unitPrice'               => 'Prezzo Un.',
+    'totPrice'                => 'Prezzo Tot.',
+    'discount'                => 'Sconto',
+
+    // Table Index
+    'typeDoc'                 => 'Tipo Doc.',
+    '#Doc'                    => '# Doc.',
+    'dateDoc_codensed'        => 'Data Doc.',
+    'referenceDoc_condense'   => 'Riferimento Doc.',
+
+    //filter
+    'descClient'              => 'Ragione Sociale',
+    'anyDate'                 => 'Qualsiasi Data',
 
 ];

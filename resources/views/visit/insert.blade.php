@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Visite Clienti
+    - {{ trans('visit.headTitle_ins') }}
 @endsection
 
 @section('contentheader_title')
@@ -22,7 +22,7 @@
       <div class="col-lg-12">
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Inserimento Visite</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('visit.insEvent') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -33,7 +33,7 @@
               {{ csrf_field() }}
 
             <div class="form-group">
-              <label>Cliente</label>
+              <label>{{ trans('visit.client') }}</label>
               <select name="codcli" class="form-control select2" style="width: 100%;">
                 @if ($client instanceof Illuminate\Database\Eloquent\Collection)
                   @if ($client->count()>1)
@@ -49,34 +49,34 @@
             </div>
 
             <div class="form-group">
-              <label>Tipologia</label>
+              <label>{{ trans('visit.eventType') }}</label>
               <select name="tipo" class="form-control select2" style="width: 100%;">
                 <option value=""> </option>
-                <option value="Meet">Meeting</option>
-                <option value="Mail">Mail</option>
-                <option value="Prod">Presentazione Prodotto</option>
-                <option value="Scad">Scadenza</option>
-                <option value="RNC">Non Conformità</option>
+                <option value="Meet">{{ trans('visit.eventMeeting') }}</option>
+                <option value="Mail">{{ trans('visit.eventMail') }}</option>
+                <option value="Prod">{{ trans('visit.eventProduct') }}</option>
+                <option value="Scad">{{ trans('visit.eventDebt') }}</option>
+                <option value="RNC">{{ trans('visit.eventRNC') }}</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label>Date:</label>
+              <label>{{ trans('visit.eventDate') }}:</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input type="text" class="form-control pull-right datepicker" name="data">
+                <input type="text" class="form-control pull-right datepicker" name="data" readonly="true">
               </div>
             </div>
 
             <div class="form-group">
-              <label>Breve Descrizione</label>
+              <label>{{ trans('visit.eventDesc') }}</label>
               <input type="text" class="form-control" name="descrizione" value="" placeholder="Descrizione">
             </div>
 
             <div class="form-group">
-              <label>Note</label>
+              <label>{{ trans('visit.eventNote') }}</label>
               {{-- <textarea class="form-control" rows="6" name="note" placeholder="Dettagli &hellip;"></textarea>
               style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"--}}
               <textarea class="textarea" placeholder="Place some text here" name="note"
@@ -98,7 +98,7 @@
             @endpush
 
             <div>
-              <button type="submit" class="btn btn-primary">Salva</button>
+              <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
             </div>
           </form>
 

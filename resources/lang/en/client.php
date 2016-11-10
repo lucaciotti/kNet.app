@@ -14,6 +14,7 @@ return [
     'contentDesc_idx'         => '',
 
     'listCli'                 => 'Customers\' List',
+    'filter'                  => 'Filter',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,11 +91,12 @@ return [
     'closedStatus'            => 'Closed',
     'allStatus'               => 'All',
 
+    'allDocs'                 => 'All',
     'orders'                  => 'Orders',
     'quotes'                  => 'Quotes',
     'ddt'                     => 'Delivery Notes',
     'invoice'                 => 'Invoices',
-    'notecredito?'            => 'Credit Notes',
+    'notecredito'            => 'Credit Notes',
 
     'revenue'                 => 'Turnover',
 

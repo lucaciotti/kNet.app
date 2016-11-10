@@ -9,7 +9,7 @@
       Copyright &copy; 2016
       <a href="http://www.k-group.com">K-Group</a>.
     </strong>
-    {{ trans('adminlte_lang::message.createdby') }}
+    {{ trans('_message.createdby') }}
     {{-- <a href="https://github.com/lucaciotti">Luca Ciotti</a>. --}}
     <a href="#">Luca Ciotti</a>.
 </footer>

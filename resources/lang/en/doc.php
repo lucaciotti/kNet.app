@@ -73,5 +73,46 @@ return [
     'carrierDelivery'         => 'Carrier Departure',
     'goodsDestination'        => 'Goods Destination',
 
+    'totMerce'                => 'Goods Tot.',
+    'deliveryCost'            => 'Transport Cost',
+    'totImp'                  => 'Taxable Tot.',
+    'totVat'                  => 'VAT Tot.',
 
+    'lnkPayment'              => 'Associated Due Date',
+    'datePay'                 => 'Due Date',
+    'numInvoice'              => 'Inv. Num.',
+    'dateInvoice'             => 'Inv. Date',
+    'merged'                  => 'Grouped',
+    'valueToPay'              => 'Expiring Amount',
+    'valuePayed'              => 'Paid Amount',
+
+    'prevDocs'                => 'Collected Documents',
+    'nextDocs'                => 'Following Documents',
+
+    '#Row'                    => '# Line',
+    'codeArt'                 => 'Item Code',
+    'descArt'                 => 'Item Description',
+    'codeLot'                 => 'Lot Code',
+    'quantity_condensed'      => 'Qty',
+    'unitPrice'               => 'Un. Price',
+    'totPrice'                => 'Tot. Price',
+    'discount'                => 'Discount',
+
+    // Table Index
+    'typeDoc_condensed'       => 'Doc. Type',
+    'typeDoc'                 => 'Documents Type',
+    '#Doc'                    => 'Doc. #',
+    'dateDoc_condensed'        => 'Doc. Date',
+    'referenceDoc_condensed'   => 'Doc. Reference',
+
+    //filter
+    'descClient'              => 'Business Name',
+    'anyDate'                 => 'Any Date',
+
+    'allDocs'                 => 'All',
+    'orders'                  => 'Orders',
+    'quotes'                  => 'Quotes',
+    'ddt'                     => 'Delivery Notes',
+    'invoice'                 => 'Invoices',
+    'notecredito'             => 'Credit Notes',
 ];

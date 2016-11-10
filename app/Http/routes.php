@@ -49,6 +49,10 @@ Route::group(['as' => 'user::'], function () {
     'as' => 'changeDB',
     'uses' => 'UserController@changeSelfDitta'
   ]);
+  Route::post('/user_changeLang', [
+    'as' => 'changeLang',
+    'uses' => 'UserController@changeSelfLang'
+  ]);
 });
 
 Route::group(['as' => 'client::'], function () {

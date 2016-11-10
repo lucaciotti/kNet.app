@@ -23,14 +23,14 @@ return [
     'quotes'                  => 'Devis',
     'ddt'                     => 'Bons de livraison',
     'invoice'                 => 'Factures',
-    'notecredito?'            => 'Note de Crédit',
-    'debts?'                  => 'Echéances',
+    'notecredito'            => 'Note de Crédit',
+    'payment'                  => 'Echéances',
     'products'                => 'Produits',
     'insVisits'               => 'Saisies Visites Clients',
     'statsFatt'               => 'Statistiques Chiffre d\'affaires',
     'agent'                   => 'Agent',
     'client'                  => 'Client',
-    'zona?'                   => 'Zone',
+    'zona'                   => 'Zone',
     'superAgent'              => 'Chef de zone / Export Manager',
 
     // Prossime Implementazioni

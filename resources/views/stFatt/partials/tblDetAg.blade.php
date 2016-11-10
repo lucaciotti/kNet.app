@@ -7,11 +7,11 @@
     <tr>
       <th rowspan="2">&nbsp;</th>
       <th rowspan="2">&nbsp;</th>
-      <th colspan="2" style="text-align: center;">FATTURATO</th>
+      <th colspan="2" style="text-align: center;">{{ strtoupper(trans('stFatt.revenue')) }}</th>
     </tr>
     <tr>
-      <th style="text-align: center;">Mese</th>
-      <th style="text-align: center;">Progressivo</th>
+      <th style="text-align: center;">{{ trans('stFatt.monthly') }}</th>
+      <th style="text-align: center;">{{ trans('stFatt.cumulative') }}</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Gennaio</th>
+        <th>{{ trans('stFatt.january') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -35,7 +35,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Febbraio</th>
+        <th>{{ trans('stFatt.february') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -45,7 +45,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Marzo</th>
+        <th>{{ trans('stFatt.march') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -55,7 +55,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Aprile</th>
+        <th>{{ trans('stFatt.april') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -65,7 +65,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Maggio</th>
+        <th>{{ trans('stFatt.may') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -75,7 +75,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Giugno</th>
+        <th>{{ trans('stFatt.june') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -85,7 +85,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Luglio</th>
+        <th>{{ trans('stFatt.july') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -95,7 +95,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Agosto</th>
+        <th>{{ trans('stFatt.august') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -105,7 +105,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Settembre</th>
+        <th>{{ trans('stFatt.september') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -115,7 +115,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Ottobre</th>
+        <th>{{ trans('stFatt.october') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -125,7 +125,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Novembre</th>
+        <th>{{ trans('stFatt.november') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>
@@ -135,7 +135,7 @@
       @endphp
       <tr>
         <th>&nbsp;</th>
-        <th>Dicembre</th>
+        <th>{{ trans('stFatt.december') }}</th>
         <td><strong>{{ currency($fatMese) }}</strong></td>
         <td><strong>{{ currency($fatProg) }}</strong></td>
       </tr>

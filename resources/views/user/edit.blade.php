@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Gestione Utenti
+    - {{ trans('user.headTitle_edt') }}
 @endsection
 
 @section('contentheader_title')
@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
       <img src="{{asset('/img/avatar_default.jpg')}}" style="width:120px; height:120px; float:left; border-radius:50%; margin-right:25px;"/>
-      <h2>{{ $user->name }}'s Profile</h2>
+      <h2>{{ trans('user.userProfile', ['user' => $user->name]) }}</h2>
     </div>
   </div>
   <hr>
@@ -23,7 +23,7 @@
     <div class="col-lg-8 col-lg-offset-2">
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Modifica Utente</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('user.modifyUser') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -34,19 +34,19 @@
               {{ csrf_field() }}
               {{ method_field('PUT') }}
             <div class="form-group">
-              <label>Nome</label>
+              <label>{{ trans('user.name') }}</label>
               <input type="text" class="form-control" name="name" value="{{$user->name}}">
             </div>
             <div class="form-group">
-              <label>NickName</label>
+              <label>{{ trans('user.nickname') }}</label>
               <input type="text" class="form-control" name="nickname" value="{{$user->nickname}}" readonly="readonly">
             </div>
             <div class="form-group">
-              <label>Email</label>
+              <label>{{ trans('user.eMail') }}</label>
               <input type="text" class="form-control" name="email" value="{{$user->email}}" required>
             </div>
             <div class="form-group">
-              <label>Ruolo</label>
+              <label>{{ trans('user.role') }}</label>
               <select name="role" class="form-control select2" style="width: 100%;">
                 <option value=""> </option>
                 @foreach ($roles as $role)
@@ -59,7 +59,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Cod. Agente</label>
+              <label>{{ trans('user.codAg') }}</label>
               <select name="codag" class="form-control select2" style="width: 100%;">
                 <option value=""> </option>
                 @foreach ($agents as $agent)
@@ -72,7 +72,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Cod. Cliente</label>
+              <label>{{ trans('user.codCli') }}</label>
               <select name="codcli" class="form-control select2" style="width: 100%;">
                 <option value=""> </option>
                 @foreach ($clients as $client)
@@ -86,7 +86,7 @@
             </div>
 
             <div class="form-group">
-              <label>Ditta</label>
+              <label>{{ trans('user.refDitta') }}</label>
               @if (Registry::get('role')=='admin')
                 <select name="ditta" class="form-control" style="width: 100%;">
                   <option value="it" @if ($user->ditta=='it') selected="selected" @endif>kNet Italia</option>
@@ -100,7 +100,7 @@
             </div>
 
             <div>
-              <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+              <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
             </div>
           </form>
 

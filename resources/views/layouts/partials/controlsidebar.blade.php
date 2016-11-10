@@ -9,15 +9,15 @@
     <div class="tab-content">
         <!-- Home tab content -->
         <div class="tab-pane active" id="control-sidebar-ditta-tab">
-            <h3 class="control-sidebar-heading">Selezione Ditta</h3>
+            <h3 class="control-sidebar-heading">{{ trans('_configMenu.dittaSelect') }}</h3>
             <form action="{{ route('user::changeDB') }}" method="post" class="control-sidebar-form">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="input-group">
                   {{-- <input type="text" name="q" class="form-control" placeholder="{{ trans('adminlte_lang::message.search') }}..."/> --}}
                   <select class="form-control" name="ditta">
-                    <option value="it" @if (Registry::get('ditta_DB')=='kNet_it') selected="selected" @endif>kNet Italia</option>
-                    <option value="es" @if (Registry::get('ditta_DB')=='kNet_es') selected="selected" @endif>kNet Spagna</option>
-                    <option value="fr" @if (Registry::get('ditta_DB')=='kNet_fr') selected="selected" @endif>kNet Francia</option>
+                    <option value="it" @if (Registry::get('ditta_DB')=='kNet_it') selected="selected" @endif>kNet {{ trans('_configMenu.italia') }}</option>
+                    <option value="es" @if (Registry::get('ditta_DB')=='kNet_es') selected="selected" @endif>kNet {{ trans('_configMenu.spagna') }}</option>
+                    <option value="fr" @if (Registry::get('ditta_DB')=='kNet_fr') selected="selected" @endif>kNet {{ trans('_configMenu.francia') }}</option>
                   </select>
                   <span class="input-group-btn">
                     <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-angle-right"></i></button>
@@ -28,14 +28,14 @@
 
         <!-- Settings tab content -->
         <div class="tab-pane" id="control-sidebar-settings-tab">
-            <h3 class="control-sidebar-heading"> Impostazioni Avanzate{{-- trans('adminlte_lang::message.generalset') --}}</h3>
+            <h3 class="control-sidebar-heading"> {{ trans('_configMenu.extraSettings') }}</h3>
             <ul class='control-sidebar-menu'>
                 <li>
                     <a href="{{route('user::users.index')}}">
                         <i class="menu-icon fa fa-users bg-info"></i>
                         <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Gestione Utenti</h4>
-                            <p>Tabella della Gestione Utenti K-Group</p>
+                            <h4 class="control-sidebar-subheading">{{ trans('_configMenu.usersManage') }}</h4>
+                            <p>{{ trans('_configMenu.usersManageDesc') }}</p>
                         </div>
                     </a>
                 </li>
@@ -43,8 +43,8 @@
                     <a href="{{route('user::usersCli')}}">
                         <i class="menu-icon fa fa-users bg-info"></i>
                         <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Gestione Clienti</h4>
-                            <p>Tabella della Gestione Clienti K-Group</p>
+                            <h4 class="control-sidebar-subheading">{{ trans('_configMenu.clientsManage') }}</h4>
+                            <p>{{ trans('_configMenu.clientsManageDesc') }}</p>
                         </div>
                     </a>
                 </li>
@@ -52,8 +52,8 @@
                     <a href="{{route('user::import')}}">
                         <i class="menu-icon fa fa-user-plus bg-yellow"></i>
                         <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Import Utenti</h4>
-                            <p>Strumento di Importazione Utenti da Excel</p>
+                            <h4 class="control-sidebar-subheading">{{ trans('_configMenu.importUsers') }}</h4>
+                            <p>{{ trans('_configMenu.importUsersDesc') }}</p>
                         </div>
                     </a>
                 </li>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Visite Cliente
+    - {{ trans('visit.headTitle_ins') }}
 @endsection
 
 @section('contentheader_title')

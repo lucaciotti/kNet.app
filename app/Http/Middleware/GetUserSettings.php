@@ -6,7 +6,7 @@ use Torann\Registry\Facades\Registry;
 use Auth;
 use Closure;
 
-class SetConnectionDB
+class GetUserSettings
 {
     /**
      * Handle an incoming request.
@@ -26,7 +26,9 @@ class SetConnectionDB
                 'location' => 'it',
                 'role' => $user->roles()->first()->name,
                 'codag' => (string)$user->codag,
-                'codcli' => (string)$user->codcli
+                'codcli' => (string)$user->codcli,
+                'lang' => (string)$user->lang,
+                'id' => $user->id
               ];
               break;
             case 'fr':
@@ -35,7 +37,9 @@ class SetConnectionDB
                 'location' => 'fr',
                 'role' => $user->roles()->first()->name,
                 'codag' => (string)$user->codag,
-                'codcli' => (string)$user->codcli
+                'codcli' => (string)$user->codcli,
+                'lang' => (string)$user->lang,
+                'id' => $user->id
               ];
               break;
             case 'es':
@@ -44,7 +48,9 @@ class SetConnectionDB
                 'location' => 'es',
                 'role' => $user->roles()->first()->name,
                 'codag' => (string)$user->codag,
-                'codcli' => (string)$user->codcli
+                'codcli' => (string)$user->codcli,
+                'lang' => (string)$user->lang,
+                'id' => $user->id
               ];
               break;
 

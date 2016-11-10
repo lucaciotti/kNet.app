@@ -1,14 +1,14 @@
 <table class="table table-hover table-condensed dtTbls_light">
   <thead>
-    <th>Data Scad.</th>
-    <th>Stato</th>
-    <th>Num. Fatt.</th>
-    <th>Data Fatt.</th>
-    <th>Cliente</th>
-    <th>Tipologia</th>
-    <th>Tipo Pag.</th>
-    <th>Imp. Scad.</th>
-    <th>Imp. Pagato</th>
+    <th>{{ trans('scad.datePay_condensed') }}</th>
+    <th>{{ trans('scad.statusPayment') }}</th>
+    <th>{{ trans('scad.numInvoice') }}</th>
+    <th>{{ trans('scad.dateInvoice') }}</th>
+    <th>{{ trans('scad.client') }}</th>
+    <th>{{ trans('scad.merged') }}?</th>
+    <th>{{ trans('scad.typePayment') }}</th>
+    <th>{{ trans('scad.valueToPay') }}</th>
+    <th>{{ trans('scad.valuePayed') }}</th>
   </thead>
   <tbody>
     @if($scads->count()>0)
@@ -27,13 +27,13 @@
           </td>
           <td>
             @if($scad->pagato==1)
-              Pagato
+              {{ trans('scad.payedStatus') }}
             @elseif($scad->insoluto==1)
-              Insoluto
+              {{ trans('scad.unsolvedStatus') }}
             @elseif($scad->u_insoluto==1)
-              Moroso
+              {{ trans('scad.defaultingStatus') }}
             @else
-              Non Pagato
+
             @endif
           </td>
           <td>
@@ -52,7 +52,7 @@
           <td>
             @if($scad->idragg>0)
               {{-- <a href="{{ route('scad::detail', $scad->idragg ) }}"> Accorpata</a> --}}
-              <a href="#"> Accorpata</a>
+              <a href="#"> {{ trans('scad.merged') }}</a>
             @endif
           </td>
           <td>{{ $scad->desc_pag }}</td>

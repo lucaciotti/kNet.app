@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Anagrafica Clienti
+    - {{ trans('client.headTitle_idx') }}
 @endsection
 
 @section('contentheader_title')
-    Anagrafica Clienti
+    {{ trans('client.contentTitle_idx') }}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -18,7 +18,7 @@
     <div class="col-lg-7">
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Lista Clienti</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('client.listCli') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -26,12 +26,12 @@
         <div class="box-body">
           <table class="table table-hover table-condensed dtTbls_light">
             <thead>
-              <th>Codice</th>
-              <th>Rag. Sociale</th>
-              <th>Nazione e Località</th>
-              <th>Settore</th>
-              <th>Agente</th>
-              <th>Link Documenti</th>
+              <th>{{ trans('client.code') }}</th>
+              <th>{{ trans('client.descCli') }}</th>
+              <th>{{ trans('client.nat&loc') }}</th>
+              <th>{{ trans('client.sector') }}</th>
+              <th>{{ trans('client.agent') }}</th>
+              <th>{{ trans('client.lnkDocuments') }}</th>
             </thead>
             <tbody>
               @foreach ($clients as $client)
@@ -43,7 +43,7 @@
                   <td>{{ $client->codnazione }} - {{ $client->localita }}</td>
                   <td>{{ $client->settore }}</td>
                   <td>@if($client->agent) {{ $client->agent->descrizion }} @endif</td>
-                  <td><a href="{{ route('doc::client', $client->codice) }}">Documenti</a></td>
+                  <td><a href="{{ route('doc::client', $client->codice) }}">{{ trans('client.documents') }}</a></td>
                 </tr>
               @endforeach
             </tbody>
@@ -56,7 +56,7 @@
     <div class="col-lg-5">
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Filtro</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('client.filter') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}

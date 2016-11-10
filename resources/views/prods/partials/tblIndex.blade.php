@@ -1,9 +1,9 @@
 <table class="table table-hover table-condensed dtTbls_full" id="listDocs">
   <thead>
-    <th>Codice</th>
-    <th>Descrzione</th>
-    <th>Gruppo Prodotto</th>
-    <th>Listino</th>
+    <th>{{ trans('prod.codeArt') }}</th>
+    <th>{{ trans('prod.descArt') }}</th>
+    <th>{{ trans('prod.groupProd') }}</th>
+    <th>{{ trans('prod.listPrice') }}</th>
   </thead>
   <tbody>
     @foreach ($products as $prod)

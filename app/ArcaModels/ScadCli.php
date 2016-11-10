@@ -84,34 +84,31 @@ class ScadCli extends Model
       $desc='none';
       switch ($this->attributes['tipo']) {
         case 'D':
-          $desc='Rimessa Diretta';
+          $desc=trans('scad.dirRem');
           break;
         case 'R':
-          $desc='Ricevuta Bancaria';
+          $desc=trans('scad.bnkRpt');;
           break;
         case 'T':
-          $desc='Tratta';
+          $desc=trans('scad.blExc');;
           break;
         case 'P':
-          $desc='Pagherò';
+          $desc=trans('scad.iou');;
           break;
         case 'L':
-          $desc='Bollettino di C/C';
+          $desc=trans('scad.pstlPay');;
           break;
         case 'C':
-          $desc='Contrassegno';
+          $desc=trans('scad.CoD');;
           break;
         case 'B':
-          $desc='Bonifico';
+          $desc=trans('scad.WiTr');;
           break;
         case 'A':
-          $desc='Altro';
+          $desc=trans('scad.otherPayment');;
           break;
         default:
           $desc='none';
-      }
-      if ($this->attributes['tipo']=='D') {
-        $desc='Rimessa Diretta';
       }
       return $desc;
     }

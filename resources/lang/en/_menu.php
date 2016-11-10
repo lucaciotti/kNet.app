@@ -24,13 +24,13 @@ return [
     'ddt'                     => 'Delivery Notes',
     'invoice'                 => 'Invoices',
     'notecredito'             => 'Credit Notes',
-    'debts'                   => 'Deadlines',
+    'payment'                 => 'Deadlines',
     'products'                => 'Products',
     'insVisits'               => 'Customers Visits Input',
     'statsFatt'               => 'Turnover Statistics',
     'agent'                   => 'Agent',
     'client'                  => 'Customer',
-    'zona?'                   => 'Area',
+    'zona'                   => 'Area',
     'superAgent'              => 'Area Manager / Export Manager',
 
     // Prossime Implementazioni

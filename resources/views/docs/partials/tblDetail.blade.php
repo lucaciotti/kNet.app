@@ -1,17 +1,17 @@
 <table class="table table-hover table-condensed dtTbls_total">
   <thead>
-    <th># Riga</th>
-    <th>Codice Articolo</th>
-    <th>Descrizione</th>
-    <th>Cod.Lotto</th>
-    <th>Qta</th>
-    <th>Prezzo Un.</th>
-    <th>Sconto</th>
-    <th>Prezzo Tot</th>
+    <th>{{ trans('doc.#Row') }}</th>
+    <th>{{ trans('doc.codeArt') }}</th>
+    <th>{{ trans('doc.descArt') }}</th>
+    <th>{{ trans('doc.codeLot') }}</th>
+    <th>{{ trans('doc.quantity_condensed') }}</th>
+    <th>{{ trans('doc.unitPrice') }}</th>
+    <th>{{ trans('doc.discount') }}</th>
+    <th>{{ trans('doc.totPrice') }}</th>
   </thead>
   <tfoot>
     <tr>
-      <th colspan="6" style="text-align:right">Totale:</th>
+      <th colspan="6" style="text-align:right">{{ trans('doc.totMerce') }}:</th>
       <th></th>
       <th></th>
     </tr>

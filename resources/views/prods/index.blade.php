@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - {{$descModulo or 'Documenti'}}
+    - {{ trans('prod.headTitle_idx') }}
 @endsection
 
 @section('contentheader_title')
-    Lista {{$descModulo or 'Documenti'}}
+    {{ trans('prod.contentTitle_idx') }}
 @endsection
 
 {{-- @section('contentheader_breadcrumb')
@@ -21,7 +21,7 @@
   <div class="col-lg-7">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Lista Prodotti</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('prod.listProds') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
@@ -35,7 +35,7 @@
   <div class="col-lg-5">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Filtra</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('prod.filter') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
@@ -48,13 +48,13 @@
 
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Extra Filtri</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('prod.extraFilter') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
-        
+
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <form action="{{ route('doc::fltList') }}" method="post">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="form-group">
-    <label>Ragione Sociale</label>
+    <label>{{ trans('doc.descClient') }}</label>
     <div class="input-group">
       <span class="input-group-btn">
         <select type="button" class="btn btn-warning dropdown-toggle" name="ragsocOp">
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label>Data Documento:</label>
+    <label>{{ trans('doc.dateDoc') }}:</label>
     <div class="input-group">
       <button type="button" class="btn btn-default pull-right daterange-btn">
         <i class="fa fa-calendar"></i>&nbsp;
@@ -26,27 +26,27 @@
   </div>
   <div class="form-group">
     <label>&nbsp;
-      <input type="checkbox" name="noDate" id="noDate" value="C" > Qualsiasi Data
+      <input type="checkbox" name="noDate" id="noDate" value="C" > {{ trans('doc.anyDate') }}
     </label>
   </div>
   <div class="form-group">
-    <label>Tipo Documento</label>
+    <label>{{ trans('doc.typeDoc') }}</label>
     <div class="radio">
       <label>
-        <input type="radio" name="optTipoDoc" id="opt1" value="" checked> TUTTI
+        <input type="radio" name="optTipoDoc" id="opt1" value="" checked> {{ trans('doc.allDocs') }}
       </label>
       <label>
-        <input type="radio" name="optTipoDoc" id="opt2" value="O"> Ordini
+        <input type="radio" name="optTipoDoc" id="opt2" value="O"> {{ trans('doc.orders') }}
       </label>
       <label>
-        <input type="radio" name="optTipoDoc" id="opt3" value="B"> Bolle
+        <input type="radio" name="optTipoDoc" id="opt3" value="B"> {{ trans('doc.ddt') }}
       </label>
       <label>
-        <input type="radio" name="optTipoDoc" id="opt4" value="F"> Fatture
+        <input type="radio" name="optTipoDoc" id="opt4" value="F"> {{ trans('doc.invoice') }}
       </label>
     </div>
   </div>
   <div>
-    <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+    <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
   </div>
 </form>

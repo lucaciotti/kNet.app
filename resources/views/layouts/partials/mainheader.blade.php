@@ -13,7 +13,7 @@
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">{{ trans('adminlte_lang::message.togglenav') }}</span>
+            <span class="sr-only">{{ trans('_message.togglenav') }}</span>
         </a>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
@@ -109,8 +109,8 @@
                     </ul>
                 </li> --}}
                 @if (Auth::guest())
-                    <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
-                    <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
+                    <li><a href="{{ url('/register') }}">{{ trans('_message.register') }}</a></li>
+                    <li><a href="{{ url('/login') }}">{{ trans('_message.login') }}</a></li>
                 @else
                     <!-- User Account Menu -->
                     <li class="dropdown user user-menu">
@@ -128,7 +128,7 @@
                                 <p>
                                     {{ Auth::user()->name }}
                                     {{-- <small>{{ trans('adminlte_lang::message.login') }}</small> --}}
-                                    <small>Ditta: {{ Registry::get('ditta_DB') }}</small>
+                                    <small>{{ trans('_configMenu.ditta') }}: {{ Registry::get('ditta_DB') }}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
@@ -146,10 +146,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{ route('user::users.show', Auth::user()->id ) }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
+                                    <a href="{{ route('user::users.show', Auth::user()->id ) }}" class="btn btn-default btn-flat">{{ trans('_message.profile') }}</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.signout') }}</a>
+                                    <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">{{ trans('_message.signout') }}</a>
                                 </div>
                             </li>
                         </ul>

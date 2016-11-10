@@ -73,5 +73,47 @@ return [
     'carrierDelivery'         => 'Départ Transporteur',
     'goodsDestination'        => 'Destination Marchandise',
 
+    'totMerce'                => 'Tot. Marchandise',
+    'deliveryCost'            => 'Frais Transport',
+    'totImp'                  => 'Tot. Imposable',
+    'totVat'                  => 'Tot. TVA',
+
+    'lnkPayment'              => 'Echéance Associée',
+    'datePay'                 => 'Date Echéance',
+    'numInvoice'              => 'Num. Fact.',
+    'dateInvoice'             => 'Date Fact.',
+    'merged'                  => 'Regroupée',
+    'valueToPay'              => 'Montant Echu',
+    'valuePayed'              => 'Montant Payé',
+
+    'prevDocs'                => 'Documents Prélevés',
+    'nextDocs'                => 'Documents Suivants',
+
+    '#Row'                    => '# Ligne',
+    'codeArt'                 => 'Code Article',
+    'descArt'                 => 'Description Article',
+    'codeLot'                 => 'Code Lot',
+    'quantity_condensed'      => 'Qté',
+    'unitPrice'               => 'Prix Un.',
+    'totPrice'                => 'Prix Tot.',
+    'discount'                => 'Remise',
+
+    // Table Index
+    'typeDoc_condensed'       => 'Type Doc.',
+    'typeDoc'                 => 'Type Documents',
+    '#Doc'                    => '# Doc.',
+    'dateDoc_condensed'        => 'Date Doc.',
+    'referenceDoc_condensed'   => 'Référence Doc.',
+
+    //filter
+    'descClient'              => 'Raison Sociale',
+    'anyDate'                 => 'Toute Date',
+
+    'allDocs'                 => 'Tous',
+    'orders'                  => 'Commandes',
+    'quotes'                  => 'Devis',
+    'ddt'                     => 'Bons de Commande',
+    'invoice'                 => 'Factures',
+    'notecredito'             => 'Note de Crédit',
 
 ];

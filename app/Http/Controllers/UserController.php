@@ -136,4 +136,11 @@ class UserController extends Controller
       $user->save();
       return redirect()->action('HomeController@index');
     }
+
+    public function changeSelfLang(Request $req) {
+      $user = Auth::user();
+      $user->lang = $req->input('lang');
+      $user->save();
+      return redirect()->action('UserController@show', $user->id);
+    }
 }

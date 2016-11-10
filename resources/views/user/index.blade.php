@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Gestione Utenti
+    - {{ trans('user.headTitle_idx') }}
 @endsection
 
 @section('contentheader_title')
-    Gestione degli Utenti
+    {{ trans('user.contentTitle_idx') }}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -16,10 +16,10 @@
   <div class="row">
     <div class="container">
     <div class="col-lg-12">
-      
+
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Lista degli Utenti</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('user.listUsers') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -31,7 +31,7 @@
 
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Lista degli Agenti</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('user.listAgents') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>

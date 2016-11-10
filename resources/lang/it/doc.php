@@ -39,7 +39,7 @@ return [
     'document'                => 'Documento',
     'client'                  => 'Cliente',
     'dateDoc'                 => 'Data Documento',
-    'deliverType'             => 'tipologia di Consegna',
+    'deliverType'             => 'Tipologia di Consegna',
     'referenceDoc'            => 'Riferimento Documento',
     'totDoc'                  => 'Totale Documento',
     'totDoc_condensed'        => 'Tot. Documento',
@@ -73,6 +73,47 @@ return [
     'carrierDelivery'         => 'Partenza Vettore',
     'goodsDestination'        => 'Destinazione Merce',
 
-    //-----------------------------------------------------------------Fine Prima Parte
+    'totMerce'                => 'Tot. Merce',
+    'deliveryCost'            => 'Spese Trasporto',
+    'totImp'                  => 'Tot. Imponibile',
+    'totVat'                  => 'Tot. IVA',
+
+    'lnkPayment'              => 'Scadenza Associata',
+    'datePay'                 => 'Data Scad.',
+    'numInvoice'              => 'Num. Fatt.',
+    'dateInvoice'             => 'Data Fatt.',
+    'merged'                  => 'Accorpata',
+    'valueToPay'              => 'Importo Scad.',
+    'valuePayed'              => 'Importo Pagato',
+
+    'prevDocs'                => 'Documenti Prelevati',
+    'nextDocs'                => 'Documenti Successivi',
+
+    '#Row'                    => '# Riga',
+    'codeArt'                 => 'Codice Articolo',
+    'descArt'                 => 'Descrizione Articolo',
+    'codeLot'                 => 'Codice Lotto',
+    'quantity_condensed'      => 'Qtà',
+    'unitPrice'               => 'Prezzo Un.',
+    'totPrice'                => 'Prezzo Tot.',
+    'discount'                => 'Sconto',
+
+    // Table Index
+    'typeDoc_condensed'       => 'Tipo Doc.',
+    'typeDoc'                 => 'Tipo Documento',
+    '#Doc'                    => '# Doc.',
+    'dateDoc_condensed'        => 'Data Doc.',
+    'referenceDoc_condensed'   => 'Riferimento Doc.',
+
+    //filter
+    'descClient'              => 'Ragione Sociale',
+    'anyDate'                 => 'Qualsiasi Data',
+
+    'allDocs'                 => 'Tutti',
+    'orders'                  => 'Ordini',
+    'quotes'                  => 'Preventivi',
+    'ddt'                     => 'Bolle',
+    'invoice'                 => 'Fatture',
+    'notecredito'             => 'Note di Credito',
 
 ];

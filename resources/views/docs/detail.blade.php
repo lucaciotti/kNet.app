@@ -10,7 +10,7 @@
 
 @section('contentheader_description')
     {{-- di {{$head->client->descrizion}} [{{$head->codicecf}}] --}}
-    del {{$head->datadoc->format('d/m/Y')}}
+    {{ trans('doc.contentDesc_dtl', ['date' => $head->datadoc->format('d/m/Y')]) }}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -22,47 +22,47 @@
   <div class="col-lg-5">
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#DatiDoc" data-toggle="tab" aria-expanded="true">Dati Documento</a></li>
-        <li class=""><a href="#Sped" data-toggle="tab" aria-expanded="false">Dati Spedizione</a></li>
-        <li class=""><a href="#Val" data-toggle="tab" aria-expanded="false">Totali Documento</a></li>
+        <li class="active"><a href="#DatiDoc" data-toggle="tab" aria-expanded="true">{{ trans('doc.dataDoc') }}</a></li>
+        <li class=""><a href="#Sped" data-toggle="tab" aria-expanded="false">{{ trans('doc.dataSped') }}</a></li>
+        <li class=""><a href="#Val" data-toggle="tab" aria-expanded="false">{{ trans('doc.totsDoc') }}</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="DatiDoc">
           <dl class="dl-horizontal">
-            <dt>Documento</dt>
+            <dt>{{ trans('doc.document') }}</dt>
             <dd>{{$head->tipodoc}} {{$head->numerodoc}}</dd>
 
-            <dt>Cliente</dt>
+            <dt>{{ trans('doc.client') }}</dt>
             <dd><strong>{{$head->client->descrizion}} [{{$head->codicecf}}]</strong></dd>
 
-            <dt>Data Documento</dt>
+            <dt>{{ trans('doc.dateDoc') }}</dt>
             <dd>{{$head->datadoc->format('d/m/Y')}}</dd>
 
             @if($head->tipomodulo == 'O')
-              <dt>Tipologia di Consegna</dt>
+              <dt>{{ trans('doc.deliverType') }}</dt>
               <dd>{{$head->u_tipocons}}</dd>
 
               {{-- <dt>Prevista Consegna</dt>
               <dd>{{$head->datacons->format('d/m/Y')}}</dd> --}}
             @endif
 
-            <dt>Riferimento Doc.</dt>
+            <dt>{{ trans('doc.referenceDoc') }}</dt>
             <dd>{{$head->numerodocf}}</dd>
 
             <hr>
 
-            <dt>Tot. Documento</dt>
+            <dt>{{ trans('doc.totDoc') }}</dt>
             <dd><strong>{{$head->totdoc}} €</strong></dd>
 
             @if($head->tipomodulo == 'F' || $head->tipomodulo == 'N')
               <br>
 
               @if($head->scontocass)
-              <dt>Sconto Cassa</dt>
+              <dt>{{ trans('doc.scontoCass') }}</dt>
               <dd>{{$head->scontocass}} %</dd>
               @endif
 
-              <dt>Totale a Pagare</dt>
+              <dt>{{ trans('doc.totPayment') }}</dt>
               <dd>{{$head->totdoc}} €</dd>
             @endif
           </dl>
@@ -71,32 +71,32 @@
         <div class="tab-pane" id="Sped">
           @if($head->tipomodulo == 'B' || $head->tipodoc == 'BV' || $head->tipodo == 'EQ')
           <dl class="dl-horizontal">
-            <dt>N° Colli</dt>
+            <dt>{{ trans('doc.nColli') }}</dt>
             <dd>{{$head->colli}}</dd>
 
-            <dt>Aspetto dei Beni</dt>
+            <dt>{{ trans('doc.goodsAspect') }}</dt>
             <dd>@if($head->detBeni) {{$head->detBeni->descrizion}} @endif</strong></dd>
 
-            <dt>Volume</dt>
+            <dt>{{ trans('doc.volume') }}</dt>
             <dd>{{$head->volume}} mc</dd>
 
-            <dt>Peso Netto</dt>
+            <dt>{{ trans('doc.weightNet') }}</dt>
             <dd>{{$head->pesonetto}} Kg</dd>
 
-            <dt>Peso Lordo</dt>
+            <dt>{{ trans('doc.weightGross') }}</dt>
             <dd>{{$head->pesolordo}} Kg</dd>
 
             <hr>
 
-            <dt>Vettore</dt>
+            <dt>{{ trans('doc.carrier') }}</dt>
             <dd>@if($head->vettore) {{$head->vettore->descrizion}} @endif</dd>
 
-            <dt>Partenza Vettore</dt>
+            <dt>{{ trans('doc.carrierDelivery') }}</dt>
             <dd>@if($head->v1data) {{$head->v1data->format('d/m/Y')}} - {{$head->v1ora}} @else -- @endif</dd>
 
             <br>
             @if($destinaz)
-            <dt>Destinazione Merce</dt>
+            <dt>{{ trans('doc.goodsDestination') }}</dt>
             <dd>{{$destinaz->ragionesoc}}</dd>
             <dd>{{$destinaz->cap}}, {{$destinaz->localita}} ({{$destinaz->pv}}) - {{$destinaz->u_nazione}}</dd>
             <dd>{{$destinaz->indirizzo}}</dd>
@@ -107,18 +107,18 @@
             @if (empty($ddtOk))
               @include('docs.partials.mdlFormDdtOk', ['head' => $head])
             @else
-              <dt>Data Conferma Ricezione</dt>
+              <dt>{{ trans('doc.dataReceived') }}</dt>
               <dd>{{$ddtOk->created_at->format('d/m/Y')}}</dd>
 
-              <dt>Firma Ricezione</dt>
+              <dt>{{ trans('doc.signReceived') }}</dt>
               <dd>{{$ddtOk->firma}}</dd>
 
-              <dt>Note</dt>
+              <dt>{{ trans('doc.noteReceived') }}</dt>
               <dd>{{$ddtOk->note or ''}}</dd>
             @endif
           @else
             <div class="callout callout-danger">
-              <p>Visualizzabile solo nei Documenti di tipo Bolle!</p>
+              <p>{{ trans('doc.noDeliveryMessage') }}</p>
             </div>
           </dl>
           @endif
@@ -127,40 +127,40 @@
         <div class="tab-pane" id="Val">
           <dl class="dl-horizontal">
             @if($head->sconti)
-            <dt>Sconto Merce</dt>
+            <dt>{{ trans('doc.scontoMerce') }}</dt>
             <dd>{{$head->sconti}} %</dd>
             @endif
 
             <br>
 
-            <dt>Tot. Merce</dt>
+            <dt>{{ trans('doc.totMerce') }}</dt>
             <dd>{{$head->totmerce}} €</dd>
 
-            <dt>Spese Trasporto</dt>
+            <dt>{{ trans('doc.dateDoc') }}</dt>
             <dd>{{$head->speseim + $head->spesetr}} €</dd>
 
             <br>
 
-            <dt>Tot. Imponibile</dt>
+            <dt>{{ trans('doc.totImp') }}</dt>
             <dd>{{$head->totimp}} €</dd>
 
-            <dt>Tot. IVA</dt>
+            <dt>{{ trans('doc.totVat') }}</dt>
             <dd>{{$head->totiva}} €</dd>
 
             <hr>
 
-            <dt>Tot. Documento</dt>
+            <dt>{{ trans('doc.totDoc_condensed') }}</dt>
             <dd><strong>{{$head->totdoc}} €</strong></dd>
 
             @if($head->tipomodulo == 'F' || $head->tipomodulo == 'N')
               <br>
 
               @if($head->scontocass)
-              <dt>Sconto Cassa</dt>
+              <dt>{{ trans('doc.scontoCassa') }}</dt>
               <dd>{{$head->scontocass}} %</dd>
               @endif
 
-              <dt>Totale a Pagare</dt>
+              <dt>{{ trans('doc.totPayment') }}</dt>
               <dd>{{$head->totdoc}} €</dd>
             @endif
           </dl>
@@ -173,22 +173,22 @@
     @if($head->tipomodulo == 'F')
       <div class="box box-warning">
         <div class="box-header with-border">
-          <h3 class="box-title" data-widget="collapse">Scadenze</h3>
+          <h3 class="box-title" data-widget="collapse">{{ trans('doc.payment') }}</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
         </div>
         <div class="box-body">
           @if(!empty($head->scadenza))
-            <h4>Scadenza Associata</h4>
+            <h4>{{ trans('doc.lnkPayment') }}</h4>
             <table class="table table-hover table-condensed dtTbls_light">
               <thead>
-                <th>Data Scad.</th>
-                <th>Num. Fatt.</th>
-                <th>Data Fatt.</th>
-                <th>Accorpata?</th>
-                <th>Importo Scad.</th>
-                <th>Importo Pagato</th>
+                <th>{{ trans('doc.datePay') }}</th>
+                <th>{{ trans('doc.numInvoice') }}</th>
+                <th>{{ trans('doc.dateInvoice') }}</th>
+                <th>{{ trans('doc.merged') }}?</th>
+                <th>{{ trans('doc.valueToPay') }}</th>
+                <th>{{ trans('doc.valuePayed') }}</th>
               </thead>
               <tbody>
                     @if($head->scadenza->insoluto==1 || $head->scadenza->u_insoluto==1)
@@ -205,7 +205,7 @@
                       <td>{{ $head->scadenza->numfatt }}</td>
                       <td><span>{{$head->scadenza->datafatt->format('Ymd')}}</span>{{ $head->scadenza->datafatt->format('d-m-Y') }}</td>
                       <td>@if($head->scadenza->idragg>0)
-                        <a href=""> Accorpata</a>
+                        <a href=""> {{ trans('doc.merged') }}</a>
                       @endif</td>
                       <td>{{ $head->scadenza->impeffval }}</td>
                       <td>{{ $head->scadenza->importopag }}</td>
@@ -219,14 +219,14 @@
 
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Documenti Collegati</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('doc.linkedDocs') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
       </div>
       <div class="box-body">
         @if($prevDocs->count()>0)
-          <h4>Documenti Prelevati</h4>
+          <h4>{{ trans('doc.prevDocs') }}</h4>
             @foreach($prevDocs as $doc)
               <a type="button" class="btn btn-default btn-block" href="{{ route('doc::detail', $doc->id) }}">
                 <strong>{{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}</strong>
@@ -235,7 +235,7 @@
         @endif
         <hr>
         @if($nextDocs->count()>0)
-          <h4>Documenti Successivi</h4>
+          <h4>{{ trans('doc.nextDocs') }}</h4>
             @foreach($nextDocs as $doc)
               <a type="button" class="btn btn-primary btn-block" href="{{ route('doc::detail', $doc->id) }}">
                 <strong>{{$doc->tipodoc}} {{$doc->numerodoc}} del {{$doc->datadoc->format('d/m/Y')}}</strong>
@@ -249,7 +249,7 @@
   <div class="col-lg-7">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Elenco Righe</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('doc.listRows') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>

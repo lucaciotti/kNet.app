@@ -1,11 +1,11 @@
 <table class="table table-hover table-condensed dtTbls_full">
   <thead>
     <th>&nbsp;</th>
-    <th>Nome</th>
-    <th>eMail</th>
-    <th>Ruolo</th>
-    <th>Cod. Agente</th>
-    <th>Cod. Cliente</th>
+    <th>{{ trans('user.name') }}</th>
+    <th>{{ trans('user.eMail') }}</th>
+    <th>{{ trans('user.role') }}</th>
+    <th>{{ trans('user.codAg') }}</th>
+    <th>{{ trans('user.codCli') }}</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
   </thead>

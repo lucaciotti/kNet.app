@@ -2,7 +2,7 @@
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
   <div class="form-group">
-    <label>Codice Articolo</label>
+    <label>{{ trans('prod.codeArt') }}</label>
     <div class="input-group">
       <span class="input-group-btn">
         <select type="button" class="btn btn-warning dropdown-toggle" name="codArtOp">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-group">
-    <label>Descrizione Articolo</label>
+    <label>{{ trans('prod.descArt') }}</label>
     <div class="input-group">
       <span class="input-group-btn">
         <select type="button" class="btn btn-warning dropdown-toggle" name="descrOp">
@@ -30,7 +30,7 @@
   </div>
 
   <div class="form-group">
-    <label>Gruppo Prodotto</label>
+    <label>{{ trans('prod.groupProd') }}</label>
     <select name="gruppo[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Gruppo" style="width: 100%;">
       @foreach ($gruppi as $gruppo)
         <option value="{{ $gruppo->codice }}"
@@ -89,26 +89,26 @@
   </div> --}}
 
   <div class="form-group">
-    <label>Extra</label>
+    <label>{{ trans('prod.extra') }}</label>
     <div class="checkbox">
       <label>
         <input type="checkbox" name="chkCamp" id="opt1" value="1"
         @if(isset($chkCamp) && $chkCamp==1)
             checked
         @endif
-        > Campioni
+        > {{ trans('prod.sampleArt') }}
       </label>
       <label>
         <input type="checkbox" name="chkPers" id="opt2" value="1"
         @if(isset($chkPers) && $chkPers==1)
             checked
         @endif
-        > Articoli Personalizzati Cliente
+        > {{ trans('prod.persCliArt') }}
       </label>
   </div>
 
   <div>
-    <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+    <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
   </div>
 
 </form>

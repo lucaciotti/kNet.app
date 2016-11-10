@@ -170,6 +170,7 @@ return [
         Torann\Currency\CurrencyServiceProvider::class,
         Torann\Registry\RegistryServiceProvider::class,
         A6digital\Image\DefaultProfileImageServiceProvider::class,
+        Torann\GeoIP\GeoIPServiceProvider::class,
     ],
 
     /*
@@ -226,6 +227,7 @@ return [
         'Currency' => Torann\Currency\Facades\Currency::class,
         'Registry' => Torann\Registry\Facades\Registry::class,
         'DefaultProfileImage' => A6digital\Image\Facades\DefaultProfileImage::class,
+        'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
     ],
 
 ];

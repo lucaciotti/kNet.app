@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    - Statistiche
+    - {{ trans('stFatt.headTitle_cli') }}
 @endsection
 
 @section('contentheader_title')
-    Statistiche Cliente
+    {{ trans('stFatt.contentTitle_cli') }}
 @endsection
 
 @section('contentheader_breadcrumb')
@@ -22,7 +22,7 @@
   <div class="col-lg-3">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Cliente</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('stFatt.client') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
@@ -32,7 +32,7 @@
         <form action="{{ route('stFatt::idxCli') }}" method="post">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group">
-            <label>Seleziona Cliente</label>
+            <label>{{ trans('stFatt.selClient') }}</label>
             <select name="codcli" class="form-control select2" style="width: 100%;">
               <option value=""> </option>
               @foreach ($clients as $client)
@@ -45,7 +45,7 @@
             </select>
           </div>
           <div>
-            <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+            <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
           </div>
         </form>
       </div>
@@ -77,9 +77,9 @@
   <div class="col-lg-9">
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs pull-right">
-        <li class="active"><a href="#StatTot" data-toggle="tab" aria-expanded="true">TOTALI</a></li>
-        <li class=""><a href="#StatDet" data-toggle="tab" aria-expanded="false">Dettagliate</a></li>
-        <li class="pull-left header"><i class="fa fa-th"></i> Statistiche</li>
+        <li class="active"><a href="#StatTot" data-toggle="tab" aria-expanded="true">{{ strtoupper(trans('stFatt.total')) }}</a></li>
+        <li class=""><a href="#StatDet" data-toggle="tab" aria-expanded="false">{{ trans('stFatt.detailed') }}</a></li>
+        <li class="pull-left header"><i class="fa fa-th"></i> {{ trans('stFatt.statsTitle') }}</li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="StatTot">
@@ -141,7 +141,7 @@
   <div class="col-lg-12">
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title" data-widget="collapse">Grafico</h3>
+        <h3 class="box-title" data-widget="collapse">{{ trans('stFatt.graphTitle') }}</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
