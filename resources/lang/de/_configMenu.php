@@ -11,20 +11,20 @@ return [
     |
     */
 
-    'profile'                 => 'Profilo',
-    'ditta'                   => 'Ditta',
+    'profile'                 => 'Profil',
+    'ditta'                   => 'Firma',
 
-    'dittaSelect'             => 'Seleziona Ditta',
-    'italia'                  => 'Italia',
-    'spagna'                  => 'Spagna',
-    'francia'                 => 'Francia',
+    'dittaSelect'             => 'Firma auswählen',
+    'italia'                  => 'Italien',
+    'spagna'                  => 'Spanien',
+    'francia'                 => 'Frankreich',
 
-    'extraSettings'           => 'Impostazioni Avanzate',
-    'usersManage'             => 'Gestione Utenti',
-    'usersManageDesc'         => 'Tabella della Gestione Utenti K-Group.',
-    'clientsManage'           => 'Gestione Clienti',
-    'clientsManageDesc'       => 'Tabella della Gestione Clienti K-Group.',
-    'importUsers'             => 'Importazione Utenti',
-    'importUsersDesc'         => 'Strumento di importazione utenti da excel.',
+    'extraSettings'           => 'Erweiterte Einstellungen',
+    'usersManage'             => 'Benutzerverwaltung',
+    'usersManageDesc'         => 'Tabelle der K-Group Benutzerverwaltung',
+    'clientsManage'           => 'Kundenverwaltung',
+    'clientsManageDesc'       => 'Tabelle der K-Group Kundenverwaltung',
+    'importUsers'             => 'Kunden Import',
+    'importUsersDesc'         => 'Kunden Importwerkzeug von excel',
 
 ];

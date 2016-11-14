@@ -9,12 +9,12 @@ return [
     |
     */
 
-    'headTitle_agt'           => 'Statistiche',
-    'contentTitle_agt'        => 'Statistiche Agente',
+    'headTitle_agt'           => 'Statistiken',
+    'contentTitle_agt'        => 'Agent Statistiken',
     'contentDesc_agt'         => '',
 
-    'agent'                   => 'Agente',
-    'selAgent'                => 'Seleziona Agente',
+    'agent'                   => 'Agent',
+    'selAgent'                => 'Agent Auswahl',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,12 +23,12 @@ return [
     |
     */
 
-    'headTitle_cli'           => 'Statistiche',
-    'contentTitle_cli'        => 'Statistiche Cliente',
+    'headTitle_cli'           => 'Statistiken',
+    'contentTitle_cli'        => 'Kunde Statistiken',
     'contentDesc_cli'         => '',
 
-    'client'                  => 'Cliente',
-    'selClient'               => 'Seleziona Cliente',
+    'client'                  => 'Kunde',
+    'selClient'               => 'Kunde Auswahl',
 
     /*
     |--------------------------------------------------------------------------
@@ -37,35 +37,35 @@ return [
     |
     */
 
-    'statsTitle'              => 'Statistiche',
-    'total'                   => 'Totali',
-    'detailed'                => 'Dettagliato',
+    'statsTitle'              => 'Statistiken',
+    'total'                   => 'Gesamt',
+    'detailed'                => 'Detailliert',
 
-    'graphTitle'              => 'Grafico',
+    'graphTitle'              => 'Grafik',
 
-    'otherGroup'              => 'Altro',
+    'otherGroup'              => 'Anderes',
 
     //Table
-    'monthly'                 => 'Mensile',
-    'cumulative'              => 'Progressivo',
-    'ravenue'                 => 'Fatturato',
-    'target'                  => 'Target',
-    'missing'                 => 'Mancante',
+    'monthly'                 => 'Monatlich',
+    'cumulative'              => 'Progressiv',
+    'ravenue'                 => 'Umsatz',
+    'target'                  => 'Ziel',
+    'missing'                 => 'Fehlend',
 
     //Mesi
-    'january'                 => 'Gennaio',
-    'february'                => 'Febbraio',
-    'march'                   => 'Marzo',
-    'april'                   => 'Aprile',
-    'may'                     => 'Maggio',
-    'june'                    => 'Giugno',
-    'july'                    => 'Luglio',
-    'august'                  => 'Agosto',
-    'september'               => 'Settembre',
-    'october'                 => 'Ottobre',
-    'november'                => 'Novembre',
-    'december'                => 'Dicembre',
+    'january'                 => 'Januar',
+    'february'                => 'Februar',
+    'march'                   => 'März',
+    'april'                   => 'April',
+    'may'                     => 'Mai',
+    'june'                    => 'Juni',
+    'july'                    => 'Juli',
+    'august'                  => 'August',
+    'september'               => 'September',
+    'october'                 => 'Oktober',
+    'november'                => 'November',
+    'december'                => 'Dezember',
 
-    'granTot'                 => 'Totale',
+    'granTot'                 => 'Gesamtsumme',
 
 ];

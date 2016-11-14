@@ -15,15 +15,15 @@ return [
     'contentTitle'            => '',
     'contentDesc'             => 'HomePage',
 
-    'orderDeliver'            => 'Ordini da Evadere',
-    'ddtReceive'              => 'Spedizioni in Arrivo',
-    'newProd'                 => 'Nuovi Prodotti K-Group',
-    'debtPay'                 => 'Scadenze da Saldare',
+    'orderDeliver'            => 'Bestellungen nachzukommen',
+    'ddtReceive'              => 'Empfangsgut',
+    'newProd'                 => 'K-Group Neue Produkte',
+    'debtPay'                 => 'Zahlungsfristen nachzukommen',
 
-    'moreInfo'                => 'Più Info',
+    'moreInfo'                => 'Mehr Info',
 
-    'newUserMessage'          => 'Presto il tuo Account verrà attivato dall\'Amministratore.',
-    'pleaseWait'              => 'Ti preghiamo di attendere.',
-    'thanks'                  => 'Grazie.',
+    'newUserMessage'          => 'Ihr Konto wird vom Administrator schnell aktiviert.',
+    'pleaseWait'              => 'Bitte, warten.',
+    'thanks'                  => 'Danke.',
 
 ];

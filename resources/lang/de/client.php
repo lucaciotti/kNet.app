@@ -9,12 +9,12 @@ return [
     |
     */
 
-    'headTitle_idx'           => 'Anagrafica Clienti',
-    'contentTitle_idx'        => 'Anagrafica Clienti',
+    'headTitle_idx'           => 'Kundenstamm',
+    'contentTitle_idx'        => 'Kundenstamm',
     'contentDesc_idx'         => '',
 
-    'listCli'                 => 'Lista Clienti',
-    'filter'                  => 'Filtro',
+    'listCli'                 => 'Kundenliste',
+    'filter'                  => 'Filter',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,17 +23,17 @@ return [
     |
     */
 
-    'headTitle_dtl'           => 'Dettaglio Cliente',
+    'headTitle_dtl'           => 'Kundedetail',
     'contentTitle_dtl'        => '',
     'contentDesc_dtl'         => '',
 
-    'dataCli'                 => 'Anagrafica Cliente',
-    'contactCli'              => 'Contatti',
-    'maps'                    => 'Mappa',
-    'docuCli'                 => 'Documenti del Cliente',
-    'paymentCli'              => 'Scadenze del Cliente',
-    'statsCli'                => 'Statistiche Cliente',
-    'noteCli'                 => 'Annotazioni',
+    'dataCli'                 => 'Kundestamm',
+    'contactCli'              => 'Kontakte',
+    'maps'                    => 'Karte',
+    'docuCli'                 => 'Kundedokumente',
+    'paymentCli'              => 'Kundefristen',
+    'statsCli'                => 'Kundestatistiken',
+    'noteCli'                 => 'Anmerkungen',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,85 +42,85 @@ return [
     |
     */
 
-    'client'                  => 'Cliente',
-    'agent'                   => 'Agente',
+    'client'                  => 'Kunde',
+    'agent'                   => 'Agent',
 
-    'code'                    => 'Codice',
-    'codeCli'                 => 'Codice Cliente',
-    'descCli'                 => 'Ragione Sociale',
+    'code'                    => 'Kode',
+    'codeCli'                 => 'Kundekode',
+    'descCli'                 => 'Firmenname',
 
-    'vatCode'                 => 'Partita Iva',
-    'taxCode'                 => 'Codice Fiscale',
+    'vatCode'                 => 'MwSt-Nummer',
+    'taxCode'                 => 'Steuernummer',
 
-    'nation'                  => 'Nazione',
-    'location'                => 'Località',
-    'nat&loc'                 => 'Nazione e Località',
-    'address'                 => 'Indirizzo',
-    'posteCode'               => 'Cap',
-    'zone'                    => 'Zona',
+    'nation'                  => 'Staat',
+    'location'                => 'Ort',
+    'nat&loc'                 => 'Staat und Ort',
+    'address'                 => 'Adresse',
+    'posteCode'               => 'PLZ',
+    'zone'                    => 'Zone',
 
-    'sector'                  => 'Settore',
-    'sector_full'             => 'Settore Merceologico',
+    'sector'                  => 'Zweig',
+    'sector_full'             => 'Produktzweig',
 
-    'lnkDocuments'            => 'Link Documenti',
-    'documents'               => 'Documenti',
+    'lnkDocuments'            => 'Dokumente Link',
+    'documents'               => 'Dokumente',
 
-    'situationCli'            => 'Situazione Cliente',
-    'statusCli'               => 'Stato del Cliente',
-    'paymentType'             => 'Tipo Pagamento',
-    'relationStart'           => 'Data Inizio Rapporto',
-    'relationEnd'             => 'Data Fine Rapporto',
+    'situationCli'            => 'Kunde Situation',
+    'statusCli'               => 'Kunde Zustand',
+    'paymentType'             => 'Zahlungsart',
+    'relationStart'           => 'Zusammenhang Beginndatum',
+    'relationEnd'             => 'Zusammenhang Enddatum',
 
-    'referencePerson'         => 'Persona da Contattare',
-    'referenceAgent'          => 'Agente di Riferimento',
+    'referencePerson'         => 'Kontaktperson',
+    'referenceAgent'          => 'Referenz Agent',
 
-    'phone'                   => 'Telefono',
+    'phone'                   => 'Telefon',
     'fax'                     => 'Fax',
-    'phone2'                  => 'Telefono 2',
-    'mobilePhone'             => 'Cellulare',
+    'phone2'                  => 'Telefon 2',
+    'mobilePhone'             => 'Handy',
 
-    'email'                   => 'eMail Generale',
-    'emailAdm'                => 'eMail Amministrazione',
-    'emailOrder'              => 'eMail Invio Ordini',
-    'emailDdt'                => 'eMail Invio Ddt',
-    'emailInvoice'            => 'eMail Invio Fatture',
+    'email'                   => 'Allgemein eMail',
+    'emailAdm'                => 'Verwaltung eMail',
+    'emailOrder'              => 'Bestellungen Sendung eMail',
+    'emailDdt'                => 'Lieferscheine Sendung eMail',
+    'emailInvoice'            => 'Rechnungen Sendung eMail',
 
-    'activeStatus'            => 'Attivo',
-    'unsolvedStatus'          => 'Insoluto',
-    'defaultingStatus'        => 'Moroso',
-    'closedStatus'            => 'Chiuso',
-    'allStatus'               => 'Tutti',
+    'activeStatus'            => 'Aktiv',
+    'unsolvedStatus'          => 'unbezahlt',
+    'defaultingStatus'        => 'säumig',
+    'closedStatus'            => 'geschlossen',
+    'allStatus'               => 'Alle',
 
-    'allDocs'                 => 'Tutti',
-    'orders'                  => 'Ordini',
-    'quotes'                  => 'Preventivi',
-    'ddt'                     => 'Bolle',
-    'invoice'                 => 'Fatture',
-    'notecredito'             => 'Note di Credito',
+    'allDocs'                 => 'Alle',
+    'orders'                  => 'Bestellungen',
+    'quotes'                  => 'Voranschläge',
+    'ddt'                     => 'Lieferscheine',
+    'invoice'                 => 'Rechnungen',
+    'notecredito'             => 'Kreditnoten',
 
-    'revenue'                 => 'Fatturato',
+    'revenue'                 => 'Umsatz',
 
-    'payDate_condesed'        => 'Data Scad.',
-    'payDate'                 => 'Data Scadenza',
-    'invoiceNum_condesed'     => 'Numero Fatt.',
-    'invoiceNum'              => 'Numero Fattura',
-    'invoiceDate_condesed'    => 'Data Fatt.',
-    'invoiceDate'             => 'Data Fattura',
-    'payMerged'               => 'Accorpata',
-    'payValue_condesed'       => 'Importo Scad.',
-    'payValue'                => 'Importo Scadenza',
-    'payedValue'              => 'Importo Pagato',
+    'payDate_condesed'        => 'Fristendatum',
+    'payDate'                 => 'Fristendatum',
+    'invoiceNum_condesed'     => 'Rechnungnummer',
+    'invoiceNum'              => 'Rechnungnummer',
+    'invoiceDate_condesed'    => 'Rechnungdatum',
+    'invoiceDate'             => 'Rechnungdatum',
+    'payMerged'               => 'Zusammengelegte',
+    'payValue_condesed'       => 'Terminbetrag',
+    'payValue'                => 'Terminbetrag',
+    'payedValue'              => 'Bezahlte Betrag',
 
-    'insEvent'                => 'Inserisci Evento',
-    'seeTimeline'             => 'Timeline Completa',
+    'insEvent'                => 'Event Eingabe',
+    'seeTimeline'             => 'Vollständige Zeitachse',
 
     'eventMeeting'            => 'Meeting',
-    'eventMail'               => 'Inviata eMail',
-    'eventProduct'            => 'Presentazione Prodotto',
-    'eventDebt'               => 'Pagamento in Scadenza',
-    'eventRNC'                => 'Non Conformità',
-    'eventGeneric'            => 'Generico',
+    'eventMail'               => 'eMail gesendet',
+    'eventProduct'            => 'Produkt Vorstellung',
+    'eventDebt'               => 'Fristenzahlung',
+    'eventRNC'                => 'Nichtkonformität',
+    'eventGeneric'            => 'Allgemein',
 
-    'readMore'                => 'Leggi Altro',
+    'readMore'                => 'Anderes lesen',
 
 ];

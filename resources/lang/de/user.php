@@ -9,12 +9,12 @@ return [
     |
     */
 
-    'headTitle_idx'           => 'Gestione Utenti',
-    'contentTitle_idx'        => 'Gestione degli Utenti',
+    'headTitle_idx'           => 'Benutzerverwaltung',
+    'contentTitle_idx'        => 'Benutzerverwaltung',
     'contentDesc_idx'         => '',
 
-    'listUsers'               => 'Lista degli Utenti',
-    'listAgents'              => 'Lista degli Agenti',
+    'listUsers'               => 'Benutzerliste',
+    'listAgents'              => 'Agentenliste',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ return [
     |
     */
 
-    'listClients'             => 'Lista dei Clienti',
+    'listClients'             => 'Kundenliste',
 
     /*
     |--------------------------------------------------------------------------
@@ -31,13 +31,13 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'headTitle_edt'           => 'Modifica Utente',
-    'headTitle_pfl'           => 'Profilo Utente',
+    'headTitle_edt'           => 'Benutzeränderung',
+    'headTitle_pfl'           => 'Benutzerprofil',
 
-    'userProfile'             => 'Profilo di :user',
-    'modifyUser'              => 'Modifica Utente',
-    'modify'                  => 'Modifica',
-    'userSettings'            => 'Impostazioni Utente',
+    'userProfile'             => 'Profil von :user',
+    'modifyUser'              => 'Benutzeränderung',
+    'modify'                  => 'Änderung',
+    'userSettings'            => 'Benutzereinstellungen',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,11 +45,11 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'headTitle_imp'           => 'Import Utenti',
-    'contentTitle_imp'        => 'Importazione degli Utenti da Excel',
+    'headTitle_imp'           => 'Benutzer Import',
+    'contentTitle_imp'        => 'Benutzer Importverkzeug von Excel',
 
-    'importUser'              => 'Import Utenti',
-    'loadExcel'               => 'Carica File Excel',
+    'importUser'              => 'Benutzer Import',
+    'loadExcel'               => 'File Exceldatei laden',
 
     /*
     |--------------------------------------------------------------------------
@@ -58,12 +58,13 @@ return [
     |
     */
 
-    'name'                 => 'Nome',
+    'name'                 => 'Name',
     'eMail'                => 'eMail',
-    'role'                 => 'Ruolo',
-    'codAg'                => 'Cod. Agente',
-    'codCli'               => 'Cod. Cliente',
+    'role'                 => 'Rolle',
+    'codAg'                => 'Agentkode ',
+    'codCli'               => 'Kundekode',
     'nickname'             => 'Nickname',
-    'refDitta'             => 'Ditta di Riferimento',
+    'refDitta'             => 'Referenzfirma',
+	'changeLang'           => 'Sprache wechseln',
 
 ];

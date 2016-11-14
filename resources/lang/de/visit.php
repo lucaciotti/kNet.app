@@ -9,11 +9,11 @@ return [
     |
     */
 
-    'headTitle_ins'           => 'Visite Clienti',
+    'headTitle_ins'           => 'Kundenbesuche',
     'contentTitle_ins'        => '',
     'contentDesc_ins'         => '',
 
-    'insEvent'                => 'Inserimento Evento',
+    'insEvent'                => 'Event Eingabe',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,19 +22,19 @@ return [
     |
     */
 
-    'client'                  => 'Cliente',
-    'eventType'               => 'Tipologia Incontro',
-    'eventDate'               => 'Data',
-    'eventDesc'               => 'Breve Descrizione',
-    'eventNote'               => 'Note',
+    'client'                  => 'Kunde',
+    'eventType'               => 'Treffensorte',
+    'eventDate'               => 'Datum',
+    'eventDesc'               => 'Kleine Beschreibung',
+    'eventNote'               => 'Anmerkungen',
 
     'eventMeeting'            => 'Meeting',
-    'eventMail'               => 'Inviata eMail',
-    'eventProduct'            => 'Presentazione Prodotto',
-    'eventDebt'               => 'Pagamento in Scadenza',
-    'eventRNC'                => 'Non Conformità',
-    'eventGeneric'            => 'Generico',
+    'eventMail'               => 'eMail geschicht',
+    'eventProduct'            => 'Produktvorstellung',
+    'eventDebt'               => 'fällige Zahlung',
+    'eventRNC'                => 'Nichtkonformität',
+    'eventGeneric'            => 'Allgemeine',
 
-    'readMore'                => 'Leggi Altro',
+    'readMore'                => 'Anderes lesen',
 
 ];

@@ -12,6 +12,7 @@
     run_composer_dev
     update_permissions
     update_symlinks
+    patch_Torann_Registry
 @endmacro
 
 @macro('deploy-master', ['on' => 'kNet'])
@@ -68,4 +69,8 @@
     chgrp -h www-data logs; --}}
 
     sudo service php5-fpm reload;
+@endtask
+
+@task('patch_Torann_Registry')
+  cp -irf {{ $release_dir }}/{{ $release }}/myPackages/* {{ $release_dir }}/{{ $release }}/vendor
 @endtask

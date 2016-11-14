@@ -9,23 +9,23 @@ return [
     |
     */
 
-    'headTitle_idx'           => 'Prodotti',
-    'contentTitle_idx'        => 'Lista Prodotti',
+    'headTitle_idx'           => 'Produkte',
+    'contentTitle_idx'        => 'Produkte Liste',
     'contentDesc_idx'         => '',
 
-    'listProds'               => 'Lista Prodotti',
-    'filter'                  => 'Filtro',
-    'extraFilter'             => 'Entra Filtro',
+    'listProds'               => 'Produkte Liste',
+    'filter'                  => 'Filter',
+    'extraFilter'             => 'Filter Eingabe',
 
     //Table
-    'codeArt'                 => 'Codice Articolo',
-    'descArt'                 => 'Descrizione Articolo',
-    'groupProd'               => 'Gruppo Prodotto',
-    'listPrice'               => 'Prezzo Listino',
+    'codeArt'                 => 'Artikelnummer',
+    'descArt'                 => 'Artikelbeschreibung',
+    'groupProd'               => 'Produktgruppe',
+    'listPrice'               => 'Listenpreis',
 
     //Filter
     'extra'                   => 'Extra',
-    'sampleArt'               => 'Campioni',
-    'persCliArt'              => 'Articoli Personalizzati Cliente',
+    'sampleArt'               => 'Proben',
+    'persCliArt'              => 'Kunden personalisierte Artikeln',
 
 ];

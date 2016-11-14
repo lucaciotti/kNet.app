@@ -10,11 +10,9 @@ return [
     |
     |
     */
-
-    'knetMission'            => 'Il nostro obbiettivo è quello di garantire un miglior servizio informatizzato
-                                        ai nostri Clienti ed ai nostri Agenti, offrendo una migliore esperienza di navigazione web.',
+    'knetMission'            => 'Unser Ziel ist für einen besseren computerisierten Dienst zu unseren Kunden und zu unseren Agenten garantieren, und eine bessere Web-Surfen Erfahrung zu bieten.',
 
 
-    'services'               => 'Servizi Offerti',
+    'services'               => 'Angebotene Dienste',
 
 ];
