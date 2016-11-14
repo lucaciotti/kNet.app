@@ -72,5 +72,5 @@
 @endtask
 
 @task('patch_Torann_Registry')
-  cp -irf {{ $release_dir }}/{{ $release }}/myPackages/* {{ $release_dir }}/{{ $release }}/vendor
+  yes | cp -irf {{ $release_dir }}/{{ $release }}/myPackages/* {{ $release_dir }}/{{ $release }}/vendor
 @endtask

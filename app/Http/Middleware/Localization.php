@@ -18,10 +18,10 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
-        // $geoIp = geoip()->getLocation();
+        $geoIp = geoip()->getLocation();
         // $geoIp = geoip()->getLocation('194.250.219.30');
         // $geoIp = geoip()->getLocation('213.152.198.50');
-        $geoIp = geoip()->getLocation('212.100.36.138');
+        // $geoIp = geoip()->getLocation('212.100.36.138');
         $locationLang = strtolower($geoIp->iso_code);
         // if ($request->session()->has('located')) {
         //    dd($request->session()->get('located'));
