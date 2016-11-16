@@ -23,8 +23,8 @@ return [
     'dateInvoice'             => 'Date Fact.',
     'client'                  => 'Client',
     'typePayment'             => 'Type Paiement',
-    'merged'                  => 'Regroupée',
-    'valueToPay'              => 'Montant à Payer.',
+    'merged'                  => 'Regroupées',
+    'valueToPay'              => 'Montant à Payer',
     'valuePayed'              => 'Montant Payé',
 
     //Filter

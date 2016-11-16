@@ -45,7 +45,7 @@ return [
     'level'                   => 'Niveau',
     'here'                    => 'Ici',
     'recentactivity'          => 'Activité Récente',
-    'createdby'               => 'Creé par',
+    'createdby'               => 'Créé par',
     'online'                  => 'En ligne',
     'home'                    => 'Accueil',
     'progress'                => 'Avancement des tâches',

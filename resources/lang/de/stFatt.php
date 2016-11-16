@@ -48,9 +48,11 @@ return [
     //Table
     'monthly'                 => 'Monatlich',
     'cumulative'              => 'Progressiv',
-    'ravenue'                 => 'Umsatz',
+    'revenue'                 => 'Umsatz',
     'target'                  => 'Ziel',
     'missing'                 => 'Fehlend',
+
+    'targetGraph'             => '% Monatziel',
 
     //Mesi
     'january'                 => 'Januar',

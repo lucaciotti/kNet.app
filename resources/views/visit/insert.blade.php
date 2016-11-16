@@ -72,14 +72,14 @@
 
             <div class="form-group">
               <label>{{ trans('visit.eventDesc') }}</label>
-              <input type="text" class="form-control" name="descrizione" value="" placeholder="Descrizione">
+              <input type="text" class="form-control" name="descrizione" value="" placeholder="{{ trans('visit.desc_plchld') }}">
             </div>
 
             <div class="form-group">
               <label>{{ trans('visit.eventNote') }}</label>
               {{-- <textarea class="form-control" rows="6" name="note" placeholder="Dettagli &hellip;"></textarea>
               style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"--}}
-              <textarea class="textarea" placeholder="Place some text here" name="note"
+              <textarea class="textarea" placeholder="{{ trans('visit.note_plchld') }}" name="note"
                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
             </div>
 

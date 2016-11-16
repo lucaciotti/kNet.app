@@ -1,4 +1,8 @@
-<table class="table table-hover table-condensed dtTbls_full" id="listDocs">
+@if($tipomodulo)
+  <table class="table table-hover table-condensed dtTbls_full_Tot" id="listDocs">
+@else
+  <table class="table table-hover table-condensed dtTbls_full" id="listDocs">
+@endif
   <thead>
     <th>{{ trans('doc.typeDoc') }}</th>
     <th>{{ trans('doc.#Doc') }}</th>
@@ -7,6 +11,14 @@
     <th>{{ trans('doc.referenceDoc_condensed') }}</th>
     <th>{{ trans('doc.totDoc_condensed') }}</th>
   </thead>
+  @if($tipomodulo)
+    <tfoot>
+      <tr>
+        <th colspan="5" style="text-align:right">{{ trans('doc.totDoc_condensed') }}:</th>
+        <th></th>
+      </tr>
+    </tfoot>
+  @endif
   <tbody>
     @foreach ($docs as $doc)
       @if($doc->numrighepr==0)

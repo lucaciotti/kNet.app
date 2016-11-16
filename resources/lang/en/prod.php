@@ -9,23 +9,26 @@ return [
     |
     */
 
-    'headTitle_idx'           => 'Items',
-    'contentTitle_idx'        => 'Items List',
+    'headTitle_idx'           => 'Products',
+    'contentTitle_idx'        => 'Products List',
     'contentDesc_idx'         => '',
 
-    'listProds'               => 'Items List',
+    'listProds'               => 'Products List',
     'filter'                  => 'Filter',
     'extraFilter'             => 'Extra Filter',
 
     //Table
-    'codeArt'                 => 'Item Code',
-    'descArt'                 => 'Item Description',
+    'codeArt'                 => 'Product Code',
+    'descArt'                 => 'Product Description',
     'groupProd'               => 'Product Group',
     'listPrice'               => 'List Price',
 
     //Filter
     'extra'                   => 'Extra',
     'sampleArt'               => 'Samples',
-    'persCliArt'              => 'Customized Items',
+    'persCliArt'              => 'Customized Products',
+
+    // Form PlaceHolder
+    'group_plchld'            => 'Select Group',
 
 ];

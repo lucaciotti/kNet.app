@@ -65,6 +65,6 @@ return [
     'codCli'               => 'Kundekode',
     'nickname'             => 'Nickname',
     'refDitta'             => 'Referenzfirma',
-	'changeLang'           => 'Sprache wechseln',
+	  'changeLang'           => 'Sprache wechseln',
 
 ];

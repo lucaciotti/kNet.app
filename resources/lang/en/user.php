@@ -65,11 +65,11 @@ return [
     'codCli'               => 'Customer Code',
     'nickname'             => 'Nickname',
     'refDitta'             => 'Reference Company',
-    'changeLang'           => 'Cambia Lingua',
-	  'langIT'	             => 'Italiano',
-	  'langFR'	             => 'Francese',
-    'langES'	             => 'Spagnolo',
-    'langEN'	             => 'Inglese',
-    'langDE'               => 'Tedesco',
+    'changeLang'           => 'Change Language',
+	  'langIT'	             => 'Italian',
+	  'langFR'	             => 'French',
+    'langES'	             => 'Spanish',
+    'langEN'	             => 'English',
+    'langDE'               => 'German',
 
 ];

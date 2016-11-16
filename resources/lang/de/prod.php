@@ -28,4 +28,7 @@ return [
     'sampleArt'               => 'Proben',
     'persCliArt'              => 'Kunden personalisierte Artikeln',
 
+    // Form PlaceHolder
+    'group_plchld'            => 'Gruppe wählen',
+
 ];

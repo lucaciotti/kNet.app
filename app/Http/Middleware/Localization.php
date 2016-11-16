@@ -39,7 +39,7 @@ class Localization
           $request->session()->put('located', $log->id);
           $request->session()->save();
         }
-        $lang = Registry::get('lang')!==null ? Registry::get('lang') : $locationLang;
+        $lang = Registry::get('lang')!==null && Registry::get('lang')!='' ? Registry::get('lang') : $locationLang;
         App::setLocale($lang);
         return $next($request);
     }

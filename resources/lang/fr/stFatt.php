@@ -48,9 +48,11 @@ return [
     //Table
     'monthly'                 => 'Mensuel',
     'cumulative'              => 'Progressif',
-    'ravenue'                 => 'Chiffre d'Affaires',
+    'revenue'                 => 'Chiffre d\'Affaires',
     'target'                  => 'Objectif',
     'missing'                 => 'Manquant',
+
+    'targetGraph'             => '% Objectif Mensuel',
 
     //Mesi
     'january'                 => 'Janvier',

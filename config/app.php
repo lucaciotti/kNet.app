@@ -171,6 +171,7 @@ return [
         Torann\Registry\RegistryServiceProvider::class,
         A6digital\Image\DefaultProfileImageServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
     ],
 
     /*
@@ -228,6 +229,7 @@ return [
         'Registry' => Torann\Registry\Facades\Registry::class,
         'DefaultProfileImage' => A6digital\Image\Facades\DefaultProfileImage::class,
         'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
+        'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
     ],
 
 ];

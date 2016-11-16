@@ -5,9 +5,13 @@ namespace knet;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class User extends Authenticatable
+use Spatie\Activitylog\LogsActivityInterface;
+use Spatie\Activitylog\LogsActivity;
+
+class User extends Authenticatable implements LogsActivityInterface
 {
   use EntrustUserTrait;
+  use LogsActivity;
     /**
      * The attributes that are mass assignable.
      *
@@ -38,5 +42,29 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsToMany('knet\Role');
+    }
+
+    /**
+     * Get the message that needs to be logged for the given event name.
+     *
+     * @param string $eventName
+     * @return string
+     */
+    public function getActivityDescriptionForEvent($eventName){
+      switch ($eventName) {
+        case 'created':
+          return 'User Id:"' . $this->id . '" was created ' .$this->toJson();
+          break;
+        case 'updated':
+          return 'User Id:"' . $this->id . '" was updated ' .json_encode($this->getDirty());
+          break;
+        case 'deleted':
+          return 'User Id:"' . $this->id . '" was deleted';
+          break;
+
+        default:
+          return 'User Id:"' . $this->id . '" was ??';
+          break;
+      }
     }
 }

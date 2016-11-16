@@ -52,6 +52,8 @@ return [
     'target'                  => 'Target',
     'missing'                 => 'Mancante',
 
+    'targetGraph'             => '% Target Mese',
+
     //Mesi
     'january'                 => 'Gennaio',
     'february'                => 'Febbraio',

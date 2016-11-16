@@ -10,7 +10,7 @@ return [
     */
 
     'headTitle_idx'           => 'Dokumente',
-    'contentTitle_idx'        => 'Liste :tipoDoc',
+    'contentTitle_idx'        => ':tipoDoc Liste',
     'contentDesc_idx'         => '',
 
     'listDocs'                => 'Dokumente-Liste',
@@ -100,9 +100,12 @@ return [
 
     // Table Index
     'typeDoc'                 => 'Dokumenttyp',
+    'typeDoc_condensed'       => 'Dok.typ',
     '#Doc'                    => 'Dokumentnummer',
-    'dateDoc_codensed'        => 'Dokumentdatum',
-    'referenceDoc_condense'   => 'Dokumentbezug',
+    'dateDoc'                 => 'Dokumentdatum',
+    'dateDoc_condensed'       => 'Dok. Datum',
+    'referenceDoc'            => 'Dokumentbezug',
+    'referenceDoc_condensed'  => 'Dok. Bezug',
 
     //filter
     'descClient'              => 'Firmenname',

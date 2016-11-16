@@ -123,4 +123,9 @@ return [
 
     'readMore'                => 'Plus d\'Infos',
 
+    // Form Placeholder
+    'sector_plchld'           => 'Sélectionez Marché',
+    'nation_plchld'           => 'Sélectionez Pays',
+    'zone_plchld'             => 'Sélectionez Zone',
+
 ];

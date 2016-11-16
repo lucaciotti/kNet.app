@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="box-body">
-        @include('docs.partials.tblIndex', $docs)
+        @include('docs.partials.tblIndex', [$docs, $tipomodulo])
       </div>
     </div>
   </div>

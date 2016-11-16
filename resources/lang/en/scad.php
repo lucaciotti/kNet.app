@@ -13,7 +13,7 @@ return [
     'contentTitle_idx'        => 'Due Dates List',
     'contentDesc_idx'         => '',
 
-    'listScads'               => 'Lista Scadenze',
+    'listScads'               => 'Due Dates List',
     'filter'                  => 'Filter',
 
     //Table
@@ -48,7 +48,7 @@ return [
     'closedStatus'            => 'Closed',
     'allStatus'               => 'All',
 
-    'mergedOrNot'             => 'Singles or Grouped',
-    'each'                    => 'Singles',
+    'mergedOrNot'             => 'Single or Grouped',
+    'each'                    => 'Single',
 
 ];

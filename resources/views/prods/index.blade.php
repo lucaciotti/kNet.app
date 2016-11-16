@@ -8,13 +8,9 @@
     {{ trans('prod.contentTitle_idx') }}
 @endsection
 
-{{-- @section('contentheader_breadcrumb')
-  @if($tipomodulo)
-    {!! Breadcrumbs::render('docsTipo', $tipomodulo) !!}
-  @else
-    {!! Breadcrumbs::render('docs') !!}
-  @endif
-@endsection --}}
+@section('contentheader_breadcrumb')
+    {!! Breadcrumbs::render('prods') !!}
+@endsection
 
 @section('main-content')
 <div class="row">

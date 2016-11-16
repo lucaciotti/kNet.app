@@ -102,8 +102,10 @@ return [
     'typeDoc_condensed'       => 'Type Doc.',
     'typeDoc'                 => 'Type Documents',
     '#Doc'                    => '# Doc.',
-    'dateDoc_condensed'        => 'Date Doc.',
-    'referenceDoc_condensed'   => 'Référence Doc.',
+    'dateDoc'                 => 'Date Documents',
+    'dateDoc_condensed'       => 'Date Doc.',
+    'referenceDoc'            => 'Référence Doc.',
+    'referenceDoc_condensed'  => 'Réf. Doc.',
 
     //filter
     'descClient'              => 'Raison Sociale',
@@ -114,6 +116,6 @@ return [
     'quotes'                  => 'Devis',
     'ddt'                     => 'Bons de Commande',
     'invoice'                 => 'Factures',
-    'notecredito'             => 'Note de Crédit',
+    'notecredito'             => 'Notes de Crédit',
 
 ];

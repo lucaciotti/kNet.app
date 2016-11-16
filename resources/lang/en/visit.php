@@ -9,11 +9,11 @@ return [
     |
     */
 
-    'headTitle_ins'           => 'Visite Clienti',
+    'headTitle_ins'           => 'Customer Visit',
     'contentTitle_ins'        => '',
     'contentDesc_ins'         => '',
 
-    'insEvent'                => 'Inserimento Evento',
+    'insEvent'                => 'Event Input',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,19 +22,23 @@ return [
     |
     */
 
-    'client'                  => 'Cliente',
-    'eventType'               => 'Tipologia Incontro',
-    'eventDate'               => 'Data',
-    'eventDesc'               => 'Breve Descrizione',
-    'eventNote'               => 'Note',
+    'client'                  => 'Customer',
+    'eventType'               => 'Meeting type',
+    'eventDate'               => 'Date',
+    'eventDesc'               => 'Short Description',
+    'eventNote'               => 'Notes',
 
     'eventMeeting'            => 'Meeting',
-    'eventMail'               => 'Inviata eMail',
-    'eventProduct'            => 'Presentazione Prodotto',
-    'eventDebt'               => 'Pagamento in Scadenza',
-    'eventRNC'                => 'Non Conformità',
-    'eventGeneric'            => 'Generico',
+    'eventMail'               => 'eMail sent',
+    'eventProduct'            => 'Product Presentation',
+    'eventDebt'               => 'Expiring Payment',
+    'eventRNC'                => 'Non Conformity',
+    'eventGeneric'            => 'Generic',
 
-    'readMore'                => 'Leggi Altro',
+    'readMore'                => 'Read More',
+
+    // Form PlaceHolder
+    'desc_plchld'             => 'Description',
+    'note_plchld'             => 'Place some text here',
 
 ];

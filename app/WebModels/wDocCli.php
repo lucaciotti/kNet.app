@@ -7,13 +7,18 @@ use Illuminate\Database\Eloquent\Builder;
 use Torann\Registry\Facades\Registry;
 use Auth;
 
-class wDocCli extends Model
+use Spatie\Activitylog\LogsActivityInterface;
+use Spatie\Activitylog\LogsActivity;
+
+class wDocCli extends Model implements LogsActivityInterface
 {
+  use LogsActivity;
+
     protected $table = 'w_doctes';
     protected $dates = ['datadoc', 'v1data'];
     protected $connection = '';
 
-    public function __construct ($attributes = array()) 
+    public function __construct ($attributes = array())
     {
       self::boot();
       parent::__construct($attributes);
@@ -58,5 +63,29 @@ class wDocCli extends Model
 
     public function docrow(){
       return $this->hasMany('knet\ArcaModels\DocRow', 'id_testa', 'id');
+    }
+
+    /**
+     * Get the message that needs to be logged for the given event name.
+     *
+     * @param string $eventName
+     * @return string
+     */
+    public function getActivityDescriptionForEvent($eventName){
+      switch ($eventName) {
+        case 'created':
+          return 'wDocCli on '. $this->getConnectionName() .' Id:"' . $this->id . '" was created ' .$this->toJson();
+          break;
+        case 'updated':
+          return 'wDocCli on '. $this->getConnectionName() .' Id:"' . $this->id . '" was updated ' .json_encode($this->getDirty());
+          break;
+        case 'deleted':
+          return 'wDocCli on '. $this->getConnectionName() .' Id:"' . $this->id . '" was deleted';
+          break;
+
+        default:
+          return 'wDocCli on '. $this->getConnectionName() .' Id:"' . $this->id . '" was ??';
+          break;
+      }
     }
 }

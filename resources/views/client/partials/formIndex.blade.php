@@ -15,7 +15,7 @@
   </div>
   <div class="form-group">
     <label>{{ trans('client.sector') }}</label>
-    <select name="settore[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Settore" style="width: 100%;">
+    <select name="settore[]" class="form-control select2" multiple="multiple" data-placeholder="{{ trans('client.sector_plchld') }}" style="width: 100%;">
       @foreach ($settori as $settore)
         <option value="{{ $settore->codice }}">{{ $settore->descrizion }}</option>
       @endforeach
@@ -23,7 +23,7 @@
   </div>
   <div class="form-group">
     <label>{{ trans('client.nation') }}</label>
-    <select name="nazione[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Nazione" style="width: 100%;">
+    <select name="nazione[]" class="form-control select2" multiple="multiple" data-placeholder="{{ trans('client.nation_plchld') }}" style="width: 100%;">
       @foreach ($nazioni as $nazione)
         <option value="{{ $nazione->codice }}">{{ $nazione->descrizion }}</option>
       @endforeach
@@ -31,7 +31,7 @@
   </div>
   <div class="form-group">
     <label>{{ trans('client.zone') }}</label>
-    <select name="zona[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Zona" style="width: 100%;">
+    <select name="zona[]" class="form-control select2" multiple="multiple" data-placeholder="{{ trans('client.zone_plchld') }}" style="width: 100%;">
       @foreach ($zone as $zona)
         <option value="{{ $zona->codice }}">{{ $zona->descrizion }}</option>
       @endforeach

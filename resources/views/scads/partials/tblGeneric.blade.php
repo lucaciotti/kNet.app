@@ -1,11 +1,11 @@
 <table class="table table-hover table-condensed dtTbls_light">
   <thead>
-    <th>Data Scad.</th>
-    <th>Num. Fatt.</th>
-    <th>Data Fatt.</th>
-    <th>Accorpata?</th>
-    <th>Importo Scad.</th>
-    <th>Importo Pagato</th>
+    <th>{{ trans('scad.datePay_condensed') }}</th>
+    <th>{{ trans('scad.numInvoice') }}</th>
+    <th>{{ trans('scad.dateInvoice') }}</th>
+    <th>{{ trans('scad.merged') }}?</th>
+    <th>{{ trans('scad.valueToPay') }}</th>
+    <th>{{ trans('scad.valuePayed') }}</th>
   </thead>
   <tbody>
     @if($scads->count()>0)
@@ -28,11 +28,11 @@
           </td>
           <td><span>{{$scad->datafatt->format('Ymd')}}</span>{{ $scad->datafatt->format('d-m-Y') }}</td>
           <td>@if($scad->idragg>0)
-            <a href=""> Accorpata</a>
+            <a href=""> {{ trans('scad.merged') }}</a>
           @endif</td>
           <td>{{ $scad->impeffval }}</td>
           <td>{{ $scad->importopag }}</td>
-        </tr>        
+        </tr>
       @endforeach
     @endif
   </tbody>

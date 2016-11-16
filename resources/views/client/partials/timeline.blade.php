@@ -22,37 +22,37 @@
           @case( 'Meet' )
               <i class="fa fa-weixin bg-light-blue"></i>
               @php
-                $message='Meeting'
+                $message=trans('visit.eventMeeting')
               @endphp
           @breakswitch
           @case( 'Mail' )
               <i class="fa fa-envelope bg-orange"></i>
               @php
-                $message='Inviata eMail'
+                $message=trans('visit.eventMail')
               @endphp
           @breakswitch
           @case( 'Prod' )
               <i class="fa fa-cube bg-green"></i>
               @php
-                $message='Presentazione Prodotto'
+                $message=trans('visit.eventProduct')
               @endphp
           @breakswitch
           @case( 'Scad' )
               <i class="fa fa-money bg-purple"></i>
               @php
-                $message='Pagamento Scadenza'
+                $message=trans('visit.eventDebt')
               @endphp
           @breakswitch
           @case( 'RNC' )
               <i class="fa fa-exclamation-circle bg-red"></i>
               @php
-                $message='Non Conformità'
+                $message=trans('visit.eventRNC')
               @endphp
           @breakswitch
           @default
               <i class="fa fa-question-circle bg-yellow"></i>
               @php
-                $message='Generico'
+                $message=trans('visit.eventGeneric')
               @endphp
           @breakswitch
       @endswitch
@@ -65,7 +65,7 @@
             {!! $visit->note !!}
           </div>
           <div class="timeline-footer">
-            <a class="btn btn-primary btn-xs">Read more</a>
+            <a class="btn btn-primary btn-xs">{{ trans('visit.readMore') }}</a>
           </div>
         </div>
       </li>
@@ -80,8 +80,8 @@
   <li>
     <i class='fa fa-clock-o bg-gray'></i>
     <span class="timeline-item">
-      <a class="btn btn-sm btn-default" href="{{ route('visit::insert', $codcli) }}"> <i class="fa fa-plus"></i> <span>Inserisci Evento</span></a>
-      <a class="btn btn-sm btn-primary" href="{{ route('visit::show', $codcli) }}">  <span>TimeLine Completa... </span></a>
+      <a class="btn btn-sm btn-default" href="{{ route('visit::insert', $codcli) }}"> <i class="fa fa-plus"></i> <span>{{ trans('client.insEvent') }}</span></a>
+      <a class="btn btn-sm btn-primary" href="{{ route('visit::show', $codcli) }}">  <span>{{ trans('client.seeTimeline') }}... </span></a>
     </span>
   </li>
 </ul>

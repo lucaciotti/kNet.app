@@ -10,10 +10,10 @@ return [
     */
 
     'headTitle_idx'           => 'Documents',
-    'contentTitle_idx'        => 'List :tipoDoc',
+    'contentTitle_idx'        => ':tipoDoc List',
     'contentDesc_idx'         => '',
 
-    'listDocs'                => 'Documents List',
+    'listDocs'                => 'Document List',
     'filter'                  => 'Filter',
     'changeDoc'               => 'Change Document Type',
     'forCli'                  => 'for :client',
@@ -42,7 +42,7 @@ return [
     'deliverType'             => 'Delivery type',
     'referenceDoc'            => 'Document Reference',
     'totDoc'                  => 'Document Total',
-    'totDoc_condensed'        => 'Document Total',
+    'totDoc_condensed'        => 'Doc. Total',
     'totPayment'              => 'Total to Pay',
 
     'scontoCassa'             => 'Cash Discount',
@@ -100,10 +100,12 @@ return [
 
     // Table Index
     'typeDoc_condensed'       => 'Doc. Type',
-    'typeDoc'                 => 'Documents Type',
+    'typeDoc'                 => 'Document Type',
     '#Doc'                    => 'Doc. #',
-    'dateDoc_condensed'        => 'Doc. Date',
-    'referenceDoc_condensed'   => 'Doc. Reference',
+    'dateDoc'                 => 'Document Date',
+    'dateDoc_condensed'       => 'Doc. Date',
+    'referenceDoc'            => 'Document Reference',
+    'referenceDoc_condensed'  => 'Doc. Reference',
 
     //filter
     'descClient'              => 'Business Name',

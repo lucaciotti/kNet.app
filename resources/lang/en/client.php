@@ -13,7 +13,7 @@ return [
     'contentTitle_idx'        => 'Customer Data',
     'contentDesc_idx'         => '',
 
-    'listCli'                 => 'Customers\' List',
+    'listCli'                 => 'Customer List',
     'filter'                  => 'Filter',
 
     /*
@@ -122,5 +122,10 @@ return [
     'eventGeneric'            => 'Generic',
 
     'readMore'                => 'Read More',
+
+    // Form Placeholder
+    'sector_plchld'           => 'Select Sector',
+    'nation_plchld'           => 'Select Country',
+    'zone_plchld'             => 'Select Area',
 
 ];

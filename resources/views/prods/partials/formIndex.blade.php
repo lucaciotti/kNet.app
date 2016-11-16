@@ -31,7 +31,7 @@
 
   <div class="form-group">
     <label>{{ trans('prod.groupProd') }}</label>
-    <select name="gruppo[]" class="form-control select2" multiple="multiple" data-placeholder="Seleziona Gruppo" style="width: 100%;">
+    <select name="gruppo[]" class="form-control select2" multiple="multiple" data-placeholder="{{ trans('prod.group_plchld') }}" style="width: 100%;">
       @foreach ($gruppi as $gruppo)
         <option value="{{ $gruppo->codice }}"
           @if(isset($grpSelected) && in_array($gruppo->codice, $grpSelected))

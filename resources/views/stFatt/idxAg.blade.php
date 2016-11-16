@@ -45,7 +45,7 @@
             </select>
           </div>
           <div>
-            <button type="submit" class="btn btn-primary">{{ trans('adminlte_lang::message.submit') }}</button>
+            <button type="submit" class="btn btn-primary">{{ trans('_message.submit') }}</button>
           </div>
         </form>
       </div>
@@ -69,7 +69,7 @@
         @endphp
           <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="{{ $deltaProg }}" data-width="120" data-height="120" data-fgColor="{{ $colorDelta }}">
 
-          <div class="knob-label"><strong>% Target Mese</strong></div>
+          <div class="knob-label"><strong>{{ trans('stFatt.targetGraph') }}</strong></div>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
               <li class=""><a href="#Koblenz" data-toggle="tab" aria-expanded="false">Koblenz</a></li>
               <li class=""><a href="#Kubica" data-toggle="tab" aria-expanded="false">Kubica</a></li>
               <li class=""><a href="#Grass" data-toggle="tab" aria-expanded="false">Grass</a></li>
-              <li class=""><a href="#Altro" data-toggle="tab" aria-expanded="false">Altro</a></li>
+              <li class=""><a href="#Altro" data-toggle="tab" aria-expanded="false">{{ trans('stFatt.otherGroup') }}</a></li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="Krona">

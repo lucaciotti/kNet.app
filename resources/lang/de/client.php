@@ -85,7 +85,7 @@ return [
     'emailDdt'                => 'Lieferscheine Sendung eMail',
     'emailInvoice'            => 'Rechnungen Sendung eMail',
 
-    'activeStatus'            => 'Aktiv',
+    'activeStatus'            => 'aktiv',
     'unsolvedStatus'          => 'unbezahlt',
     'defaultingStatus'        => 'säumig',
     'closedStatus'            => 'geschlossen',
@@ -122,5 +122,10 @@ return [
     'eventGeneric'            => 'Allgemein',
 
     'readMore'                => 'Anderes lesen',
+
+    // Form Placeholder
+    'sector_plchld'           => 'Zweig wählen',
+    'nation_plchld'           => 'Staat wählen',
+    'zone_plchld'             => 'Zone wählen',
 
 ];

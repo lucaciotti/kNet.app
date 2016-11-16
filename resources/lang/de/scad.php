@@ -31,6 +31,7 @@ return [
     'descClient'              => 'Firmenname',
     'anyDate'                 => 'Alle Daten',
     'datePay'                 => 'Fristendatum',
+    
     'dirRem'                  => 'Überweisung',
     'bnkRpt'                  => 'Bankquittung',
     'blExc'                   => 'Tratte',

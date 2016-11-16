@@ -65,5 +65,6 @@ return [
     'codCli'               => 'Code Client',
     'nickname'             => 'Pseudo',
     'refDitta'             => 'Société de Référence',
+    'changeLang'           => 'Change Langue',
 
 ];

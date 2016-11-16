@@ -102,8 +102,10 @@ return [
     'typeDoc_condensed'       => 'Tipo Doc.',
     'typeDoc'                 => 'Tipo Documento',
     '#Doc'                    => '# Doc.',
-    'dateDoc_condensed'        => 'Data Doc.',
-    'referenceDoc_condensed'   => 'Riferimento Doc.',
+    'dateDoc'                 => 'Data Documento',
+    'dateDoc_condensed'       => 'Data Doc.',
+    'referenceDoc'            => 'Riderimento Documento',
+    'referenceDoc_condensed'  => 'Riferimento Doc.',
 
     //filter
     'descClient'              => 'Ragione Sociale',

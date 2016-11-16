@@ -37,4 +37,8 @@ return [
 
     'readMore'                => 'Lis davantage',
 
+    // Form PlaceHolder
+    'desc_plchld'             => 'Description',
+    'note_plchld'             => 'Ecrivez ici',
+
 ];
