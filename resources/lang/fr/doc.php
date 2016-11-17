@@ -41,9 +41,9 @@ return [
     'dateDoc'                 => 'Date Document',
     'deliverType'             => 'typologie de Livraison',
     'referenceDoc'            => 'Référence Document',
-    'totDoc'                  => 'Totale Document',
-    'totDoc_condensed'        => 'Totale Document',
-    'totPayment'              => 'Totale à Payer',
+    'totDoc'                  => 'Total Document',
+    'totDoc_condensed'        => 'Total Document',
+    'totPayment'              => 'Total à Payer',
 
     'scontoCassa'             => 'Remise Caisse',
     'scontoMerce'             => 'Remise Quantitative',
@@ -117,5 +117,13 @@ return [
     'ddt'                     => 'Bons de Commande',
     'invoice'                 => 'Factures',
     'notecredito'             => 'Notes de Crédit',
+
+    // Title
+    'orders_title'            => 'Commandes',
+    'quotes_title'            => 'Devis',
+    'ddt_title'               => 'Bons de Commande',
+    'invoice_title'           => 'Factures',
+    'notecredito_title'       => 'Notes de Crédit',
+    'documents'               => 'Documents',
 
 ];

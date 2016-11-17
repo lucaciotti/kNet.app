@@ -29,6 +29,6 @@ return [
     'persCliArt'              => 'Articles Personnalisés Client',
 
     // Form PlaceHolder
-    'group_plchld'            => 'Sélectionne Groupe',
+    'group_plchld'            => 'Sélectionnez Groupe',
 
 ];

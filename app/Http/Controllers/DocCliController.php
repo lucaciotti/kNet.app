@@ -35,7 +35,27 @@ class DocCliController extends Controller
     $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
     // dd($docs);
 
-    $descModulo = ($tipomodulo == 'O' ? 'Ordini' : ($tipomodulo == 'B' ? 'Bolle' : ($tipomodulo == 'F' ? 'Fatture' : $tipomodulo)));
+    switch ($tipomodulo) {
+      case 'O':
+        $descModulo = trans('doc.orders_title');
+        break;
+      case 'B':
+        $descModulo = trans('doc.ddt_title');
+        break;
+      case 'F':
+        $descModulo = trans('doc.invoice_title');
+        break;
+      case 'P':
+        $descModulo = trans('doc.quotes_title');
+        break;
+      case 'N':
+        $descModulo = trans('doc.notecredito_title');
+        break;
+
+      default:
+        $descModulo = trans('doc.documents');
+        break;
+    }
 
     return view('docs.index', [
       'docs' => $docs,
@@ -92,7 +112,27 @@ class DocCliController extends Controller
     }]);
     $docs = $docs->orderBy('datadoc', 'desc')->orderBy('id', 'desc')->get();
 
-    $descModulo = ($req->input('optTipoDoc') == 'O' ? 'Ordini' : ($req->input('optTipoDoc') == 'B' ? 'Bolle' : ($req->input('optTipoDoc') == 'F' ? 'Fatture' : 'Documenti')));
+    switch ($req->input('optTipoDoc')) {
+      case 'O':
+        $descModulo = trans('doc.orders_title');
+        break;
+      case 'B':
+        $descModulo = trans('doc.ddt_title');
+        break;
+      case 'F':
+        $descModulo = trans('doc.invoice_title');
+        break;
+      case 'P':
+        $descModulo = trans('doc.quotes_title');
+        break;
+      case 'N':
+        $descModulo = trans('doc.notecredito_title');
+        break;
+
+      default:
+        $descModulo = trans('doc.documents');
+        break;
+    }
 
     return view('docs.index', [
       'docs' => $docs,

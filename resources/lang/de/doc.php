@@ -118,4 +118,12 @@ return [
     'invoice'                 => 'Rechnungen',
     'notecredito'             => 'Kreditnoten',
 
+    // Title
+    'orders_title'            => 'Bestellungen',
+    'quotes_title'            => 'Voranschläge',
+    'ddt_title'               => 'Lieferscheine',
+    'invoice_title'           => 'Rechnungen',
+    'notecredito_title'       => 'Kreditnoten',
+    'documents'               => 'Dokumente',
+
 ];

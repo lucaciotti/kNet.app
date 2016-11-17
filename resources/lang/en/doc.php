@@ -117,4 +117,12 @@ return [
     'ddt'                     => 'Delivery Notes',
     'invoice'                 => 'Invoices',
     'notecredito'             => 'Credit Notes',
+
+    // Title
+    'orders_title'            => 'Order',
+    'quotes_title'            => 'Quote',
+    'ddt_title'               => 'Delivery Note',
+    'invoice_title'           => 'Invoice',
+    'notecredito_title'       => 'Credit Note',
+    'documents'               => 'Documentation',
 ];

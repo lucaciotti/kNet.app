@@ -96,7 +96,7 @@ return [
     'quotes'                  => 'Devis',
     'ddt'                     => 'Bons de Commande',
     'invoice'                 => 'Factures',
-    'notecredito'            => 'Note de Crédit',
+    'notecredito'             => 'Notes de Crédit',
 
     'revenue'                 => 'Chiffre d\'Affaires',
 
@@ -124,8 +124,8 @@ return [
     'readMore'                => 'Plus d\'Infos',
 
     // Form Placeholder
-    'sector_plchld'           => 'Sélectionez Marché',
-    'nation_plchld'           => 'Sélectionez Pays',
-    'zone_plchld'             => 'Sélectionez Zone',
+    'sector_plchld'           => 'Sélectionnez Marché',
+    'nation_plchld'           => 'Sélectionnez Pays',
+    'zone_plchld'             => 'Sélectionnez Zone',
 
 ];

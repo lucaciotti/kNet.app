@@ -14,7 +14,8 @@
   @if($tipomodulo)
     <tfoot>
       <tr>
-        <th colspan="5" style="text-align:right">{{ trans('doc.totDoc_condensed') }}:</th>
+        {{-- <th colspan="5" style="text-align:right">{{ trans('doc.totDoc_condensed') }}:</th> --}}
+        <th colspan="5" style="text-align:right"></th>
         <th></th>
       </tr>
     </tfoot>
