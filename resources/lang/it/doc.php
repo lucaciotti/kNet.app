@@ -104,7 +104,7 @@ return [
     '#Doc'                    => '# Doc.',
     'dateDoc'                 => 'Data Documento',
     'dateDoc_condensed'       => 'Data Doc.',
-    'referenceDoc'            => 'Riderimento Documento',
+    'referenceDoc'            => 'Riferimento Documento',
     'referenceDoc_condensed'  => 'Riferimento Doc.',
 
     //filter

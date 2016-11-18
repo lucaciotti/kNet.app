@@ -17,7 +17,7 @@ return [
     'home'                    => 'Home',
     'search'                  => 'Suche',
     'anagClient'              => 'Kundestamm',
-    'listClients'             => 'Kundeliste',
+    'listClients'             => 'Kundenliste',
     'documents'               => 'Dokumente',
     'orders'                  => 'Bestellungen',
     'quotes'                  => 'Voranschläge',

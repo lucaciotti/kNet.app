@@ -165,7 +165,27 @@ class DocCliController extends Controller
                       ->withoutGlobalScope('client')
                       ->findOrFail($codice);
 
-    $descModulo = ($tipomodulo == 'O' ? 'Ordini' : ($tipomodulo == 'B' ? 'Bolle' : ($tipomodulo == 'F' ? 'Fatture' : 'Documenti')));
+    switch ($tipomodulo) {
+      case 'O':
+        $descModulo = trans('doc.orders_title');
+        break;
+      case 'B':
+        $descModulo = trans('doc.ddt_title');
+        break;
+      case 'F':
+        $descModulo = trans('doc.invoice_title');
+        break;
+      case 'P':
+        $descModulo = trans('doc.quotes_title');
+        break;
+      case 'N':
+        $descModulo = trans('doc.notecredito_title');
+        break;
+
+      default:
+        $descModulo = trans('doc.documents');
+        break;
+    }
 
     // dd($docs);
     return view('docs.indexCli', [

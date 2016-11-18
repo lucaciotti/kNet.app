@@ -136,7 +136,7 @@
             <dt>{{ trans('doc.totMerce') }}</dt>
             <dd>{{$head->totmerce}} €</dd>
 
-            <dt>{{ trans('doc.dateDoc') }}</dt>
+            <dt>{{ trans('doc.deliveryCost') }}</dt>
             <dd>{{$head->speseim + $head->spesetr}} €</dd>
 
             <br>

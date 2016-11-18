@@ -10,10 +10,10 @@ return [
     */
 
     'headTitle_idx'           => 'Products',
-    'contentTitle_idx'        => 'Products List',
+    'contentTitle_idx'        => 'Product List',
     'contentDesc_idx'         => '',
 
-    'listProds'               => 'Products List',
+    'listProds'               => 'Product List',
     'filter'                  => 'Filter',
     'extraFilter'             => 'Extra Filter',
 

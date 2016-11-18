@@ -12,13 +12,13 @@ return [
     */
 
     'home'                    => 'Home',
-    'clients'                 => 'Clients',
-    'client'                  => 'Client',
+    'clients'                 => 'Customers',
+    'client'                  => 'Customer',
     'documents'               => 'Documents',
     'scads'                   => 'Due Dates',
     'products'                => 'Products',
     'stFatt'                  => 'Statistics',
-    'stFattAgent'             => 'Agent Stats.',
+    'stFattAgent'             => 'Agent Stats',
     'event'                   => 'Event',
     'insEvent'                => 'Event Input',
 

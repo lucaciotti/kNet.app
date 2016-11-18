@@ -102,7 +102,6 @@ return [
     'typeDoc_condensed'       => 'Type Doc.',
     'typeDoc'                 => 'Type Documents',
     '#Doc'                    => '# Doc.',
-    'dateDoc'                 => 'Date Documents',
     'dateDoc_condensed'       => 'Date Doc.',
     'referenceDoc'            => 'Référence Doc.',
     'referenceDoc_condensed'  => 'Réf. Doc.',

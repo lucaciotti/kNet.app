@@ -14,7 +14,7 @@ return [
     'contentDesc_agt'         => '',
 
     'agent'                   => 'Agent',
-    'selAgent'                => 'Selectionne Agent',
+    'selAgent'                => 'Sélectionnez Agent',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     'contentDesc_cli'         => '',
 
     'client'                  => 'Client',
-    'selClient'               => 'Selectionne Client',
+    'selClient'               => 'Sélectionnez Client',
 
     /*
     |--------------------------------------------------------------------------

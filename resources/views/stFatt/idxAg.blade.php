@@ -187,13 +187,15 @@
     // AREA CHART
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var data = {!! $stats !!};
+    var revenueLabel = "{!! trans('stFatt.revenue') !!}";
+    var targetLabel = "{!! trans('stFatt.target') !!}";
     var area = new Morris.Line({
       element: 'revenue-chart',
       resize: true,
       data: data,
       xkey: 'm',
       ykeys: ['a', 'b'],
-      labels: ['Fatturato', 'Target'],
+      labels: [revenueLabel, targetLabel],
       lineColors: ['#227a03', '#cd6402'],
       hideHover: 'auto',
       xLabelFormat: function(x) { // <--- x.getMonth() returns valid index

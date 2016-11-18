@@ -187,8 +187,8 @@
     // AREA CHART
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var data = {!! $stats !!};
-    var revenueLabel = '{!! trans('stFatt.revenue') !!}';
-    var targetLabel = '{!! trans('stFatt.target') !!}';
+    var revenueLabel = "{!! trans('stFatt.revenue') !!}";
+    var targetLabel = "{!! trans('stFatt.target') !!}";
     var area = new Morris.Line({
       element: 'revenue-chart',
       resize: true,

@@ -23,7 +23,7 @@ return [
     */
 
     'client'                  => 'Customer',
-    'eventType'               => 'Meeting type',
+    'eventType'               => 'Event type',
     'eventDate'               => 'Date',
     'eventDesc'               => 'Short Description',
     'eventNote'               => 'Notes',

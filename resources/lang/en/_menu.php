@@ -26,7 +26,7 @@ return [
     'notecredito'             => 'Credit Notes',
     'payment'                 => 'Due Dates',
     'products'                => 'Products',
-    'insVisits'               => 'Customer Visits Input',
+    'insVisits'               => 'Customer Visit Input',
     'statsFatt'               => 'Turnover Statistics',
     'agent'                   => 'Agent',
     'client'                  => 'Customer',

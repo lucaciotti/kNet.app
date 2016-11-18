@@ -11,14 +11,14 @@ return [
     |
     */
 
-    'home'                    => 'Home',
+    'home'                    => 'Accueil',
     'clients'                 => 'Clients',
     'client'                  => 'Client',
     'documents'               => 'Documents',
     'scads'                   => 'Echéances',
     'products'                => 'Produits',
     'stFatt'                  => 'Statistiques',
-    'stFattAgent'             => 'Statistiques Agent.',
+    'stFattAgent'             => 'Statistiques Agent',
     'event'                   => 'Visites',
     'insEvent'                => 'Insertion Evénement',
 

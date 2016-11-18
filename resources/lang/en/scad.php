@@ -10,10 +10,10 @@ return [
     */
 
     'headTitle_idx'           => 'Due Dates',
-    'contentTitle_idx'        => 'Due Dates List',
+    'contentTitle_idx'        => 'Due Date List',
     'contentDesc_idx'         => '',
 
-    'listScads'               => 'Due Dates List',
+    'listScads'               => 'Due Date List',
     'filter'                  => 'Filter',
 
     //Table
