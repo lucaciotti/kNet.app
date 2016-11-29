@@ -31,7 +31,7 @@ return [
     'agent'                   => 'Agent',
     'client'                  => 'Kunde',
     'zone'                    => 'Zone',
-    'superAgent'              => 'Area Manager / Export Manager',
+    'superAgent'              => 'Area Manager',
 
     // Prossime Implementazioni
     'contacts'                => 'Kontaktliste',

@@ -30,8 +30,8 @@ return [
     'statsFatt'               => 'Statistiques Chiffre d\'affaires',
     'agent'                   => 'Agent',
     'client'                  => 'Client',
-    'zona'                   => 'Zone',
-    'superAgent'              => 'Chef de zone / Export Manager',
+    'zone'                   => 'Zone',
+    'superAgent'              => 'Chef de zone',
 
     // Prossime Implementazioni
     'contacts'                => 'Répertoire Contacts',

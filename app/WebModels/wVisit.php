@@ -31,9 +31,6 @@ class wVisit extends Model implements LogsActivityInterface
 
   /**
    * Get the message that needs to be logged for the given event name.
-   *
-   * @param string $eventName
-   * @return string
    */
   public function getActivityDescriptionForEvent($eventName){
     switch ($eventName) {

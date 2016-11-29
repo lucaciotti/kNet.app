@@ -30,8 +30,8 @@ return [
     'statsFatt'               => 'Turnover Statistics',
     'agent'                   => 'Agent',
     'client'                  => 'Customer',
-    'zona'                    => 'Area',
-    'superAgent'              => 'Area Manager / Export Manager',
+    'zone'                    => 'Area',
+    'superAgent'              => 'Area Manager',
 
     // Prossime Implementazioni
     'contacts'                => 'Contacts List',

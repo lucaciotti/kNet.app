@@ -31,7 +31,7 @@ return [
     'agent'                   => 'Agente',
     'client'                  => 'Cliente',
     'zone'                    => 'Zona',
-    'superAgent'              => 'Capoarea / Export Manager',
+    'superAgent'              => 'Area Manager',
 
     // Prossime Implementazioni
     'contacts'                => 'Rubrica Contatti',

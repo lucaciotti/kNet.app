@@ -162,6 +162,10 @@ Route::group(['as' => 'stFatt::'], function(){
     'as' => 'idxAg',
     'uses' => 'StFattController@idxAg'
   ]);
+  Route::post('/stFattAg', [
+    'as' => 'idxAg',
+    'uses' => 'StFattController@idxAg'
+  ]);
   Route::get('/stFattCli', [
     'as' => 'idxCli',
     'uses' => 'StFattController@idxCli'
@@ -170,15 +174,67 @@ Route::group(['as' => 'stFatt::'], function(){
     'as' => 'fltCli',
     'uses' => 'StFattController@idxCli'
   ]);
-  Route::post('/stFattAg', [
-    'as' => 'idxAg',
-    'uses' => 'StFattController@idxAg'
-  ]);
   Route::post('/stFattCli', [
     'as' => 'idxCli',
     'uses' => 'StFattController@idxCli'
   ]);
+  Route::get('/stFattZone', [
+    'as' => 'idxZone',
+    'uses' => 'StFattController@idxZone'
+  ]);
+  Route::post('/stFattZone', [
+    'as' => 'idxZone',
+    'uses' => 'StFattController@idxZone'
+  ]);
+  Route::get('/stFattManager', [
+    'as' => 'idxManager',
+    'uses' => 'StFattController@idxManager'
+  ]);
+  Route::post('/stFattManager', [
+    'as' => 'idxManager',
+    'uses' => 'StFattController@idxManager'
+  ]);
 });
+
+Route::group(['as' => 'stAbc::'], function(){
+  Route::get('/stAbcAg/{codag?}', [
+    'as' => 'idxAg',
+    'uses' => 'StAbcController@idxAg'
+  ]);
+  Route::post('/stAbcAg', [
+    'as' => 'idxAg',
+    'uses' => 'StAbcController@idxAg'
+  ]);
+  Route::get('/stAbcCli', [
+    'as' => 'idxCli',
+    'uses' => 'StAbcController@idxCli'
+  ]);
+  Route::get('/stAbcCli/{codcli}', [
+    'as' => 'fltCli',
+    'uses' => 'StAbcController@idxCli'
+  ]);
+  Route::post('/stAbcCli', [
+    'as' => 'idxCli',
+    'uses' => 'StAbcController@idxCli'
+  ]);
+  Route::get('/stAbcZone', [
+    'as' => 'idxZone',
+    'uses' => 'StAbcController@idxZone'
+  ]);
+  Route::post('/stAbcZone', [
+    'as' => 'idxZone',
+    'uses' => 'StAbcController@idxZone'
+  ]);
+  Route::get('/stAbcManager', [
+    'as' => 'idxManager',
+    'uses' => 'StAbcController@idxManager'
+  ]);
+  Route::post('/stAbcManager', [
+    'as' => 'idxManager',
+    'uses' => 'StAbcController@idxManager'
+  ]);
+});
+
 // API ROUTES ==================================
 // Route::group(['prefix' => 'api'], function() {
 //
