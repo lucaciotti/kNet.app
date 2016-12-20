@@ -20,6 +20,7 @@
     run_composer_master
     update_permissions
     update_symlinks
+    patch_Torann_Registry
 @endmacro
 
 @task('fetch_repo_master')
