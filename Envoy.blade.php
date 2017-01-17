@@ -13,6 +13,7 @@
     update_permissions
     update_symlinks
     patch_Torann_Registry
+    clear_all_data
 @endmacro
 
 @macro('deploy-master', ['on' => 'kNet'])
@@ -21,6 +22,7 @@
     update_permissions
     update_symlinks
     patch_Torann_Registry
+    clear_all_data
 @endmacro
 
 @task('fetch_repo_master')
@@ -73,5 +75,14 @@
 @endtask
 
 @task('patch_Torann_Registry')
-  yes | cp -irf {{ $release_dir }}/{{ $release }}/myPackages/* {{ $release_dir }}/{{ $release }}/vendor
+    yes | cp -irf {{ $release_dir }}/{{ $release }}/myPackages/* {{ $release_dir }}/{{ $release }}/vendor
+@endtask
+
+@task('clear_all_data')
+    cd {{ $release_dir }}/{{ $release }};
+    truncate -s 0 storage/logs/laravel.log;
+    php artisan cache:clear;
+    php artisan clear-compiled;
+    sudo chmod -R 777 storage/ -R;
+    composer dump-autoload;
 @endtask
