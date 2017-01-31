@@ -94,6 +94,7 @@ return [
     'descArt'                 => 'Item Description',
     'codeLot'                 => 'Lot Code',
     'quantity_condensed'      => 'Qty',
+    'quantity_residual'       => 'Residual',
     'unitPrice'               => 'Un. Price',
     'totPrice'                => 'Tot. Price',
     'discount'                => 'Discount',
@@ -104,6 +105,7 @@ return [
     '#Doc'                    => 'Doc. #',
     'dateDoc'                 => 'Document Date',
     'dateDoc_condensed'       => 'Doc. Date',
+    'dateDispach_condensed'   => 'Dispach Date',
     'referenceDoc'            => 'Document Reference',
     'referenceDoc_condensed'  => 'Doc. Reference',
 

@@ -266,4 +266,9 @@
   @include('layouts.partials.scripts.iCheck')
   @include('layouts.partials.scripts.select2')
   @include('layouts.partials.scripts.datePicker')
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+  </script>
 @endsection

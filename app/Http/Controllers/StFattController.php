@@ -81,7 +81,7 @@ class StFattController extends Controller
                                 )
                           ->where('codicecf', 'CTOT')
                           ->where('agente', $agente)
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->whereIn('prodotto', ['KRONA', 'KOBLENZ', 'KUBIKA'])
                           ->where('tipologia', 'FATTURATO')
                           ->groupBy(['agente', 'tipologia'])
@@ -93,7 +93,7 @@ class StFattController extends Controller
                           ->get();
       $target = StatFatt::where('codicecf', 'CTOT')
                           ->where('agente', $agente)
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->where('tipologia', 'TARGET')
                           ->groupBy(['agente', 'tipologia', 'gruppo'])
                           ->with([
@@ -152,7 +152,7 @@ class StFattController extends Controller
                                 )
                           ->where('codicecf', $cliente)
                           ->where('tipologia', 'FATTURATO')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['codicecf', 'tipologia', 'gruppo'])
                           ->with([
                             'client' => function($query){
@@ -183,7 +183,7 @@ class StFattController extends Controller
                           ->where('codicecf', $cliente)
                           ->whereIn('prodotto', ['KRONA', 'KOBLENZ', 'KUBIKA'])
                           ->where('tipologia', 'FATTURATO')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['codicecf', 'tipologia'])
                           ->with([
                             'client' => function($query){
@@ -196,7 +196,7 @@ class StFattController extends Controller
                           ->get();
       $target = StatFatt::where('codicecf', $cliente)
                           ->where('tipologia', 'TARGET')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['codicecf', 'tipologia', 'gruppo'])
                           ->with([
                             'client' => function($query){
@@ -252,7 +252,7 @@ class StFattController extends Controller
                               $query->where('u_capoa', $manager);
                             })
                           ->where('tipologia', 'FATTURATO')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['tipologia', 'gruppo'])
                           ->with([
                             'grpProd' => function($query){
@@ -303,7 +303,7 @@ class StFattController extends Controller
                               $query->where('u_capoa', $manager);
                             })
                           ->where('tipologia', 'TARGET')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['tipologia'])
                           ->with(['grpProd' => function($query){
                               $query->select('codice', 'descrizion');
@@ -374,7 +374,7 @@ class StFattController extends Controller
                               $query->where('codnazione', $zone);
                             })
                           ->where('tipologia', 'FATTURATO')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->groupBy(['tipologia', 'gruppo'])
                           ->with([
                             'grpProd' => function($query){
@@ -399,7 +399,7 @@ class StFattController extends Controller
                                 )
                           ->where('codicecf', '!=','CTOT')
                           ->where('agente', '!=','00')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->whereHas('client', function ($query) use ($zone) {
                               $query->where('codnazione', $zone);
                             })
@@ -424,7 +424,7 @@ class StFattController extends Controller
                                 )
                           ->where('codicecf', '!=','CTOT')
                           ->where('agente', '!=','00')
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->whereHas('client', function ($query) use ($zone) {
                               $query->where('codnazione', $zone);
                             })

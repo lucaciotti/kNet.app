@@ -94,6 +94,7 @@ return [
     'descArt'                 => 'Descrizione Articolo',
     'codeLot'                 => 'Codice Lotto',
     'quantity_condensed'      => 'Qtà',
+    'quantity_residual'       => 'Qtà Residua',
     'unitPrice'               => 'Prezzo Un.',
     'totPrice'                => 'Prezzo Tot.',
     'discount'                => 'Sconto',
@@ -104,6 +105,7 @@ return [
     '#Doc'                    => '# Doc.',
     'dateDoc'                 => 'Data Documento',
     'dateDoc_condensed'       => 'Data Doc.',
+    'dateDispach_condensed'   => 'Data Consegna',
     'referenceDoc'            => 'Riferimento Documento',
     'referenceDoc_condensed'  => 'Riferimento Doc.',
 
