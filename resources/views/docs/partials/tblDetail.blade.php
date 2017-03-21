@@ -60,7 +60,9 @@
             @if($row->u_dtpronto)
               {{ $row->u_dtpronto->format('d-m-Y') }}
             @else
-              {{ $row->dataconseg->format('d-m-Y') }}
+              @if($row->dataconseg)
+                {{ $row->dataconseg->format('d-m-Y') }}
+              @endif
             @endif
           </td>
           <td>

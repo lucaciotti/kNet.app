@@ -39,7 +39,7 @@ class ClientController extends Controller
       $clients = $clients->select('codice', 'descrizion', 'codnazione', 'agente', 'localita', 'settore');
       $clients = $clients->with(['agent']);
       $clients = $clients->get();
-
+      
       $nazioni = Nazione::all();
       $settori = Settore::all();
       $zone = Zona::all();

@@ -26,6 +26,7 @@ class StFattController extends Controller
     public function idxAg (Request $req, $codAg=null) {
       $agents = StatFatt::select('agente')
                           ->where('agente', '!=', '00')
+                          ->where('agente', '!=', '')
                           ->groupBy('agente')
                           ->with([
                             'agent' => function($query){
@@ -53,7 +54,7 @@ class StFattController extends Controller
                                 )
                           ->where('codicecf', 'CTOT')
                           ->where('agente', $agente)
-                          ->where('esercizio', '2016')
+                          ->where('esercizio', '2017')
                           ->where('tipologia', 'FATTURATO')
                           ->groupBy(['agente', 'tipologia', 'gruppo'])
                           ->with([
