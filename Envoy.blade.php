@@ -86,3 +86,5 @@
     sudo chmod -R 777 storage/ -R;
     composer dump-autoload;
 @endtask
+
+{{--  Solo per test  --}}
