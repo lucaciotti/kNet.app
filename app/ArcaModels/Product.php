@@ -72,13 +72,20 @@ class Product extends Model
   }
 
   // JOIN Tables
-  public function doccli(){
-    return $this->hasMany('knet\ArcaModels\DocCli', 'codicearti', 'codice');
+  public function docrow(){
+    return $this->hasMany('knet\ArcaModels\DocRow', 'codicearti', 'codice');
   }
 
-  public function docsup(){
-    return $this->hasMany('knet\ArcaModels\DocSup', 'codicearti', 'codice');
-  }
+  // PER CERCARE I DOCUMENTI CON QUESTE RIGHE:
+  //  knet\ArcaModels\Product::find('0500 1')->docrow()->with(['doccli' => function($query) { $query->where('tipodoc','OC');}])->first()
+
+  // public function doccli(){
+  //   return $this->hasManyThrough('knet\ArcaModels\DocCli', 'knet\ArcaModels\DocRow', 'codicearti', 'id');
+  // }
+
+  // public function docsup(){
+  //   return $this->hasManyThrough('knet\ArcaModels\DocSup', 'knet\ArcaModels\DocRow', 'codicearti', 'id', 'codice', 'id_testa');
+  // }
 
   public function masterClas(){
     return $this->hasOne('knet\ArcaModels\ClasProd', 'codice', 'master_clas');
